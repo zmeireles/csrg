@@ -1,0 +1,151 @@
+<ice:panelGroup xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ice="http://www.icesoft.com/icefaces/component"
+      xmlns:s="http://jboss.com/products/seam/taglib">
+
+
+<ice:panelGroup>
+   	<ice:dataTable id="dataTable" value="#{modelEditHome.profCategoryList}"
+   			var="data" rows="10">
+ 		<ice:column>
+   			<f:facet name="header">
+     				<ice:outputText value="#{messages.Name}" />
+   			</f:facet>
+   			<ice:outputText value="#{data.profCategory.name}" />
+ 		</ice:column>
+ 		<ice:column style="width: 200px">
+ 			<ice:panelConfirmation id="deleteConfirmPanel" message="#{messages.DeleteConfirmation} "
+                      acceptLabel="#{messages.DeleteButton}" cancelLabel="#{messages.BooleanNo}" 
+                      title="#{messages.DeleteUserProfCategoryProfCategory.concat(' '.concat(data.profCategory.name))}"/>
+   			<f:facet name="header">
+     				<ice:outputText value="#{messages.Operations}" />
+   			</f:facet>
+   			<ice:commandButton panelConfirmation="deleteConfirmPanel"
+                              value="#{messages.DeleteButton}"
+                              style="font-size:12px"
+                              actionListener="#{operationsBean.deleteModel}">
+                   <f:attribute name="modelId" value="#{data.id}"/>
+                   <f:attribute name="modelName" value="UserProfCategory"/>
+                   <f:attribute name="report" value="#{null}"/>
+			</ice:commandButton>
+  		</ice:column>
+   	</ice:dataTable>
+   	
+   	<h:commandButton id="addProfCategories"
+   			value="#{messages.UserAddProfCategories}"
+   			disabled="#{modelEditHome.showPopup}"
+   			actionListener="#{modelEditHome.togglePopup}"/>
+   	 
+<!-- Modal Panel Popup to add professional categories -->
+<ice:panelGroup visible="#{modelEditHome.showPopup}">
+<ice:panelPopup id="modalPnlPop"
+                draggable="false" modal="true"
+                visible="#{modelEditHome.showPopup}"
+                autoCentre="true"
+                styleClass="corePopup" resizable="true" style="width: 500px">
+    <f:facet name="header">
+        <ice:panelGroup styleClass="popupHeaderWrapper">
+            <ice:outputText
+                    value="#{messages.UserAddProfCategories}"
+                    styleClass="popupHeaderText"/>
+            <ice:commandButton id="modalPnlCloseBtn" type="button"
+                               actionListener="#{modelEditHome.togglePopup}"
+                               styleClass="popupHeaderImage"
+                               title="Close Popup" alt="Close" 
+                               image="../img/popupclose.gif"/>
+        </ice:panelGroup>
+    </f:facet>
+    <f:facet name="body"> -->
+        <ice:panelGroup styleClass="popupBody">
+        	<!-- User list goes here -->
+        	<ice:outputText value="#{messages.DragAndDropText}"/>
+        	<ice:panelGrid id="pgrid" columns="2" style="vertical-align: top">
+        		<ice:panelGroup>
+	                <ice:panelGroup style="vertical-align: top"
+	                		hoverclass="cartDropTarget"
+                			dropTarget="true" >
+	               	<ice:dataTable id="availableUSers" value="#{modelEditHome.profCategoriesNotInList}"
+										var="data" rows="10">
+						<ice:column>
+			    			<f:facet name="header">
+			    				<ice:outputText value="#{messages.AvailableItems}"/>
+			    			</f:facet>
+			    			<ice:panelGroup id="availableDropBox"
+			    					draggable="true"
+			    					dragListener="#{modelEditHome.addDndProfCategory}"
+			    					dragValue="#{data}"
+			    					dragOptions="dragGhost"
+			    					dragMask="dragging,drag_cancel,hover_start,hover_end"
+	               					dropMask="dragging,drag_cancel,hover_start,hover_end">
+		                        <ice:outputText value="#{data.name}" />
+	                        </ice:panelGroup>
+			    		</ice:column>
+	                </ice:dataTable>
+	                </ice:panelGroup>
+	                <!--  drop target to use the table is empty -->
+	                <ice:panelGroup styleClass="chartContainer backBeanChangeContainer" 
+					                style="padding:2px;"
+					                dropTarget="true"
+					                hoverclass="cartDropTarget"
+					                rendered="#{empty modelEditHome.profCategoriesNotInList}">
+					    <ice:panelGroup id="cartDropTarget"
+					                    style="text-align: center;background-color:white;padding:20px;" >
+					
+					        <ice:graphicImage value="/img/shopping-cart.png"
+					                          width="55" height="45"/>
+					    </ice:panelGroup>
+					</ice:panelGroup>
+				</ice:panelGroup>
+                <ice:panelGroup style="vertical-align: top">
+	                <ice:panelGroup id="selectedItemsPnlGroup"
+	                		hoverclass="cartDropTarget"
+                			dropTarget="true" >
+                    <ice:dataTable id="selectedUsers" value="#{modelEditHome.selectedProfCategories}"
+ 									var="data" rows="10">
+ 								<ice:column>
+			    			<f:facet name="header">
+			    				<ice:outputText value="#{messages.SelectedItems}"/>
+			    			</f:facet>
+			    			<ice:panelGroup id="selectedDropBox"
+			    					draggable="true"
+			    					dragListener="#{modelEditHome.removeDndProfCategory}"
+			    					dragValue="#{data}"
+			    					dragOptions="dragGhost"
+			    					dragMask="dragging,drag_cancel,hover_start,hover_end"
+	               					dropMask="dragging,drag_cancel,hover_start,hover_end">
+		                        <ice:outputText value="#{data.name}" />
+	                        </ice:panelGroup>
+			    		</ice:column>
+                    </ice:dataTable>
+                    </ice:panelGroup>
+                    <!--  drop target to use the table is empty -->
+	                <ice:panelGroup styleClass="chartContainer backBeanChangeContainer" 
+					                style="padding:2px;"
+					                dropTarget="true"
+					                hoverclass="cartDropTarget"
+					                rendered="#{empty modelEditHome.selectedProfCategories}">
+					    <ice:panelGroup id="cartDropTarget"
+					                    style="text-align: center;background-color:white;padding:20px;" >
+					
+					        <ice:graphicImage value="/img/shopping-cart.png"
+					                          width="55" height="45"/>
+					    </ice:panelGroup>
+					</ice:panelGroup>
+                </ice:panelGroup>
+                
+        	 </ice:panelGrid>
+			<ice:commandButton id="modalPnlSaveButton" type="submit"
+                               value="#{messages.SaveButton}"
+                               actionListener="#{modelEditHome.savePopupSelectedProfCategories}"/>
+            <ice:commandButton id="modalPnlCloseButton" type="submit"
+                               value="#{messages.CancelButton}"
+                               actionListener="#{modelEditHome.togglePopup}"/>
+        </ice:panelGroup>
+    </f:facet>
+</ice:panelPopup>
+</ice:panelGroup>
+</ice:panelGroup>
+</ice:panelGroup>
+	

@@ -1,0 +1,42 @@
+<ice:panelGroup xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ice="http://www.icesoft.com/icefaces/component"
+      xmlns:s="http://jboss.com/products/seam/taglib">
+    
+    	<div class="#{identity.loggedIn==true ? 'div_user' : 'div_hide'}" style="width:350px; float:left">
+			<ice:panelGroup rendered="#{identity.loggedIn==true}">
+				
+			    	<s:graphicImage value="#{stateBean.user.person.photo}" style="float: left;"
+			    					rendered="#{stateBean.user.person.photo ne null}">
+						<s:transformImageSize height="64" maintainRatio="true"/>
+					</s:graphicImage>
+					<s:graphicImage value="/img/user_no_image.jpg" style="float: left;"
+									rendered="#{stateBean.user.person.photo eq null}">
+						<s:transformImageSize height="48" maintainRatio="true"/>
+					</s:graphicImage>
+				
+				<span style="padding-left:5px;">
+					<h:outputText value="#{stateBean.user.person.name}"/>
+				</span>	
+				<br/>
+				<span style="padding-left:5px;">
+					<h:outputText value="#{stateBean.user.person.email}"/>
+				</span>
+		    </ice:panelGroup>
+		</div>
+	
+		<div class="#{identity.loggedIn==true ? 'top_nav_pad' : ''}" style="width:600px; float: right;">
+		<div id="navlist" align="center">
+			<s:link id="menuHomeId" view="/home.xhtml" value="#{messages.TopMenuItemHome}" propagation="none"/>
+			<s:link id="personData" view="#{stateBean.getDir().concat('/userEdit.xhtml')}" 
+					value="#{messages.TopMenuItemPersonData}" propagation="begin" rendered="#{identity.loggedIn==true}">
+				<f:param value="#{stateBean.user.id}" name="userId"/>
+			</s:link>
+		    
+		    <s:link id="menuContactsId" view="/contacts.xhtml" value="#{messages.TopMenuItemContacts}" propagation="none"/>
+			
+		</div>
+		</div>
+</ice:panelGroup>

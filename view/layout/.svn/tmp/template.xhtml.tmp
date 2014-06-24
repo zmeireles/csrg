@@ -1,0 +1,174 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ice="http://www.icesoft.com/icefaces/component"        
+      xmlns:s="http://jboss.com/products/seam/taglib">
+<head> 
+    <ice:outputDeclaration doctypeRoot="HTML"
+        doctypePublic="-//W3C//DTD XHTML 1.0 Transitional//EN"
+        doctypeSystem="http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"/>  
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>CSRG</title>
+    <link rel="shortcut icon" href="#{request.contextPath}/favicon.ico"/>
+    <link rel="stylesheet" type="text/css" href="#{request.contextPath}/xmlhttp/css/rime/rime.css"/>
+    <link rel="stylesheet" type="text/css" href="#{request.contextPath}/stylesheet/theme.css"/>
+    <link rel="stylesheet" type="text/css" href="#{request.contextPath}/stylesheet/style.css"/>
+    <link rel="stylesheet" type="text/css" href="#{request.contextPath}/stylesheet/showcase_layout.css"/>
+    <link rel="stylesheet" type="text/css" href="#{request.contextPath}/stylesheet/showcase_overrides.css"/>
+    <link rel="stylesheet" type="text/css" href="#{request.contextPath}/stylesheet/showcase_style.css"/>
+    
+     <link rel="stylesheet" type="text/css" href="#{request.contextPath}/stylesheet/superfish.css"/>
+    <link rel="stylesheet" type="text/css" href="#{request.contextPath}/stylesheet/superfish-vertical.css"/>
+    <script type="text/javascript" src="#{request.contextPath}/js/jquery-1.3.2.js"></script>
+	<script type="text/javascript" src="#{request.contextPath}/js/hoverIntent.js"></script>
+    <script type="text/javascript" src="#{request.contextPath}/js/superfish.js"></script>
+	<script type="text/javascript" src="#{request.contextPath}/js/jquery.innerfade.js"></script>
+	
+    
+    <script type="text/javascript">
+
+	$(document).ready(function() {
+
+
+		jQuery("ul.sf-menu").superfish({ 
+	            animation: {height:'show'},   // slide-down effect without fade-in 
+	            delay:     1200               // 1.2 second delay on mouseout 
+	       });
+
+       var sp = #{stateBean.config.speed};
+       var time = #{stateBean.config.timeOut};
+
+       sp = sp * 1000;
+       time = time * 1000;
+
+		jQuery('#topNewsBar').innerfade({
+			animationtype: '#{stateBean.config.animationType}',
+			speed: sp,
+			timeout: time,
+            type: 'sequence',
+			containerheight: '2em',
+			runningclass: 'newsTicker'
+		});
+
+
+	});
+
+	</script>
+
+
+    
+    
+    
+    <ui:insert name="head"/> 
+</head>
+  	<body>
+  		<!-- parametros para todos os xhtml -->
+		<ui:param name="theme" value="/layout"></ui:param>
+		<ui:param name="myPath" value="#{stateBean.myPath()}"></ui:param>
+  	
+		<div class="main_top"> <!-- Main Top Starts Here-->
+		<div class="navcontainer">
+			<ui:include src="#{theme}/menuTop.xhtml"></ui:include>
+		</div>
+		</div> <!-- Main Top Ends Here-->
+		
+		<div style="clear:both"></div> <!-- Clear Both -->
+		
+		<div class="main_body"> <!-- Main Body Starts Here-->
+		<div class="content"> <!-- Content Starts Here -->
+		<div class="#{identity.loggedIn==false ? 'header_banner' : 'small_header_banner'}"></div> <!-- Header Banner // use <div class="small_header_banner"></div> instead for small banner-->
+		<div class="mid_space"><!-- Mid Cosmetic Starts Here -->
+		<div id="news"> <!-- Use to give a news, note or alert -->
+		</div>
+		<div style="clear:both;"></div> <!-- Clear Both -->
+		</div><!-- Mid Cosmetic Ends Here -->
+		
+		<div id="main_content"> <!-- Main Content Starts Here -->
+		
+		<s:div styleClass="newsDiv" ><!-- news ticker -->
+		    <h:outputText value="#{stateBean.echo(newsTicker.buildNewsTicker())}"/>
+		</s:div>
+		
+		<div id="left"> <!-- Left Side Starts Here -->
+			<br style="clear: both;"/>
+			<h:outputText value="#{stateBean.echo(visualItemMenu.buildMenu())}"/>
+			<br style="clear: both;"/>
+			
+			<div id="login_box">
+				<ice:panelGroup rendered="#{not identity.loggedIn}">
+				<ice:form id="loginForm">
+					#{messages.LoginLabel}<br/>
+					<ice:inputText id="username" 
+                              value="#{credentials.username}"/><br/>
+					#{messages.UserPasswordLabel}<br/>
+					<ice:inputSecret id="password" 
+                                value="#{credentials.password}"/>
+					<br/>
+					<h:outputLabel for="rememberMe">#{messages.RememberMe}</h:outputLabel>
+					<ice:selectBooleanCheckbox id="rememberMe" value="#{rememberMe.enabled}"/>
+					<div class="actionButtons">
+			            <h:commandButton target="_blank" id="submit" value="#{messages.Login}" action="#{identity.login}"/>
+			            <!-- <s:link id="submit" view="/home.xhtml" action="#{identity.login}" value="Login"/> -->
+			        </div>
+				</ice:form>
+				</ice:panelGroup>
+				<ice:panelGroup rendered="#{identity.loggedIn}">
+				<ice:form id="logoutForm">
+					<div class="actionButtons">
+			            <!-- <ice:commandButton id="submit" value="#{messages.Logout}" action="#{authenticator.logoutUser}"/> -->
+			            <s:button id="menuLogoutId" view="/home.xhtml" action="#{identity.logout}" value="Logout" rendered="#{identity.loggedIn}" propagation="none"/>
+			        </div>
+			    </ice:form>
+				</ice:panelGroup>
+			</div>
+		<div style="clear:both"></div> <!-- Clear Both -->
+		</div> <!-- Left Side Ends Here -->
+		
+		<div id="right"><!-- Right Side Starts Here -->
+			<table>
+				<tr valign="top"><td>
+					<ui:include src="globalSearch.xhtml"></ui:include>
+					<ui:insert name="body"/>
+				</td>
+				<s:fragment rendered="#{newsPanelController.newsCount>0}">
+					<td width="200">
+						<ui:include src="#{theme}/newsPanel.xhtml"></ui:include>
+					</td>
+				</s:fragment>
+				</tr>
+			</table>
+			
+		<div style="clear:both"></div><!-- Clear Both -->
+		</div> <!-- Right Side Ends Here -->
+		</div> <!-- Main Content Ends Here -->
+		
+		<div style="clear:both"></div><!-- Clear Both -->
+		
+		<div class="footer"><!-- Footer Starts Here -->
+			<table width="100%" border="0">
+				<tr><td style="text-align: left" width="250px">
+					<h:outputText value="#{messages.ProductVersion.concat(' '.concat(messages.ProductVersionNumber))}"/>
+				</td><td class="showcaseFooter">
+            		<h:outputText value="#{messages.CopyrightPrefixInfo}"/>&#160;&#169;&#160;
+            		<h:outputText value="#{messages.CopyrightSufixInfo}"/>
+            	</td><td width="250px">
+					<h:form>
+					<div align="right">
+					    <h:selectOneMenu value="#{localeSelector.localeString}">
+							<f:selectItems value="#{localeSelector.supportedLocales}"/>
+						</h:selectOneMenu>
+						<h:commandButton action="#{localeSelector.select()}" value="#{messages.ChangeLanguage}"/>
+					</div>
+					</h:form>
+				</td></tr>
+			</table>
+		</div><!-- Footer Ends Here -->
+		
+		<div style="clear:both"></div><!-- Clear Both -->
+		</div> <!-- Content Ends Here -->
+		</div> <!-- Main Body Ends Here -->
+	</body> <!--BODY Ends Here -->
+</html>

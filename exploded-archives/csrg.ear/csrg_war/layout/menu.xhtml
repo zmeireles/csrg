@@ -1,0 +1,144 @@
+<div class="menuButtons" 
+		xmlns="http://www.w3.org/1999/xhtml"
+		xmlns:ui="http://java.sun.com/jsf/facelets"
+		xmlns:h="http://java.sun.com/jsf/html"
+		xmlns:f="http://java.sun.com/jsf/core"
+		xmlns:ice="http://www.icesoft.com/icefaces/component"  
+		xmlns:s="http://jboss.com/products/seam/taglib">
+		
+<ice:panelGroup id="menuPanelGroup" styleClass="formBorderHighlight">
+<ice:form id="menuForm">
+	<table width="100%" border="0" cellspacing="0" cellpadding="0">
+	   <tr>
+	   	
+		<td class="iceDatTblColHdr2">
+         		<ice:panelGrid id="menuPanelGrid" columns="2" columnClasses="leftMenu,rightMenu">
+                        <ice:panelGroup id="menuPanelGroupLeft">
+                        	<table width="100%" border="0" cellspacing="0" cellpadding="0">
+		                        <tr>
+<td>
+	<ice:panelGroup rendered="#{identity.loggedIn==true}">
+		<table border="0" cellspacing="0" cellpadding="0">
+			<tr><td>
+				<s:graphicImage value="#{stateBean.user.person.photo}" style="float: left; padding: 0px;"
+			    				rendered="#{stateBean.user.person.photo ne null}">
+					<s:transformImageSize height="48" maintainRatio="true"/>
+				</s:graphicImage>
+				<s:graphicImage value="/img/user_no_image.jpg" style="float: left; padding: 0px;"
+								rendered="#{stateBean.user.person.photo eq null}">
+					<s:transformImageSize height="48" maintainRatio="true"/>
+				</s:graphicImage>
+			</td><td>
+				<h:outputText value="#{stateBean.user.person.name}"/><br/>
+				<h:outputText value="#{stateBean.user.person.email}"/>
+			</td></tr>
+		</table>
+	</ice:panelGroup>
+</td>		                        	
+		                          <td>
+	                              <!-- @newMenuItem@ -->
+	                              <ice:panelGroup styleClass="clearer" />
+	                              <ice:panelGroup styleClass="menuBarContainer">
+	                              <ice:menuBar id="menuBar" >
+				                        <ice:menuItem  value="#{messages.MenuManage}" id="menuManage" onclick="return false;">
+											<ice:menuItem 	id="menuItemUsers" value="#{messages.MenuItemUsers}"
+															action="#{menuBar.showUserList}">
+											</ice:menuItem>
+											<ice:menuItem  value="#{messages.MenuItemDepartments}" id="menuItemDepartments"
+															rendered="#{stateBean.hasRoleAdmin()}"
+															action="#{stateBean.getDir().concat('/departmentTreeList.xhtml')}">
+											</ice:menuItem>
+											<ice:menuItem  value="#{messages.MenuItemProfCategories}" id="menuItemProfCategories"
+															rendered="#{stateBean.hasRoleAdmin()}"
+															action="#{stateBean.getDir().concat('/profCategoryList.xhtml')}">
+											</ice:menuItem>
+											<ice:menuItem  value="#{messages.MenuItemServiceAreas}" id="menuItemServiceAreas"
+															rendered="#{stateBean.hasRoleAdmin() or steateBean.hasRoleContentManager()}"
+															action="#{stateBean.getDir().concat('/serviceAreaList.xhtml')}">
+											</ice:menuItem>
+
+											<ice:menuItem  value="#{messages.MenuItemServiceClassifications}" id="menuItemServiceClassifications"
+															rendered="#{stateBean.hasRoleAdmin() or steateBean.hasRoleContentManager()}"
+															action="#{stateBean.getDir().concat('/serviceClassificationList.xhtml')}">
+											</ice:menuItem>
+
+											<ice:menuItem  value="#{messages.MenuItemVisualItem}" id="menuItemVisualItem"
+															rendered="#{stateBean.hasRoleAdmin()}"
+															action="#{stateBean.getDir().concat('/visualItemTreeList.xhtml')}">
+											</ice:menuItem>
+											<ice:menuItem  value="#{messages.MenuItemMediaManager}" id="menuItemMediaManager"
+															rendered="#{stateBean.hasRoleAdmin()}"
+															action="#{stateBean.getDir().concat('/mediaManager.xhtml')}">
+											</ice:menuItem>
+											<ice:menuItem  value="#{messages.MenuItemNews}" id="menuItemNews"
+															rendered="#{stateBean.hasRoleAdmin() or steateBean.hasRoleContentManager()}"
+															action="#{stateBean.getDir().concat('/newsList.xhtml')}">
+											</ice:menuItem>
+											<!-- 
+											<ice:menuItem  value="#{messages.MenuItemNotifications}" id="menuItemNotifications"
+															rendered="#{stateBean.hasRoleAdmin() or steateBean.hasRoleContentManager()}"
+															action="#{stateBean.getDir().concat('/notificationList.xhtml')}">
+											</ice:menuItem>
+											 -->
+											<ice:menuItem  value="#{messages.MenuItemNotifications}" id="menuItemNotifications"
+															rendered="#{stateBean.hasRoleAdmin() or steateBean.hasRoleContentManager()}"
+															action="#{stateBean.getDir().concat('/composedNotificationList.xhtml')}">
+											</ice:menuItem>
+
+										</ice:menuItem>
+										<ice:menuItem  value="#{messages.MenuDefinitions}" id="menuDefinitions" onclick="return false;">
+											<ice:menuItem  value="#{messages.MenuItemConfig}" id="menuItemConfig"
+															action="#{stateBean.getDir().concat('/configEdit.xhtml')}">
+											</ice:menuItem>
+											<ice:menuItem  value="#{messages.MenuItemSendEmail}" id="menuItemSendEmail"
+															action="#{stateBean.getDir().concat('/sendEmailEdit.xhtml')}">
+											</ice:menuItem>
+											<ice:menuItem  value="#{messages.MenuItemSendSms}" id="menuItemSendSms"
+															action="#{stateBean.getDir().concat('/sendSmsEdit.xhtml')}">
+											</ice:menuItem>
+											
+											<ice:menuItem  value="#{messages.MenuItemSessionLog}" id="menuItemSessionLog"
+															action="#{stateBean.getDir().concat('/sessionLogList.xhtml')}">
+											</ice:menuItem>
+											<ice:menuItem  value="#{messages.MenuItemOnlineUsers}" id="menuItemOnlineUsers"
+															action="#{stateBean.getDir().concat('/onlineUsersList.xhtml')}">
+											</ice:menuItem>
+											<ice:menuItem  value="#{messages.MenuItemGeneralOperations}" id="menuItemGeneralOperations"
+															action="#{stateBean.getDir().concat('/generalOperations.xhtml')}">
+											</ice:menuItem>
+											<ice:menuItem  value="#{messages.MenuItemModelDisplayInfo}" id="menuItemModelDisplayInfo"
+															action="#{stateBean.getDir().concat('/modelDisplayInfoList.xhtml')}">
+											</ice:menuItem>
+											<ice:menuItem value="#{messages.MenuItemDataChangeModel}" id="menuItemDataChangeMode"
+															rendered="#{stateBean.hasRoleSysAdmin()}"
+															action="#{stateBean.getDir().concat('/dataChangeModelList.xhtml')}">
+											</ice:menuItem>
+											<ice:menuItem  value="#{messages.MenuItemGeographicAreas}" id="menuItemGeographicAreas"
+															rendered="#{stateBean.hasRoleAdmin()}"
+															action="#{stateBean.getDir().concat('/geographicAreaList.xhtml')}">
+											</ice:menuItem>
+										</ice:menuItem>
+									</ice:menuBar>
+									</ice:panelGroup>
+									<ice:panelGroup styleClass="clearer" />
+									</td>
+								</tr>
+							</table>
+							<!-- 
+                            <ui:include src="subMenu/adminMenu.xhtml" />
+                             -->
+                        </ice:panelGroup>
+                        
+                        <ice:panelGroup id="menuPanelGroupRight" >
+                            <s:link id="menuLoginId" view="/login.xhtml" value="Login" rendered="#{not identity.loggedIn}" propagation="none"/>
+                            <s:link id="menuLogoutId" view="/home.xhtml" action="#{identity.logout}" value="Logout" rendered="#{identity.loggedIn}" propagation="none"/>
+                        </ice:panelGroup>                     
+                </ice:panelGrid>
+           </td>
+
+		</tr>
+	</table>    
+</ice:form>        
+</ice:panelGroup>		
+      
+</div>

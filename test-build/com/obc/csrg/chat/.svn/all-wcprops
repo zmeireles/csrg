@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/csrg/!svn/ver/294/src/shared/com/obc/csrg/chat
+END
+ChatMessage.java
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/csrg/!svn/ver/294/src/shared/com/obc/csrg/chat/ChatMessage.java
+END
+ChatMessageLog.java
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/csrg/!svn/ver/249/src/shared/com/obc/csrg/chat/ChatMessageLog.java
+END
+ChatRoom.java
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/csrg/!svn/ver/279/src/shared/com/obc/csrg/chat/ChatRoom.java
+END
+ChatUser.java
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/csrg/!svn/ver/254/src/shared/com/obc/csrg/chat/ChatUser.java
+END

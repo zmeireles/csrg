@@ -1,0 +1,37 @@
+<div
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:s="http://jboss.com/products/seam/taglib"
+    xmlns:a4j="http://richfaces.org/a4j"
+    xmlns:ice="http://www.icesoft.com/icefaces/component">
+	
+	
+	<ice:form>
+	
+		<s:decorate id="contentDecoration" template="/layout/edit.xhtml">
+			<ui:define name="label">#{messages.WebpageContentLabel}</ui:define>
+			<ice:inputRichText id="html" 
+								value="#{addWebpage.newWebpage.html}"
+								skin="silver" toolbar="Default"/>
+			<!-- 
+			<h:inputText id="html" required="false" style="width: 320px;" 
+					value="#{addWebpage.newWebpage.html}" >
+			</h:inputText>
+			 -->
+		</s:decorate>
+		
+		
+
+		
+		<div class="actionButtons">
+	        <h:commandButton value="#{messages.AddButton}" 
+	        				action="#{addWebpage.add}"
+	        			styleClass="button" >
+			</h:commandButton>
+		</div>
+		
+	</ice:form>
+	
+</div>

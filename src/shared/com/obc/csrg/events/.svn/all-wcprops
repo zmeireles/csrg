@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/csrg/!svn/ver/262/src/shared/com/obc/csrg/events
+END
+ChatEvent.java
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/csrg/!svn/ver/254/src/shared/com/obc/csrg/events/ChatEvent.java
+END
+ModelEvent.java
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/csrg/!svn/ver/1/src/shared/com/obc/csrg/events/ModelEvent.java
+END
+ChatEventAdapter.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/csrg/!svn/ver/249/src/shared/com/obc/csrg/events/ChatEventAdapter.java
+END
+ModelEventAdapter.java
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/csrg/!svn/ver/262/src/shared/com/obc/csrg/events/ModelEventAdapter.java
+END
+SessionEvent.java
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/csrg/!svn/ver/249/src/shared/com/obc/csrg/events/SessionEvent.java
+END
+SessionEventAdapter.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/csrg/!svn/ver/230/src/shared/com/obc/csrg/events/SessionEventAdapter.java
+END
+ChatEventQueue.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/csrg/!svn/ver/254/src/shared/com/obc/csrg/events/ChatEventQueue.java
+END
+ModelEventQueue.java
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/csrg/!svn/ver/262/src/shared/com/obc/csrg/events/ModelEventQueue.java
+END
+ChatEventListener.java
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/csrg/!svn/ver/249/src/shared/com/obc/csrg/events/ChatEventListener.java
+END
+ModelEventListener.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/csrg/!svn/ver/262/src/shared/com/obc/csrg/events/ModelEventListener.java
+END
+BasicEventObject.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/csrg/!svn/ver/1/src/shared/com/obc/csrg/events/BasicEventObject.java
+END
+SessionEventQueue.java
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/csrg/!svn/ver/230/src/shared/com/obc/csrg/events/SessionEventQueue.java
+END
+SessionEventListener.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/csrg/!svn/ver/230/src/shared/com/obc/csrg/events/SessionEventListener.java
+END

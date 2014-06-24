@@ -1,0 +1,137 @@
+<div xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ice="http://www.icesoft.com/icefaces/component"
+      xmlns:s="http://jboss.com/products/seam/taglib">
+
+	<s:decorate id="nameDecoration" template="/layout/edit.xhtml">
+        <ui:define name="label">#{messages.NameLabel}</ui:define>
+        <h:inputText id="name" style="width: 120px;"
+                     value="#{modelEditHome.instance.name}" readonly="true"/>
+    </s:decorate>
+    <s:decorate id="aliasDecoration" template="/layout/edit.xhtml">
+        <ui:define name="label">#{messages.AliasLabel}</ui:define>
+        <h:inputText id="alias" required="false" style="width: 220px;"
+                     value="#{modelEditHome.instance.alias}"/>
+    </s:decorate>
+    <s:decorate id="descriptionDecoration" template="/layout/edit.xhtml">
+        <ui:define name="label">#{messages.DescriptionLabel}</ui:define>
+        <h:inputText id="description" required="false" style="width: 320px;"
+                     value="#{modelEditHome.instance.description}"/>
+    </s:decorate>
+    <s:decorate id="actionLinkDecoration" template="/layout/edit.xhtml">
+        <ui:define name="label">#{messages.ModelDisplayInfoActionLinkLabel}</ui:define>
+        <h:inputText id="actionLink" required="false" style="width: 420px;"
+                     value="#{modelEditHome.instance.actionLink}"/>
+    </s:decorate>
+    <ice:dataTable id="dataTable" value="#{modelEditHome.properties}" var="data" rows="10">
+    	<ice:column>
+   			<f:facet name="header">
+     			<ice:outputText value="#{messages.Name}" />
+   			</f:facet>
+   			<ice:inputText value="#{data.alias}" />
+ 		</ice:column>
+ 		<ice:column style="width: 50px;">
+   			<f:facet name="header">
+     			<ice:outputText value="#{messages.SortOrder}" />
+   			</f:facet>
+   			<ice:inputText style="width: 20px;" value="#{data.sortOrder}" />
+ 		</ice:column>
+ 		<ice:column>
+   			<f:facet name="header">
+     			<ice:outputText value="#{messages.DataType}" />
+   			</f:facet>
+   			<ice:outputText value="#{data.dataType}" />
+ 		</ice:column>
+ 		<ice:column>
+   			<f:facet name="header">
+     			<ice:outputText value="#{messages.Format}" />
+   			</f:facet>
+   			<ice:inputText rendered="#{data.showFormat()}" value="#{data.format}" />
+   			<ice:panelGroup rendered="#{not data.showFormat()}" panelTooltip="panelToolTip">
+   				<ice:outputLabel for="width" value="#{messages.WidthShort}"/>
+   				<ice:inputText id="width" value="#{data.width}" style="width: 30px;"/>
+   				<ice:outputLabel for="heigth" value="#{messages.HeightShort}"/>
+   				<ice:inputText id="height" value="#{data.width}" style="width: 30px;"/>
+   			</ice:panelGroup>
+   			<ice:panelTooltip id="panelToolTip" displayOn="#{tooltipController.panelToolTipModel.displayOn}"
+							hideOn="#{tooltipController.panelToolTipModel.hideOn}" 
+							moveWithMouse="#{tooltipController.panelToolTipModel.moveWithMouse}"
+		                    hoverDelay="#{tooltipController.panelToolTipModel.hoverDelayTime}"
+		                    style="width:100px;height:75px;text-align:left;">
+		    	<f:facet name="header">
+		            <ice:outputText value="#{messages.WidthShort.concat(' - ').concat(messages.HeightShort)}"/>
+		        </f:facet>
+		        <f:facet name="body">
+		            <ice:panelGroup>
+						<ice:outputText value="#{messages.WidthShort.concat(' - ').concat(messages.Width)}"/>
+						<ice:outputText value="#{messages.HeightShort.concat(' - ').concat(messages.Height)}"/>
+		            </ice:panelGroup>
+		        </f:facet>
+		    </ice:panelTooltip>
+ 		</ice:column>
+ 		<ice:column style="width: 50px;">
+   			<f:facet name="header">
+     			<ice:outputText value="#{messages.Use}" />
+   			</f:facet>
+   			<ice:selectBooleanCheckbox value="#{data.use}"/>
+ 		</ice:column>
+ 		<ice:column style="width: 100px">
+   			<ice:commandButton value="#{messages.SaveButton}"
+                              style="font-size:12px"
+                              actionListener="#{modelEditHome.saveProperty}">
+                   <f:attribute name="propertyId" value="#{data.id}"></f:attribute>
+			</ice:commandButton>
+	  	</ice:column>
+    </ice:dataTable>
+    <ice:panelGroup style="float:left;width:420px;">
+        <center>
+        <ice:dataPaginator id="dataScroll_1"
+               rendered="true"
+               for="dataTable"
+               vertical="false"
+               fastStep="3"
+               paginator="true"
+               paginatorMaxPages="4">
+            <f:facet name="first">
+                <ice:graphicImage id="firstpage_1"
+                                  url="#{styleBean.imageDirectory}arrow-first.gif"
+                                  style="border:none;"
+                                  title="#{messages.DataScrollingFirstPage}"/>
+            </f:facet>
+            <f:facet name="last">
+                <ice:graphicImage id="lastpage_1"
+                                  url="#{styleBean.imageDirectory}arrow-last.gif"
+                                  style="border:none;"
+                                  title="#{messages.DataScrollingLastPage}"/>
+            </f:facet>
+            <f:facet name="previous">
+                <ice:graphicImage id="previouspage_1"
+                                  url="#{styleBean.imageDirectory}arrow-previous.gif"
+                                  style="border:none;"
+                                  title="#{messages.DataScrollingPreviousPage}"/>
+            </f:facet>
+            <f:facet name="next">
+                <ice:graphicImage id="nextpage_1"
+                                  url="#{styleBean.imageDirectory}arrow-next.gif"
+                                  style="border:none;"
+                                  title="#{messages.DataScrollingNextPage}"/>
+            </f:facet>
+            <f:facet name="fastforward">
+                <ice:graphicImage id="fastforward_1"
+                                  url="#{styleBean.imageDirectory}arrow-ff.gif"
+                                  style="border:none;"
+                                  title="#{messages.DataScrollingFastForward}"/>
+            </f:facet>
+            <f:facet name="fastrewind">
+                <ice:graphicImage id="fastrewind_1"
+                                  url="#{styleBean.imageDirectory}arrow-fr.gif"
+                                  style="border:none;"
+                                  title="#{messages.DataScrollingFastBackward}"/>
+            </f:facet>
+        </ice:dataPaginator>
+        </center>
+    </ice:panelGroup>
+</div>
+	

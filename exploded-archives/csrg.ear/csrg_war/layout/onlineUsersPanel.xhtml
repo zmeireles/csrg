@@ -1,0 +1,71 @@
+<ice:panelGroup xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ice="http://www.icesoft.com/icefaces/component"
+      xmlns:s="http://jboss.com/products/seam/taglib"
+      styleClass="newsBox panelSeriesContainer">
+   
+   
+<div  class="chatList">
+<div class="chatListHead"  >
+    <div class="chatListTitle"><ice:outputText value="#{messages.UsersOnline}" styleClass="titleText"/></div>
+    <div class="chatboxoptions">
+        <a href="javascript:void(0)" onclick="javascript:chatListToggel()" class="titleText">_</a> 
+    </div>
+    <br clear="all"/>
+</div>
+<div class="chatListContent"> 
+    
+    <ice:form id="onlineUsersForm">
+	<ice:panelGroup id="userBox" >
+        <ice:panelSeries id="icePnlSrs"
+                         value="#{applicationBean.getUserIdentityList()}"
+                         var="data" style="float:left">
+                <ice:commandLink id="startChat" 
+                		rendered="#{not sessionChatAction.isInActiveChatWith(data.user) and stateBean.userIdentity.sessionId!=data.sessionId}"
+           				style="text-align: left; vertical-align: baseline"
+           				onclick="chatboxReset();"
+           				actionListener="#{operationsBean.startChat}" partialSubmit="true" >
+           				<f:attribute name="destinationUser" value="#{data.user}"/>
+           			<s:graphicImage value="#{data.user.person.photo}" rendered="#{data.user.person.photo ne null}"
+           					style="float: left;">
+						<s:transformImageSize height="32" maintainRatio="true"/>
+					</s:graphicImage>
+					<s:graphicImage value="/img/user_no_image.jpg" rendered="#{data.user.person.photo eq null}"
+							style="float: left;">
+						<s:transformImageSize height="32" maintainRatio="true"/>
+					</s:graphicImage>
+					<div style="width:140px; padding-left:5px; float:right;" align="left">
+						<ice:outputText id="username" value="#{data.user.person.name}" />
+					</div>
+					<br/><br/><br/>
+				</ice:commandLink>
+				<ice:panelGroup rendered="#{sessionChatAction.isInActiveChatWith(data.user) and stateBean.userIdentity.sessionId!=data.sessionId}">
+					<s:graphicImage value="#{data.user.person.photo}" rendered="#{data.user.person.photo ne null}"
+           					style="float: left;">
+						<s:transformImageSize height="32" maintainRatio="true"/>
+					</s:graphicImage>
+					<s:graphicImage value="/img/user_no_image.jpg" rendered="#{data.user.person.photo eq null}"
+							style="float: left;">
+						<s:transformImageSize height="32" maintainRatio="true"/>
+					</s:graphicImage>
+					<div style="width:140px; padding-left:5px; float:right;" align="left">
+					<ice:outputText id="username" value="#{data.user.person.name}" />
+					</div>
+					<br/><br/><br/>
+				</ice:panelGroup>
+        </ice:panelSeries>
+	</ice:panelGroup>
+	</ice:form>
+	
+</div>
+						
+</div>
+
+<div class="chatListBottom"  onclick="javascript:chatListToggel()" align="left">
+<ice:outputText value="#{messages.UsersOnline}"/>(<h:outputText value="#{ajaxEasyPushAction.getUsersCount()-1}"/>)
+</div>	
+	
+	
+</ice:panelGroup>

@@ -1,0 +1,29 @@
+<div
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:s="http://jboss.com/products/seam/taglib"
+    xmlns:a4j="http://richfaces.org/a4j"
+    xmlns:ice="http://www.icesoft.com/icefaces/component">
+
+
+	 <br style="clear: both;"/>
+	 <br style="clear: both;"/>
+	 <div style="width:250px" class="viMenuSimulator" align="left">
+	   <h:outputText value="#{stateBean.echo(visualItemMenu.buildSimulatorMenu())}"/>
+     </div>
+     <div id="viContent" style="margin-left:215px;border: thin #FF9900 solid; padding:10px">
+     	<br />
+     	<br />
+     	<br />
+     	<br />
+     	<br />
+     	<br />
+     	<br />
+     	<br />
+     	<br />
+     </div>
+     <br style="clear: both;"/>	
+	
+</div>

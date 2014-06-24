@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 37
+/svn/csrg/!svn/ver/1/bootstrap/deploy
+END
+hsqldb-ds.xml
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/csrg/!svn/ver/1/bootstrap/deploy/hsqldb-ds.xml
+END
+remoting-service.xml
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/csrg/!svn/ver/1/bootstrap/deploy/remoting-service.xml
+END
+jboss-xa-jdbc.rar
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/csrg/!svn/ver/1/bootstrap/deploy/jboss-xa-jdbc.rar
+END
+jboss-local-jdbc.rar
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/csrg/!svn/ver/1/bootstrap/deploy/jboss-local-jdbc.rar
+END
+jms-ra.rar
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/csrg/!svn/ver/1/bootstrap/deploy/jms-ra.rar
+END
+ejb3-interceptors-aop.xml
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/csrg/!svn/ver/1/bootstrap/deploy/ejb3-interceptors-aop.xml
+END

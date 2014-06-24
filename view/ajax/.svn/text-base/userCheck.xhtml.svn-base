@@ -1,0 +1,12 @@
+<div 			
+		xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:s="http://jboss.com/products/seam/taglib"
+        xmlns:ui="http://java.sun.com/jsf/facelets"
+        xmlns:f="http://java.sun.com/jsf/core"
+        xmlns:h="http://java.sun.com/jsf/html"
+        xmlns:ice="http://www.icesoft.com/icefaces/component">
+
+<h:outputText value="#{messages.RegisterUsernameAvailable}"  rendered="#{registerUser.checkUsername() == true}" style="color:green;"/>
+<h:outputText value="#{messages.RegisterUsernameNotAvailable}"  rendered="#{registerUser.checkUsername() == false}" style="color:red;"/>
+
+</div>

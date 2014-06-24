@@ -1,0 +1,90 @@
+<div
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:s="http://jboss.com/products/seam/taglib"
+    xmlns:a4j="http://richfaces.org/a4j"
+    xmlns:ice="http://www.icesoft.com/icefaces/component">
+	
+ <script type="text/javascript">
+    //<![CDATA[	
+         
+       function checkUsername() {
+
+  		 var name = jQuery(".username").val();//getting the username value
+		  
+		 //loading image display in div bellow username with class name isUserExist
+		 jQuery(".isUserExist").html('<img src="#{request.contextPath}/img/loading.gif" style="margin-top: 8px;"/>');
+
+		 var url = '#{request.contextPath}/ajax/userCheck.seam?ajaxUsername=' + name;//url with parameter 
+
+		 jQuery(".isUserExist").load(url); //ajax call, result will load in div bellow username div with class name isUserExist
+
+		return false;
+	  }
+                                 
+	//]]>
+</script>	
+	
+	<ice:form>
+	
+		<s:decorate id="nameDecoration" template="/layout/edit.xhtml">
+			<ui:define name="label">#{messages.PersonNameLabel}</ui:define>
+			<ice:inputText id="name" required="true" style="width: 320px;"
+					value="#{registerUser.newUser.person.name}"/>
+		</s:decorate>
+		
+		<s:decorate id="emailDecoration" template="/layout/edit.xhtml">
+			<ui:define name="label">#{messages.EmailLabel}</ui:define>
+			<ice:inputText id="email" required="false" style="width: 320px;" 
+					value="#{registerUser.newUser.person.email}" >
+			</ice:inputText>
+		</s:decorate>
+		
+		<s:decorate id="usernameDecoration" template="/layout/edit.xhtml" >
+             <ui:define name="label">#{messages.RegisterUsernameLabel}</ui:define>
+             <ice:inputText id="username" required="true" style="width: 120px;" 
+             	value="#{registerUser.newUser.username}" styleClass="username" 
+             	valueChangeListener="#{registerUser.validateUsername}"
+             	partialSubmit="true">
+             </ice:inputText>&#160;
+             <!-- 
+             <input type="button" value="#{messages.CheckUsernameButton}" onclick="checkUsername()"/>&#160;
+              -->
+             <!-- 
+             <h:outputText value="#{messages.RegisterUsernameTip}" styleClass="tip" />
+              -->
+             <div class="isUserExist"></div>
+        </s:decorate>
+   		
+   		<s:decorate id="pwdDecoration" template="/layout/edit.xhtml">
+	              <ui:define name="label">#{messages.PasswordInputLabel}</ui:define>
+	              <ice:inputSecret id="pwd" required="true" 
+	              		style="width: 120px;" redisplay="true" value="#{registerUser.password}"/>
+		</s:decorate>
+		<s:decorate id="pwdConfirmationDecoration" template="/layout/edit.xhtml">
+	              <ui:define name="label">#{messages.PasswordConfirmationLabel}</ui:define>
+	              <ice:inputSecret id="pwdConfirmation" required="true" 
+	              		style="width: 120px;" redisplay="true" value="#{registerUser.passwordConfirmation}"/>
+		</s:decorate>
+		
+		<s:decorate id="profileDecoration" template="/layout/edit.xhtml">
+			<ui:define name="label">#{messages.ProfileLabel}</ui:define>
+			<h:selectOneMenu id="profile" required="true" value="#{registerUser.profile}">
+				<s:selectItems value="#{registerUser.profiles}" var="data" label="#{messages.get(data.toString())}" 
+							noSelectionLabel="#{messages.NoSelectionLabel}" />
+	            <s:convertEntity />
+            </h:selectOneMenu>
+		</s:decorate>
+		
+		<div class="actionButtons">
+	        <h:commandButton value="#{messages.RegisterButton}" 
+	        				action="#{registerUser.register}"
+	        			styleClass="button" >
+			</h:commandButton>
+		</div>
+		
+	</ice:form>
+	
+</div>

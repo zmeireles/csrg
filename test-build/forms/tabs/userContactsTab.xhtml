@@ -1,0 +1,103 @@
+<div xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ice="http://www.icesoft.com/icefaces/component"
+      xmlns:s="http://jboss.com/products/seam/taglib">
+
+	<s:decorate id="phoneDecoration" template="/layout/edit.xhtml">
+        <ui:define name="label">#{messages.PhoneLabel}</ui:define>
+        <h:outputText value="+ "/>
+        <h:inputText id="phonePrefix" required="false" style="width: 40px;"
+                     value="#{modelEditHome.instance.person.phonePrefix}" maxlength="4"></h:inputText>&#160;
+		<h:inputText id="phone" required="false" style="width: 100px;"
+                     value="#{modelEditHome.instance.person.phone}"/>
+    </s:decorate>
+    
+    <s:decorate id="mobilePhoneDecoration" template="/layout/edit.xhtml">
+        <ui:define name="label">#{messages.MobilePhoneLabel}</ui:define>
+        <h:outputText value="+ "/>
+        <h:inputText id="mobilePhonePrefix" required="false" style="width: 40px;"
+                     value="#{modelEditHome.instance.person.mobilePhonePrefix}" maxlength="4"></h:inputText>&#160;
+		<h:inputText id="mobilePhone" required="false" style="width: 100px;"
+                     value="#{modelEditHome.instance.person.mobilePhone}"/>
+    </s:decorate>
+    
+    <s:decorate id="faxDecoration" template="/layout/edit.xhtml">
+        <ui:define name="label">#{messages.FaxLabel}</ui:define>
+        <h:outputText value="+ "/>
+        <h:inputText id="faxPrefix" required="false" style="width: 40px;"
+                     value="#{modelEditHome.instance.person.faxPrefix}" maxlength="4"></h:inputText>&#160;
+		<h:inputText id="fax" required="false" style="width: 100px;"
+                     value="#{modelEditHome.instance.person.fax}"/>
+    </s:decorate>
+    
+    <s:decorate id="emailDecoration" template="/layout/edit.xhtml">
+        <ui:define name="label">#{messages.EmailLabel}</ui:define>
+		<h:inputText id="email" required="false" style="width: 320px;"
+                     value="#{modelEditHome.instance.person.email}"/>
+    </s:decorate>
+    
+    <s:decorate id="addressDecoration" template="/layout/edit.xhtml">
+        <ui:define name="label">#{messages.PersonAddressLabel}</ui:define>
+		<h:inputText id="address" required="false" style="width: 320px;"
+                     value="#{modelEditHome.instance.person.address}"/>
+    </s:decorate>
+    
+    <s:decorate id="zipCodeDecoration" template="/layout/edit.xhtml">
+        <ui:define name="label">#{messages.PersonZipCodeLabel}</ui:define>
+		<h:inputText id="mainZipCode" required="false" size="4"
+                     value="#{modelEditHome.mainZipCode}" maxlength="4"/>&#160;
+       	<h:inputText id="subZipCode" required="false" size="3"
+                     value="#{modelEditHome.subZipCode}" maxlength="4"/>
+    </s:decorate>
+    
+    <s:decorate id="regionDecoration" template="/layout/edit.xhtml" 
+			rendered="#{modelEditHome.geographicAreaUtil.showRegionSelection}">
+		<ui:define name="label">#{messages.GeographicAreaRegionLabel}</ui:define>
+		<ice:selectOneMenu value="#{modelEditHome.geographicAreaUtil.region}" required="true" 
+			valueChangeListener="#{modelEditHome.geographicAreaUtil.valueChangeListener}"
+			partialSubmit="true">
+			<s:selectItems value="#{modelEditHome.geographicAreaUtil.getPossibleRegionList()}" 
+				var="data" label="#{data.name}" noSelectionLabel="#{messages.NoSelectionLabel}"/>
+			<s:convertEntity />
+		</ice:selectOneMenu >
+	</s:decorate>
+	
+	<s:decorate id="islandDistrictDecoration" template="/layout/edit.xhtml" 
+			rendered="#{modelEditHome.geographicAreaUtil.showIslandDistrictSelection}">
+		<ui:define name="label">#{messages.get(modelEditHome.geographicAreaUtil.islandDistrictLabel)}</ui:define>
+		<ice:selectOneMenu value="#{modelEditHome.geographicAreaUtil.islandDistrict}" required="true" 
+			valueChangeListener="#{modelEditHome.geographicAreaUtil.valueChangeListener}"
+			partialSubmit="true">
+			<s:selectItems value="#{modelEditHome.geographicAreaUtil.getPossibleIslandDistrictList()}" 
+				var="data" label="#{data.name}" noSelectionLabel="#{messages.NoSelectionLabel}"/>
+			<s:convertEntity />
+		</ice:selectOneMenu>
+	</s:decorate>
+	
+	<s:decorate id="concelhoDecoration" template="/layout/edit.xhtml" 
+			rendered="#{modelEditHome.geographicAreaUtil.showCountySelection}">
+		<ui:define name="label">#{messages.GeographicAreaCountyLabel}</ui:define>
+		<ice:selectOneMenu value="#{modelEditHome.geographicAreaUtil.county}" required="true" 
+			valueChangeListener="#{modelEditHome.geographicAreaUtil.valueChangeListener}"
+			partialSubmit="true">
+			<s:selectItems value="#{modelEditHome.geographicAreaUtil.getPossibleCountyList()}" 
+				var="data" label="#{data.name}" noSelectionLabel="#{messages.NoSelectionLabel}"/>
+			<s:convertEntity />
+		</ice:selectOneMenu>
+	</s:decorate>
+	
+	<s:decorate id="freguesiaDecoration" template="/layout/edit.xhtml" 
+			rendered="#{modelEditHome.geographicAreaUtil.showFreguesiaSelection}">
+		<ui:define name="label">#{messages.GeographicAreaFreguesiaLabel}</ui:define>
+		<ice:selectOneMenu value="#{modelEditHome.geographicAreaUtil.freguesia}" required="false" 
+			valueChangeListener="#{modelEditHome.geographicAreaUtil.valueChangeListener}"
+			partialSubmit="true">
+			<s:selectItems value="#{modelEditHome.geographicAreaUtil.getPossibleFreguesiaList()}" 
+				var="data" label="#{data.name}" noSelectionLabel="#{messages.NoSelectionLabel}"/>
+			<s:convertEntity />
+		</ice:selectOneMenu>
+	</s:decorate>
+</div>
+	

@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 31
+/svn/csrg/!svn/ver/304/src/test
+END
+readme.txt
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/svn/csrg/!svn/ver/1/src/test/readme.txt
+END
+GenericTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/csrg/!svn/ver/304/src/test/GenericTest.java
+END

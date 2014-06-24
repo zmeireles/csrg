@@ -1,0 +1,249 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ice="http://www.icesoft.com/icefaces/component"        
+      xmlns:s="http://jboss.com/products/seam/taglib">
+<head> 
+	<h:inputHidden value="#{visualItemMenu.buildMenu()}"/>
+ 
+    <ice:outputDeclaration doctypeRoot="HTML"
+        doctypePublic="-//W3C//DTD XHTML 1.0 Transitional//EN"
+        doctypeSystem="http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"/>  
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>#{messages.BackofficeTitle}</title>
+    <style type="text/css" >
+	    .csrgBodyClass{
+			font-size: 12px;
+		}
+    </style>
+    
+    <link rel="shortcut icon" href="#{request.contextPath}/favicon.ico"/>
+    <link rel="stylesheet" type="text/css" href="#{request.contextPath}/stylesheet/rime/rime.css"/>
+    <link rel="stylesheet" type="text/css" href="#{request.contextPath}/stylesheet/showcase_layout.css"/>
+    <link rel="stylesheet" type="text/css" href="#{request.contextPath}/stylesheet/showcase_overrides.css"/>
+    <link rel="stylesheet" type="text/css" href="#{request.contextPath}/stylesheet/showcase_style.css"/>
+    
+    <link rel="stylesheet" type="text/css" href="#{request.contextPath}/stylesheet/theme.css"/>
+    
+ 
+    <!-- Seam remoting -->
+    <script type="text/javascript" src="seam/resource/remoting/resource/remote.js"></script>
+    <!-- <script type="text/javascript" src="seam/resource/remoting/interface.js?utilAction"></script> -->
+    <s:remote include="utilAction"/>
+    
+    <script type="text/javascript" src="#{messages.UrlRoot}/scripts/util.js" language="javascript"></script>
+    <link rel="stylesheet" type="text/css" href="#{request.contextPath}/stylesheet/superfish.css"/>
+    <link rel="stylesheet" type="text/css" href="#{request.contextPath}/stylesheet/superfish-vertical.css"/>
+    <script type="text/javascript" src="#{request.contextPath}/js/jquery-1.3.2.js"></script>
+    <script type="text/javascript" src="#{request.contextPath}/js/jquery.cookie.js"></script>
+	<script type="text/javascript" src="#{request.contextPath}/js/hoverIntent.js"></script>
+    <script type="text/javascript" src="#{request.contextPath}/js/superfish.js"></script>
+    
+    
+    <link rel="stylesheet" type="text/css" href="#{request.contextPath}/stylesheet/chat.css"/>
+    <script type="text/javascript" src="#{request.contextPath}/js/chat.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="#{request.contextPath}/mms/file_tree/jqueryFileTree.css" media="screen" />
+    <script src="#{request.contextPath}/mms/file_tree/jqueryFileTree.js" type="text/javascript"></script>
+	<script src="#{request.contextPath}/mms/file_tree/jquery.easing.1.3.js" type="text/javascript"></script>
+    <!-- 
+    <script type="text/javascript" src="#{request.contextPath}/scripts/util.js"  language="javascript"></script>
+    <script type="text/javascript" src="#{request.contextPath}/scripts/components.js"  language="javascript"></script>
+     -->
+	<!-- DWR -->
+	<!-- 
+    <script type="text/javascript" src="#{messages.UrlRoot}/dwr/interface/dwrAction.js"> </script>
+    <script type="text/javascript" src="#{messages.UrlRoot}/dwr/engine.js"> </script>
+    <script type="text/javascript" src="#{messages.UrlRoot}/dwr/util.js"> </script>
+     -->
+    <script type="text/javascript" language="javascript">
+		//<![CDATA[
+		function onloadProc(){
+			//dwr.engine.setActiveReverseAjax(true);
+			//dwrAction.setScriptSession(null);
+		}
+		//]]>
+	</script>
+	
+
+    
+    <script type="text/javascript">
+    //<![CDATA[
+	$(document).ready(function() {
+
+		//Top menu simulator
+		topMenuSet();
+		
+		//vi menu  simulator
+		jQuery("ul.sf-menu").superfish({ 
+	            animation: {height:'show'},   // slide-down effect without fade-in 
+	            delay:     1200               // 1.2 second delay on mouseout 
+	       });
+	       
+		jQuery('#menuLabel1').css('width', '#{visualItemMenu.menuWidth(1)}');
+		jQuery('#menuLabel2').css('left', '#{visualItemMenu.menuWidth(1)}');
+		jQuery('#menuLabel2').css('width', '#{visualItemMenu.menuWidth(2)}');
+		jQuery('#menuLabel3').css('left', '#{visualItemMenu.menuWidth(2)}');
+		jQuery('#menuLabel3').css('width', '#{visualItemMenu.menuWidth(3)}');
+		jQuery('#menuLabel4').css('left', '#{visualItemMenu.menuWidth(3)}');
+		jQuery('#menuLabel4').css('width', '#{visualItemMenu.menuWidth(4)}');
+		jQuery('#menuLabel5').css('left', '#{visualItemMenu.menuWidth(4)}');
+		jQuery('#menuLabel5').css('width', '#{visualItemMenu.menuWidth(5)}');
+		jQuery('#menuLabel6').css('left', '#{visualItemMenu.menuWidth(5)}');
+		jQuery('#menuLabel6').css('width', '#{visualItemMenu.menuWidth(6)}');
+		jQuery('#menuLabel7').css('left', '#{visualItemMenu.menuWidth(6)}');
+		jQuery('#menuLabel7').css('width', '#{visualItemMenu.menuWidth(7)}');
+		jQuery('#menuLabel8').css('left', '#{visualItemMenu.menuWidth(7)}');
+		jQuery('#menuLabel8').css('width', '#{visualItemMenu.menuWidth(8)}');
+		//vi menu simulator ends
+
+		//on demand font size
+		var maxSize = #{stateBean.config.onDemandFontSizeMax};
+		var minSize = #{stateBean.config.onDemandFontSizeMin};
+		var defaultSize = #{stateBean.config.onDemandFontSizeDefault};
+
+		var ds = defaultSize + 'px';
+
+		jQuery('.csrgBodyClass').css('fontSize', ds);
+
+		jQuery('.on_demand_font a').click(function(){
+
+			var ourText = jQuery('.csrgBodyClass');
+			var currFontSize = ourText.css('fontSize');
+			//alert(currFontSize);
+			
+			var finalNum = parseFloat(currFontSize, 10);
+			var stringEnding = currFontSize.slice(-2);
+			if(this.id == 'font_increase') {
+				finalNum *= 1.1;
+				if(finalNum > maxSize)
+					finalNum = maxSize
+			}
+			else if (this.id == 'font_decrease'){
+				finalNum /=1.1;
+				if(finalNum < minSize)
+					finalNum = minSize
+			}
+			if (this.id == 'font_default'){
+				finalNum = defaultSize;
+			}
+			//alert(finalNum);
+
+
+			ourText.css('fontSize', finalNum + stringEnding);			
+		});
+		//on demand font size ends
+
+
+		jQuery('.viMenuSimulator a').click(function(){
+			var newHref = jQuery(this).attr("href");
+			//alert(newHref);
+			jQuery("#viContent").load(newHref);
+			return false;
+
+		});
+
+		
+	});
+
+	 
+
+	function topMenuSet()
+	{
+		//Top menu simulator
+		jQuery(".iceMnuBarItem").css('width', '#{stateBean.config.menuBarItemWidth}px');
+		jQuery(".iceMnuItm").css('width', '#{stateBean.config.menuItemWidth}px');
+		//Top menu simulatorends
+	}
+
+	
+	//]]>
+	</script>
+
+	<ui:insert name="head"/> 
+</head>
+  <body class="csrgBodyClass">
+  
+ 
+	<!-- parametros para todos os xhtml -->
+	<ui:param name="theme" value="/layout"></ui:param>
+	<ui:param name="myPath" value="#{stateBean.myPath()}"></ui:param>
+	
+    <ui:include src="menu.xhtml">
+        <ui:param name="projectName" value="csrg"/>
+    </ui:include>
+    <ice:outputConnectionStatus activeLabel="requesting..." styleClass="connectionStatus"/>
+
+	<div class="body">
+        <h:messages id="messages" globalOnly="true" styleClass="message" rendered="#{showGlobalMessages != 'false'}"
+            errorClass="errormsg" infoClass="infomsg" warnClass="warnmsg"/>
+		<table>
+			<tr valign="top"><td>
+			
+				<ui:insert name="body"/>
+			</td>
+			<td>
+			<table>
+				<s:fragment rendered="#{newsPanelController.newsCount>0}">
+					<tr><td width="200">
+						<ui:include src="#{theme}/newsPanel.xhtml"></ui:include>
+					</td></tr>
+				</s:fragment>
+				<s:fragment rendered="#{sessionChatAction.activeChats.size()>0}">
+					<tr><td width="250">
+						<ui:include src="#{theme}/chatPanel.xhtml"></ui:include>
+					</td></tr>
+				</s:fragment>
+				<s:fragment rendered="#{stateBean.canSeeOnlineUsers()==true}">
+					<tr><td width="250">
+						<ui:include src="#{theme}/onlineUsersPanel.xhtml"></ui:include>
+					</td></tr>
+				</s:fragment>
+			</table>
+			</td>
+			</tr>
+		</table>
+	</div>
+
+	<div style="clear:both"></div><!-- Clear Both -->
+	<div class="footerCSRG">
+			
+       <div align="center">
+	   <table style="width: 800px; table-layout:fixed;" border="0" cellpadding="0" cellspacing="0">
+           <tr><td width="250px" style="text-align: left">
+				<h:outputText value="#{messages.ProductVersion.concat(' '.concat(messages.ProductVersionNumber))}" />
+			</td><td class="showcaseFooter">
+            	<h:outputText value="#{messages.CopyrightPrefixInfo}"/>&#160;&#169;&#160;
+            	<h:outputText value="#{messages.CopyrightSufixInfo}"/>
+            </td><td width="235px">
+				<h:form>
+				<div align="right">
+				    <h:selectOneMenu value="#{localeSelector.localeString}">
+						<f:selectItems value="#{localeSelector.supportedLocales}"/>
+					</h:selectOneMenu>
+					<h:commandButton action="#{localeSelector.select()}" value="#{messages.ChangeLanguage}"/>
+				</div>
+				</h:form>
+			</td>
+			<td width="55px">
+				<div class="on_demand_font" >
+					<a id="font_decrease" href="#" title="#{messages.OnDemandFontSizeDecrease}"><img src="#{request.contextPath}/img/font-decrease.gif" alt="A-" /></a>
+					<a id="font_default" href="#" title="#{messages.OnDemandFontSizeDefault}">	<img src="#{request.contextPath}/img/font-default.gif"  alt="A" /></a>
+					<a id="font_increase" href="#" title="#{messages.OnDemandFontSizeIncrease}">	<img src="#{request.contextPath}/img/font-increase.gif" alt="A+" /></a>
+				</div>
+			
+			</td>
+           </tr><tr>
+			<td colspan="4">
+				<ui:include src="usersCount.xhtml"></ui:include>
+			</td>
+			</tr>
+       </table>
+       </div>
+                    
+    </div>
+  </body>
+</html>

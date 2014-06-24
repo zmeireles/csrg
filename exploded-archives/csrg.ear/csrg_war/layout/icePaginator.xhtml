@@ -1,0 +1,57 @@
+<ui:composition  xmlns="http://www.w3.org/1999/xhtml"
+                 xmlns:ui="http://java.sun.com/jsf/facelets"
+                 xmlns:h="http://java.sun.com/jsf/html"
+                 xmlns:f="http://java.sun.com/jsf/core"
+                 xmlns:ice="http://www.icesoft.com/icefaces/component"
+                 xmlns:s="http://jboss.com/products/seam/taglib">
+                 
+	<ui:insert/>
+    <ice:panelGroup style="float:left;">
+        <center>
+        <ice:dataPaginator id="dataScroll_1"
+               rendered="true"
+               for="#{dataTable}"
+               vertical="false"
+               fastStep="3"
+               paginator="true"
+               paginatorMaxPages="4">
+            <f:facet name="first">
+                <ice:graphicImage id="firstpage_1"
+                                  url="#{styleBean.imageDirectory}arrow-first.gif"
+                                  style="border:none;"
+                                  title="#{messages.DataScrollingFirstPage}"/>
+            </f:facet>
+            <f:facet name="last">
+                <ice:graphicImage id="lastpage_1"
+                                  url="#{styleBean.imageDirectory}arrow-last.gif"
+                                  style="border:none;"
+                                  title="#{messages.DataScrollingLastPage}"/>
+            </f:facet>
+            <f:facet name="previous">
+                <ice:graphicImage id="previouspage_1"
+                                  url="#{styleBean.imageDirectory}arrow-previous.gif"
+                                  style="border:none;"
+                                  title="#{messages.DataScrollingPreviousPage}"/>
+            </f:facet>
+            <f:facet name="next">
+                <ice:graphicImage id="nextpage_1"
+                                  url="#{styleBean.imageDirectory}arrow-next.gif"
+                                  style="border:none;"
+                                  title="#{messages.DataScrollingNextPage}"/>
+            </f:facet>
+            <f:facet name="fastforward">
+                <ice:graphicImage id="fastforward_1"
+                                  url="#{styleBean.imageDirectory}arrow-ff.gif"
+                                  style="border:none;"
+                                  title="#{messages.DataScrollingFastForward}"/>
+            </f:facet>
+            <f:facet name="fastrewind">
+                <ice:graphicImage id="fastrewind_1"
+                                  url="#{styleBean.imageDirectory}arrow-fr.gif"
+                                  style="border:none;"
+                                  title="#{messages.DataScrollingFastBackward}"/>
+            </f:facet>
+        </ice:dataPaginator>
+        </center>
+    </ice:panelGroup>
+</ui:composition>

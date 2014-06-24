@@ -1,0 +1,203 @@
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/csrg/!svn/ver/310/src/shared/com/obc/csrg/util
+END
+GeographicAreaUtil.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/csrg/!svn/ver/226/src/shared/com/obc/csrg/util/GeographicAreaUtil.java
+END
+MessagesFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/csrg/!svn/ver/45/src/shared/com/obc/csrg/util/MessagesFactory.java
+END
+ParseUtil.java
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/csrg/!svn/ver/310/src/shared/com/obc/csrg/util/ParseUtil.java
+END
+DataChangeUtil.java
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/csrg/!svn/ver/279/src/shared/com/obc/csrg/util/DataChangeUtil.java
+END
+PdfBuilder.java
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/csrg/!svn/ver/1/src/shared/com/obc/csrg/util/PdfBuilder.java
+END
+ReportFilter.java
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/csrg/!svn/ver/1/src/shared/com/obc/csrg/util/ReportFilter.java
+END
+MediaController.java
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/csrg/!svn/ver/211/src/shared/com/obc/csrg/util/MediaController.java
+END
+EmailUtil.java
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/csrg/!svn/ver/141/src/shared/com/obc/csrg/util/EmailUtil.java
+END
+SearchModel.java
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/csrg/!svn/ver/1/src/shared/com/obc/csrg/util/SearchModel.java
+END
+ArrayListModelUtil.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/csrg/!svn/ver/1/src/shared/com/obc/csrg/util/ArrayListModelUtil.java
+END
+PopFaxUtil.java
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/csrg/!svn/ver/1/src/shared/com/obc/csrg/util/PopFaxUtil.java
+END
+TouchSessionFilter.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/csrg/!svn/ver/249/src/shared/com/obc/csrg/util/TouchSessionFilter.java
+END
+ContextCount.java
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/csrg/!svn/ver/1/src/shared/com/obc/csrg/util/ContextCount.java
+END
+SmsUtil.java
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/csrg/!svn/ver/160/src/shared/com/obc/csrg/util/SmsUtil.java
+END
+FacesUtils.java
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/csrg/!svn/ver/1/src/shared/com/obc/csrg/util/FacesUtils.java
+END
+QueryUtil.java
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/csrg/!svn/ver/306/src/shared/com/obc/csrg/util/QueryUtil.java
+END
+InputFileController.java
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/csrg/!svn/ver/1/src/shared/com/obc/csrg/util/InputFileController.java
+END
+TargetsManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/csrg/!svn/ver/292/src/shared/com/obc/csrg/util/TargetsManager.java
+END
+StringUtil.java
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/csrg/!svn/ver/1/src/shared/com/obc/csrg/util/StringUtil.java
+END
+ScriptSessionWrapper.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/csrg/!svn/ver/230/src/shared/com/obc/csrg/util/ScriptSessionWrapper.java
+END
+HtmlBuilder.java
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/csrg/!svn/ver/1/src/shared/com/obc/csrg/util/HtmlBuilder.java
+END
+PagedArrayList.java
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/csrg/!svn/ver/121/src/shared/com/obc/csrg/util/PagedArrayList.java
+END
+BackLinkUtil.java
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/csrg/!svn/ver/1/src/shared/com/obc/csrg/util/BackLinkUtil.java
+END
+SelectModelItem.java
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/csrg/!svn/ver/107/src/shared/com/obc/csrg/util/SelectModelItem.java
+END
+NotificationUtil.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/csrg/!svn/ver/304/src/shared/com/obc/csrg/util/NotificationUtil.java
+END
+UserIdentityUtil.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/csrg/!svn/ver/292/src/shared/com/obc/csrg/util/UserIdentityUtil.java
+END
+FileOnTheFly.java
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/csrg/!svn/ver/1/src/shared/com/obc/csrg/util/FileOnTheFly.java
+END
+InputFileData.java
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/csrg/!svn/ver/1/src/shared/com/obc/csrg/util/InputFileData.java
+END
+PdfPageEventImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/csrg/!svn/ver/1/src/shared/com/obc/csrg/util/PdfPageEventImpl.java
+END
+SessionDispatcher.java
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/csrg/!svn/ver/249/src/shared/com/obc/csrg/util/SessionDispatcher.java
+END
+TimeUtil.java
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/csrg/!svn/ver/1/src/shared/com/obc/csrg/util/TimeUtil.java
+END
+InputFileSessionCleaner.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/csrg/!svn/ver/1/src/shared/com/obc/csrg/util/InputFileSessionCleaner.java
+END
+ParamUtil.java
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/csrg/!svn/ver/1/src/shared/com/obc/csrg/util/ParamUtil.java
+END

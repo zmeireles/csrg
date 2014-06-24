@@ -1,0 +1,33 @@
+#1 -> ref_regiao
+#2 -> ref_distrito
+#3 -> distrito
+
+01;01;Aveiro
+01;02;Beja
+01;03;Braga
+01;04;Bragança
+01;05;Castelo Branco
+01;06;Coimbra
+01;07;Évora
+01;08;Faro
+01;09;Guarda
+01;10;Leiria
+01;11;Lisboa
+01;12;Portalegre
+01;13;Porto
+01;14;Santarém
+01;15;Setúbal
+01;16;Viana do Castelo
+01;17;Vila Real
+01;18;Viseu
+30;31;Ilha da Madeira
+30;32;Ilha de Porto Santo
+20;41;Ilha de Santa Maria
+20;42;Ilha de São Miguel
+20;43;Ilha Terceira
+20;44;Ilha da Graciosa
+20;45;Ilha de São Jorge
+20;46;Ilha do Pico
+20;47;Ilha do Faial
+20;48;Ilha das Flores
+20;49;Ilha do Corvo

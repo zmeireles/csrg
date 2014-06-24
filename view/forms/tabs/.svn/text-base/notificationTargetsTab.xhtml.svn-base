@@ -1,0 +1,165 @@
+<div xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ice="http://www.icesoft.com/icefaces/component"
+      xmlns:s="http://jboss.com/products/seam/taglib">
+
+<ice:panelGroup>
+
+	<ice:panelCollapsible expanded="#{modelEditHome.showUsersPanel}">
+		<f:facet name="header">
+			<ice:panelGroup>
+				<ice:outputText value="#{messages.UserList}"/>
+			</ice:panelGroup>
+		</f:facet>
+		<s:decorate id="usersDecorate" template="/layout/tableDataSwitch.xhtml">
+			<ui:param name="avTableId" value="avUsers"></ui:param>
+			<ui:param name="avDataTableValue" value="#{modelEditHome.avUsers}"></ui:param>
+			<ui:param name="columnHeader" value="#{messages.Name}"></ui:param>
+			<ui:define name="columnValue">
+				<ice:outputText value="#{data.instance.person.name}" />
+			</ui:define>
+			<ui:define name="avItemsButtons">
+				<ice:commandButton id="checkAvUsers" value="#{modelEditHome.avUsersButtonValue}" actionListener="#{modelEditHome.selectAllButton}" style="font-size: 12px"/>
+				<ice:commandButton id="addUsers" value="#{messages.AddButton}" actionListener="#{modelEditHome.addItems}" style="font-size: 12px"/>
+			</ui:define>
+			<ui:param name="selTableId" value="selUsers"></ui:param>
+			<ui:param name="selDataTableValue" value="#{modelEditHome.selUsers}"></ui:param>
+			<ui:define name="selItemsButtons">
+				<ice:commandButton id="removeUsers" value="#{messages.RemoveButton}" actionListener="#{modelEditHome.addItems}" style="font-size: 12px"/>
+				<ice:commandButton id="checkSelUsers" value="#{modelEditHome.selUsersButtonValue}" actionListener="#{modelEditHome.selectAllButton}" style="font-size: 12px"/>
+			</ui:define>
+		</s:decorate>
+	</ice:panelCollapsible>
+	<ice:panelCollapsible expanded="#{modelEditHome.showProfCategoriesPanel}">
+		<f:facet name="header">
+			<ice:panelGroup>
+				<ice:outputText value="#{messages.ProfCategoryList}"/>
+			</ice:panelGroup>
+		</f:facet>
+		<s:decorate id="profCategoryDecorate" template="/layout/tableDataSwitch.xhtml">
+			<ui:param name="avTableId" value="avProfCategories"></ui:param>
+			<ui:param name="avDataTableValue" value="#{modelEditHome.avProfCategories}"></ui:param>
+			<ui:param name="columnHeader" value="#{messages.Name}"></ui:param>
+			<ui:define name="columnValue">
+				<ice:outputText value="#{data.instance.name}" />
+			</ui:define>
+			<ui:define name="avItemsButtons">
+				<ice:commandButton id="checkAvProfCategories" value="#{modelEditHome.avProfCategoriesButtonValue}" actionListener="#{modelEditHome.selectAllButton}" style="font-size: 12px"/>
+				<ice:commandButton id="addProfCategories" value="#{messages.AddButton}" actionListener="#{modelEditHome.addItems}" style="font-size: 12px"/>
+			</ui:define>
+			<ui:param name="selTableId" value="selProfCategories"></ui:param>
+			<ui:param name="selDataTableValue" value="#{modelEditHome.selProfCategories}"></ui:param>
+			<ui:define name="selItemsButtons">
+				<ice:commandButton id="removeProfCategories" value="#{messages.RemoveButton}" actionListener="#{modelEditHome.addItems}" style="font-size: 12px"/>
+				<ice:commandButton id="checkSelProfCategories" value="#{modelEditHome.selProfCategoriesButtonValue}" actionListener="#{modelEditHome.selectAllButton}" style="font-size: 12px"/>
+			</ui:define>
+		</s:decorate>
+	</ice:panelCollapsible>
+	<ice:panelCollapsible expanded="#{modelEditHome.showDepartmentsPanel}">
+		<f:facet name="header">
+			<ice:panelGroup>
+				<ice:outputText value="#{messages.DepartmentList}"/>
+			</ice:panelGroup>
+		</f:facet>
+		<s:decorate id="departmentsDecorate" template="/layout/tableDataSwitch.xhtml">
+			<ui:param name="avTableId" value="avDepartments"></ui:param>
+			<ui:param name="avDataTableValue" value="#{modelEditHome.avDepartments}"></ui:param>
+			<ui:param name="columnHeader" value="#{messages.Name}"></ui:param>
+			<ui:define name="columnValue">
+				<ice:outputText value="#{data.instance.name}" />
+			</ui:define>
+			<ui:define name="avItemsButtons">
+				<ice:commandButton id="checkAvDepartments" value="#{modelEditHome.avDepartmentsButtonValue}" actionListener="#{modelEditHome.selectAllButton}" style="font-size: 12px"/>
+				<ice:commandButton id="addDepartments" value="#{messages.AddButton}" actionListener="#{modelEditHome.addItems}" style="font-size: 12px"/>
+			</ui:define>
+			<ui:param name="selTableId" value="selDepartments"></ui:param>
+			<ui:param name="selDataTableValue" value="#{modelEditHome.selDepartments}"></ui:param>
+			<ui:define name="selItemsButtons">
+				<ice:commandButton id="removeDepartments" value="#{messages.RemoveButton}" actionListener="#{modelEditHome.addItems}" style="font-size: 12px"/>
+				<ice:commandButton id="checkSelDepartments" value="#{modelEditHome.selDepartmentsButtonValue}" actionListener="#{modelEditHome.selectAllButton}" style="font-size: 12px"/>
+			</ui:define>
+		</s:decorate>
+	</ice:panelCollapsible>
+	<ice:panelCollapsible expanded="#{modelEditHome.showServiceClassificationsPanel}">
+		<f:facet name="header">
+			<ice:panelGroup>
+				<ice:outputText value="#{messages.ServiceClassificationList}"/>
+			</ice:panelGroup>
+		</f:facet>
+		<s:decorate id="serviceClassificationsDecorate" template="/layout/tableDataSwitch.xhtml">
+			<ui:param name="avTableId" value="avServiceClassifications"></ui:param>
+			<ui:param name="avDataTableValue" value="#{modelEditHome.avServiceClassifications}"></ui:param>
+			<ui:param name="columnHeader" value="#{messages.Name}"></ui:param>
+			<ui:define name="columnValue">
+				<ice:outputText value="#{data.instance.name}" />
+			</ui:define>
+			<ui:define name="avItemsButtons">
+				<ice:commandButton id="checkAvServiceClassifications" value="#{modelEditHome.avServiceClassificationsButtonValue}" actionListener="#{modelEditHome.selectAllButton}" style="font-size: 12px"/>
+				<ice:commandButton id="addServiceClassifications" value="#{messages.AddButton}" actionListener="#{modelEditHome.addItems}" style="font-size: 12px"/>
+			</ui:define>
+			<ui:param name="selTableId" value="selServiceClassifications"></ui:param>
+			<ui:param name="selDataTableValue" value="#{modelEditHome.selServiceClassifications}"></ui:param>
+			<ui:define name="selItemsButtons">
+				<ice:commandButton id="removeServiceClassifications" value="#{messages.RemoveButton}" actionListener="#{modelEditHome.addItems}" style="font-size: 12px"/>
+				<ice:commandButton id="checkSelServiceClassifications" value="#{modelEditHome.selServiceClassificationsButtonValue}" actionListener="#{modelEditHome.selectAllButton}" style="font-size: 12px"/>
+			</ui:define>
+		</s:decorate>
+	</ice:panelCollapsible>
+	<ice:panelCollapsible expanded="#{modelEditHome.showServiceAreasPanel}">
+		<f:facet name="header">
+			<ice:panelGroup>
+				<ice:outputText value="#{messages.ServiceAreaList}"/>
+			</ice:panelGroup>
+		</f:facet>
+		<s:decorate id="serviceAreasDecorate" template="/layout/tableDataSwitch.xhtml">
+			<ui:param name="avTableId" value="avServiceAreas"></ui:param>
+			<ui:param name="avDataTableValue" value="#{modelEditHome.avServiceAreas}"></ui:param>
+			<ui:param name="columnHeader" value="#{messages.Name}"></ui:param>
+			<ui:define name="columnValue">
+				<ice:outputText value="#{data.instance.name}" />
+			</ui:define>
+			<ui:define name="avItemsButtons">
+				<ice:commandButton id="checkAvServiceAreas" value="#{modelEditHome.avServiceAreasButtonValue}" actionListener="#{modelEditHome.selectAllButton}" style="font-size: 12px"/>
+				<ice:commandButton id="addServiceAreas" value="#{messages.AddButton}" actionListener="#{modelEditHome.addItems}" style="font-size: 12px"/>
+			</ui:define>
+			<ui:param name="selTableId" value="selServiceAreas"></ui:param>
+			<ui:param name="selDataTableValue" value="#{modelEditHome.selServiceAreas}"></ui:param>
+			<ui:define name="selItemsButtons">
+				<ice:commandButton id="removeServiceAreas" value="#{messages.RemoveButton}" actionListener="#{modelEditHome.addItems}" style="font-size: 12px"/>
+				<ice:commandButton id="checkSelServiceAreas" value="#{modelEditHome.selServiceAreasButtonValue}" actionListener="#{modelEditHome.selectAllButton}" style="font-size: 12px"/>
+			</ui:define>
+		</s:decorate>
+	</ice:panelCollapsible>
+	<!-- side by side list of selected departments and users -->
+	<table width="100%">
+		<tr valign="top"><td>
+			<ice:panelGroup styleClass="exampleBox firstChildTitle backBeanChangeContainer">
+				<ice:panelGroup styleClass="backBeanChangeTitle" style="width:350px;">
+			        <ice:outputText value="#{messages.UserList}"/>
+			    </ice:panelGroup>
+			    <ice:panelGroup styleClass="backBeanChangeBody">
+			    	<ice:dataTable id="calculatedUsers" rows="10" 
+			    				value="#{modelEditHome.calculatedUsers}" var="data">
+			    		<ice:column>
+			    			<f:facet name="header">
+			      				<ice:outputText value="#{messages.Name}" />
+			    			</f:facet>
+			    			<h:outputText value="#{data.instance.person.name}"/>
+			    		</ice:column>
+			    	</ice:dataTable>
+			    	<ice:dataPaginator for="calculatedUsers" paginator="true" paginatorMaxPages="4"></ice:dataPaginator>
+			    </ice:panelGroup>
+			</ice:panelGroup>
+		</td></tr>
+	</table>
+	<h:commandButton value="#{messages.NotificationCalculateUsersAction}" action="#{modelEditHome.calculateUsers}"/>
+	<!-- 
+	<h:commandButton value="#{messages.NotificationSendNowAction}" action="#{modelEditHome.sendNotification}"/>
+	<h:commandButton value="#{messages.NotificationForceSendAction}" action="#{modelEditHome.forceSendNotification}"/>
+	 -->
+</ice:panelGroup>
+   
+</div>
+	

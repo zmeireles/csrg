@@ -1,0 +1,125 @@
+K 25
+svn:wc:ra_dav:version-url
+V 32
+/svn/csrg/!svn/ver/299/resources
+END
+seam-gen.reveng.xml
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/csrg/!svn/ver/1/resources/seam-gen.reveng.xml
+END
+seam.properties
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/csrg/!svn/ver/1/resources/seam.properties
+END
+components-prod.properties
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/csrg/!svn/ver/1/resources/components-prod.properties
+END
+messages_en.properties
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/csrg/!svn/ver/1/resources/messages_en.properties
+END
+import-dev.sql
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/csrg/!svn/ver/1/resources/import-dev.sql
+END
+import-test.sql
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/csrg/!svn/ver/1/resources/import-test.sql
+END
+security.drl
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/csrg/!svn/ver/1/resources/security.drl
+END
+messages_fr.properties
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/csrg/!svn/ver/1/resources/messages_fr.properties
+END
+glassfish-resources-prod.xml
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/csrg/!svn/ver/1/resources/glassfish-resources-prod.xml
+END
+components-dev.properties
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/csrg/!svn/ver/1/resources/components-dev.properties
+END
+components-test.properties
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/csrg/!svn/ver/1/resources/components-test.properties
+END
+messages_it.properties
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/csrg/!svn/ver/1/resources/messages_it.properties
+END
+csrg-prod-ds.xml
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/csrg/!svn/ver/1/resources/csrg-prod-ds.xml
+END
+messages_pt.properties
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/csrg/!svn/ver/303/resources/messages_pt.properties
+END
+glassfish-resources-dev.xml
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/csrg/!svn/ver/1/resources/glassfish-resources-dev.xml
+END
+messages_tr.properties
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/csrg/!svn/ver/1/resources/messages_tr.properties
+END
+messages_de.properties
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/csrg/!svn/ver/1/resources/messages_de.properties
+END
+messages_bg.properties
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/csrg/!svn/ver/1/resources/messages_bg.properties
+END
+import-prod.sql
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/csrg/!svn/ver/1/resources/import-prod.sql
+END
+csrg-dev-ds.xml
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/csrg/!svn/ver/1/resources/csrg-dev-ds.xml
+END

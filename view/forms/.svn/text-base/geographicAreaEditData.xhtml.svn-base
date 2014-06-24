@@ -1,0 +1,69 @@
+<div xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:a4j="http://richfaces.org/a4j"
+      xmlns:ice="http://www.icesoft.com/icefaces/component"
+      xmlns:s="http://jboss.com/products/seam/taglib">
+      
+      
+	<ice:form id="modelEditForm" >
+		
+		<s:decorate id="levelDecoration" template="/layout/edit.xhtml">
+			<ui:define name="label">#{messages.GeographicAreaLevelLabel}</ui:define>
+			<ice:selectOneMenu id="level" value="#{modelEditHome.instance.level}" partialSubmit="true" 
+					valueChangeListener="#{modelEditHome.valueChanged}">
+				<f:selectItems value="#{modelEditHome.levelItems}"/>
+			</ice:selectOneMenu>
+		</s:decorate>
+		
+		<s:decorate id="nameDecoration" template="/layout/edit.xhtml">
+               <ui:define name="label">#{messages.NameLabel}</ui:define>
+               <h:inputText id="name" required="true" style="width: 300px;" value="#{modelEditHome.instance.name}"/>
+		</s:decorate>
+		
+		<s:decorate id="shortNameDecoration" template="/layout/edit.xhtml" rendered="#{modelEditHome.country}">
+               <ui:define name="label">#{messages.ShortNameLabel}</ui:define>
+               <h:inputText id="shortName" required="false" style="width: 30px;" value="#{modelEditHome.instance.shortName}"/>
+		</s:decorate>
+		
+		<s:decorate id="countryPhonePrefixDecoration" template="/layout/edit.xhtml" rendered="#{modelEditHome.country}">
+               <ui:define name="label">#{messages.CountryPhonePrefixLabel}</ui:define>
+               <h:inputText id="countryPhonePrefix" required="false" style="width: 30px;" value="#{modelEditHome.instance.countryPhonePrefix}"/>
+		</s:decorate>
+		
+		<s:decorate id="parentDecoration" template="/layout/edit.xhtml" >
+			<ui:define name="label">#{messages.ParentLabel}</ui:define>
+			<ice:selectInputText id="parentsAutoComplete"
+	                             rows="#{modelEditHome.parentListLength}"
+	                             width="300"
+	                             value="#{modelEditHome.selectedParentName}"
+	                             valueChangeListener="#{modelEditHome.valueChanged}">
+	            <f:selectItems id="AutoCmpTxtItms"
+	                           value="#{modelEditHome.matchedParents}"/>
+	        </ice:selectInputText>
+		</s:decorate>
+		
+		<div class="actionButtons">
+            <h:commandButton id="save" styleClass="button" 
+                          value="#{messages.SaveButton}" 
+                         action="#{modelEditHome.persist}"
+                       rendered="#{!modelEditHome.managed}"/>
+            <h:commandButton id="update" styleClass="button" 
+                          value="#{messages.UpdateButton}" 
+                         action="#{modelEditHome.update}"
+                       rendered="#{modelEditHome.managed}"/>                  
+            <h:commandButton id="delete" styleClass="button" 
+                    	  value="#{messages.DeleteButton}" 
+                   	     action="#{modelEditHome.remove}"
+                   	   rendered="#{modelEditHome.mayRemove()}"/>
+			<s:button styleClass="button" rendered="#{modelEditHome.managed}"
+		               value="#{messages.AddNewButton}"
+		                view="#{myPath}/geographicAreaEdit.xhtml" 
+		         propagation="begin" />
+        </div>
+        
+	</ice:form>
+	
+</div>
+	

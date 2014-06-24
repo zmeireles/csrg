@@ -1,0 +1,119 @@
+K 25
+svn:wc:ra_dav:version-url
+V 22
+/svn/csrg/!svn/ver/196
+END
+glassfish-build.xml
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/svn/csrg/!svn/ver/1/glassfish-build.xml
+END
+deployed-jars-ear.list
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/csrg/!svn/ver/1/deployed-jars-ear.list
+END
+.project
+K 25
+svn:wc:ra_dav:version-url
+V 29
+/svn/csrg/!svn/ver/1/.project
+END
+csrg.ipr
+K 25
+svn:wc:ra_dav:version-url
+V 29
+/svn/csrg/!svn/ver/1/csrg.ipr
+END
+seam-gen.properties
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/svn/csrg/!svn/ver/1/seam-gen.properties
+END
+validate.xml
+K 25
+svn:wc:ra_dav:version-url
+V 33
+/svn/csrg/!svn/ver/1/validate.xml
+END
+build.properties
+K 25
+svn:wc:ra_dav:version-url
+V 37
+/svn/csrg/!svn/ver/1/build.properties
+END
+build-prod.properties
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/csrg/!svn/ver/1/build-prod.properties
+END
+glassfish-readme.txt
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/csrg/!svn/ver/1/glassfish-readme.txt
+END
+hibernate-console.properties
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/csrg/!svn/ver/1/hibernate-console.properties
+END
+build.xml
+K 25
+svn:wc:ra_dav:version-url
+V 32
+/svn/csrg/!svn/ver/312/build.xml
+END
+.classpath
+K 25
+svn:wc:ra_dav:version-url
+V 31
+/svn/csrg/!svn/ver/1/.classpath
+END
+deployed-jars-war.list
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/csrg/!svn/ver/1/deployed-jars-war.list
+END
+build-dev.properties
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/csrg/!svn/ver/1/build-dev.properties
+END
+csrg.launch
+K 25
+svn:wc:ra_dav:version-url
+V 32
+/svn/csrg/!svn/ver/1/csrg.launch
+END
+debug-jboss-csrg.launch
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/csrg/!svn/ver/1/debug-jboss-csrg.launch
+END
+explode.launch
+K 25
+svn:wc:ra_dav:version-url
+V 35
+/svn/csrg/!svn/ver/1/explode.launch
+END
+debug-glassfish-csrg.launch
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/csrg/!svn/ver/1/debug-glassfish-csrg.launch
+END
+csrg.iml
+K 25
+svn:wc:ra_dav:version-url
+V 29
+/svn/csrg/!svn/ver/1/csrg.iml
+END

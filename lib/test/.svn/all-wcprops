@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 29
+/svn/csrg/!svn/ver/1/lib/test
+END
+hibernate-all.jar
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/csrg/!svn/ver/1/lib/test/hibernate-all.jar
+END
+jboss-embedded-all.jar
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/csrg/!svn/ver/1/lib/test/jboss-embedded-all.jar
+END
+thirdparty-all.jar
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/csrg/!svn/ver/1/lib/test/thirdparty-all.jar
+END

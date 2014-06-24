@@ -1,0 +1,44 @@
+<s:decorate xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:a4j="http://richfaces.org/a4j"
+      xmlns:ice="http://www.icesoft.com/icefaces/component"
+      xmlns:s="http://jboss.com/products/seam/taglib"
+      template="#{theme}/tabPanel.xhtml">
+	
+	<ice:panelTab label="#{messages.DepartmentDataTab}" title="#{messages.DepartmentDataTab}">
+		<ui:include src="/forms/tabs/departmentDataTab.xhtml" />
+	</ice:panelTab>
+	<ice:panelTab label="#{messages.ContactsTab}" title="#{messages.ContactsTab}">
+		<ui:include src="/forms/tabs/departmentContactsTab.xhtml" />
+	</ice:panelTab>
+	<ice:panelTab label="#{messages.DepartmentUsersTab}" title="#{messages.DepartmentUsersTab}" 
+				rendered="#{modelEditHome.managed}">
+		<ui:include src="/forms/tabs/departmentUsersTab.xhtml" />
+	</ice:panelTab>
+	<ice:panelTab label="#{messages.ServiceAreasTab}" title="#{messages.ServiceAreasTab}" 
+				rendered="#{modelEditHome.managed}">
+		<ui:include src="/forms/tabs/departmentServiceAreasTab.xhtml" />
+	</ice:panelTab>
+	
+	<div class="actionButtons">
+       <h:commandButton id="save" styleClass="button" 
+                     value="#{messages.SaveButton}" 
+                    action="#{modelEditHome.persist}"
+                  rendered="#{!modelEditHome.managed}"/>
+       <h:commandButton id="update" styleClass="button" 
+                     value="#{messages.UpdateButton}" 
+                    action="#{modelEditHome.update}"
+                  rendered="#{modelEditHome.managed}"/>                  
+       <h:commandButton id="delete" styleClass="button" 
+               	  value="#{messages.DeleteButton}" 
+              	     action="#{modelEditHome.remove}"
+              	   rendered="#{modelEditHome.mayRemove()}"/>
+		<s:button styleClass="button" rendered="#{modelEditHome.managed}"
+		               value="#{messages.AddNewButton}"
+		                view="#{myPath}/departmentEdit.xhtml" 
+		         propagation="begin" />
+   </div>
+</s:decorate>
+	

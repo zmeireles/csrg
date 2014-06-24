@@ -1,0 +1,233 @@
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/csrg/!svn/ver/304/src/hot/com/obc/csrg/bean
+END
+VisualItemEditHome.java
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/csrg/!svn/ver/300/src/hot/com/obc/csrg/bean/VisualItemEditHome.java
+END
+DataChangeModeEditHome.java
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/csrg/!svn/ver/279/src/hot/com/obc/csrg/bean/DataChangeModeEditHome.java
+END
+StateBean.java
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/csrg/!svn/ver/292/src/hot/com/obc/csrg/bean/StateBean.java
+END
+AddWebpageBean.java
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/csrg/!svn/ver/10/src/hot/com/obc/csrg/bean/AddWebpageBean.java
+END
+DataChangeModelHome.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/csrg/!svn/ver/279/src/hot/com/obc/csrg/bean/DataChangeModelHome.java
+END
+ModelDisplayInfoHome.java
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/csrg/!svn/ver/165/src/hot/com/obc/csrg/bean/ModelDisplayInfoHome.java
+END
+DepartmentHome.java
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/csrg/!svn/ver/304/src/hot/com/obc/csrg/bean/DepartmentHome.java
+END
+DepartmentEditHome.java
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/csrg/!svn/ver/107/src/hot/com/obc/csrg/bean/DepartmentEditHome.java
+END
+ServiceClassificationHome.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/csrg/!svn/ver/10/src/hot/com/obc/csrg/bean/ServiceClassificationHome.java
+END
+UserHome.java
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/csrg/!svn/ver/304/src/hot/com/obc/csrg/bean/UserHome.java
+END
+ApplicationBean.java
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/csrg/!svn/ver/297/src/hot/com/obc/csrg/bean/ApplicationBean.java
+END
+ComposedNotificationHome.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/csrg/!svn/ver/192/src/hot/com/obc/csrg/bean/ComposedNotificationHome.java
+END
+DwrAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/csrg/!svn/ver/230/src/hot/com/obc/csrg/bean/DwrAction.java
+END
+ServiceClassificationEditHome.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/csrg/!svn/ver/107/src/hot/com/obc/csrg/bean/ServiceClassificationEditHome.java
+END
+UserEditHome.java
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/csrg/!svn/ver/292/src/hot/com/obc/csrg/bean/UserEditHome.java
+END
+NotificationHome.java
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/csrg/!svn/ver/304/src/hot/com/obc/csrg/bean/NotificationHome.java
+END
+ComposedNotificationEditHome.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/csrg/!svn/ver/192/src/hot/com/obc/csrg/bean/ComposedNotificationEditHome.java
+END
+NewsPanelController.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/csrg/!svn/ver/249/src/hot/com/obc/csrg/bean/NewsPanelController.java
+END
+ServiceAreaHome.java
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/csrg/!svn/ver/304/src/hot/com/obc/csrg/bean/ServiceAreaHome.java
+END
+NotificationEditHome.java
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/csrg/!svn/ver/304/src/hot/com/obc/csrg/bean/NotificationEditHome.java
+END
+ServiceAreaEditHome.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/csrg/!svn/ver/107/src/hot/com/obc/csrg/bean/ServiceAreaEditHome.java
+END
+ObcEntityHome.java
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/csrg/!svn/ver/304/src/hot/com/obc/csrg/bean/ObcEntityHome.java
+END
+RegisterUserBean.java
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/csrg/!svn/ver/260/src/hot/com/obc/csrg/bean/RegisterUserBean.java
+END
+GeographicAreaHome.java
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/csrg/!svn/ver/297/src/hot/com/obc/csrg/bean/GeographicAreaHome.java
+END
+ProfCategoryHome.java
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/csrg/!svn/ver/304/src/hot/com/obc/csrg/bean/ProfCategoryHome.java
+END
+DBCronTaskActionBean.java
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/csrg/!svn/ver/304/src/hot/com/obc/csrg/bean/DBCronTaskActionBean.java
+END
+ConfigHome.java
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/csrg/!svn/ver/226/src/hot/com/obc/csrg/bean/ConfigHome.java
+END
+GeographicAreaEditHome.java
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/csrg/!svn/ver/297/src/hot/com/obc/csrg/bean/GeographicAreaEditHome.java
+END
+ModelDispalyInfoEditHome.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/csrg/!svn/ver/128/src/hot/com/obc/csrg/bean/ModelDispalyInfoEditHome.java
+END
+Snippet.java
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/csrg/!svn/ver/174/src/hot/com/obc/csrg/bean/Snippet.java
+END
+MediaManagerHome.java
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/csrg/!svn/ver/211/src/hot/com/obc/csrg/bean/MediaManagerHome.java
+END
+ProfCategoryEditHome.java
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/csrg/!svn/ver/297/src/hot/com/obc/csrg/bean/ProfCategoryEditHome.java
+END
+ConfigEditHome.java
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/csrg/!svn/ver/297/src/hot/com/obc/csrg/bean/ConfigEditHome.java
+END
+NewsHome.java
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/csrg/!svn/ver/292/src/hot/com/obc/csrg/bean/NewsHome.java
+END
+MediaManagerEditHome.java
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/csrg/!svn/ver/232/src/hot/com/obc/csrg/bean/MediaManagerEditHome.java
+END
+VisualItemHome.java
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/csrg/!svn/ver/300/src/hot/com/obc/csrg/bean/VisualItemHome.java
+END
+NewsEditHome.java
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/csrg/!svn/ver/251/src/hot/com/obc/csrg/bean/NewsEditHome.java
+END
+DBCronAppBean.java
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/csrg/!svn/ver/50/src/hot/com/obc/csrg/bean/DBCronAppBean.java
+END

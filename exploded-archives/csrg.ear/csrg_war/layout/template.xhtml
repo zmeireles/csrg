@@ -1,0 +1,304 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ice="http://www.icesoft.com/icefaces/component"        
+      xmlns:s="http://jboss.com/products/seam/taglib">
+<head>
+	<h:inputHidden value="#{visualItemMenu.buildMenu()}"/>
+ 
+    <ice:outputDeclaration doctypeRoot="HTML"
+        doctypePublic="-//W3C//DTD XHTML 1.0 Transitional//EN"
+        doctypeSystem="http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"/>  
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>CSRG</title>
+    <style type="text/css" >
+	    .csrgBodyClass{
+			font-size: 12px;
+		}
+    </style>
+    <link rel="shortcut icon" href="#{request.contextPath}/favicon.ico"/>
+    <link rel="stylesheet" type="text/css" href="#{request.contextPath}/stylesheet/rime/rime.css"/>
+    <link rel="stylesheet" type="text/css" href="#{request.contextPath}/stylesheet/theme.css"/>
+    <link rel="stylesheet" type="text/css" href="#{request.contextPath}/stylesheet/style.css"/>
+    <link rel="stylesheet" type="text/css" href="#{request.contextPath}/stylesheet/showcase_layout.css"/>
+    <link rel="stylesheet" type="text/css" href="#{request.contextPath}/stylesheet/showcase_overrides.css"/>
+    <link rel="stylesheet" type="text/css" href="#{request.contextPath}/stylesheet/showcase_style.css"/>
+    
+    <link rel="stylesheet" type="text/css" href="#{request.contextPath}/stylesheet/superfish.css"/>
+    <link rel="stylesheet" type="text/css" href="#{request.contextPath}/stylesheet/superfish-vertical.css"/>
+    <script type="text/javascript" src="#{request.contextPath}/js/jquery-1.3.2.js"></script>
+	<script type="text/javascript" src="#{request.contextPath}/js/hoverIntent.js"></script>
+    <script type="text/javascript" src="#{request.contextPath}/js/superfish.js"></script>
+	<script type="text/javascript" src="#{request.contextPath}/js/jquery.innerfade.js"></script>
+	
+	
+	<link rel="stylesheet" type="text/css" href="#{request.contextPath}/stylesheet/chat.css"/>
+    <script type="text/javascript" src="#{request.contextPath}/js/chat.js"></script>
+	
+	<script type="text/javascript" src="seam/resource/remoting/resource/remote.js"></script>
+	<!-- <script type="text/javascript" src="seam/resource/remoting/interface.js?utilAction"></script> -->
+	<s:remote include="utilAction"/> 
+	<!--
+	
+	<script type="text/javascript" src="#{request.contextPath}/scripts/util.js"  language="javascript"></script>
+	<script type="text/javascript" src="#{request.contextPath}/scripts/components.js"  language="javascript"></script>
+	 -->
+	<!-- DWR -->
+	<!-- 
+    <script type="text/javascript" src="#{messages.UrlRoot}/dwr/interface/dwrAction.js"> </script>
+    <script type="text/javascript" src="#{messages.UrlRoot}/dwr/engine.js"> </script>
+    <script type="text/javascript" src="#{messages.UrlRoot}/dwr/util.js"> </script>
+     -->
+    <script type="text/javascript" language="javascript">
+		//<![CDATA[
+		function onloadProc(){
+			//dwr.engine.setActiveReverseAjax(true);
+			//dwrAction.setScriptSession(null);
+		}
+		function sayHello(){
+			alert("Hello 6");
+			Seam.Component.getInstance("utilAction").sayHello("zzzz",sayHelloCallback);
+			alert("Hello depois");
+		}
+		function sayHelloCallback(result){
+			alert(result);
+		}
+		//]]>
+	</script>
+    
+    <script type="text/javascript">
+    //<![CDATA[
+
+	$(document).ready(function() {
+		//News Ticker
+       var sp = #{stateBean.config.speed};
+       var time = #{stateBean.config.timeOut};
+
+       //sp = sp * 1000;
+       //time = time * 1000;
+
+		jQuery('#topNewsBar').innerfade({
+			animationtype: '#{stateBean.config.animationType}',
+			speed: sp,
+			timeout: time,
+            type: 'sequence',
+			containerheight: '2em',
+			runningclass: 'newsTicker'
+		});
+		//News Ticker ends
+		
+
+		//vi menu  simulator
+		jQuery("ul.sf-menu").superfish({ 
+	            animation: {height:'show'},   // slide-down effect without fade-in 
+	            delay:     1200               // 1.2 second delay on mouseout 
+	       });
+	       
+		jQuery('#menuLabel1').css('width', '#{visualItemMenu.menuWidth(1)}');
+		jQuery('#menuLabel2').css('left', '#{visualItemMenu.menuWidth(1)}');
+		jQuery('#menuLabel2').css('width', '#{visualItemMenu.menuWidth(2)}');
+		jQuery('#menuLabel3').css('left', '#{visualItemMenu.menuWidth(2)}');
+		jQuery('#menuLabel3').css('width', '#{visualItemMenu.menuWidth(3)}');
+		jQuery('#menuLabel4').css('left', '#{visualItemMenu.menuWidth(3)}');
+		jQuery('#menuLabel4').css('width', '#{visualItemMenu.menuWidth(4)}');
+		jQuery('#menuLabel5').css('left', '#{visualItemMenu.menuWidth(4)}');
+		jQuery('#menuLabel5').css('width', '#{visualItemMenu.menuWidth(5)}');
+		jQuery('#menuLabel6').css('left', '#{visualItemMenu.menuWidth(5)}');
+		jQuery('#menuLabel6').css('width', '#{visualItemMenu.menuWidth(6)}');
+		jQuery('#menuLabel7').css('left', '#{visualItemMenu.menuWidth(6)}');
+		jQuery('#menuLabel7').css('width', '#{visualItemMenu.menuWidth(7)}');
+		jQuery('#menuLabel8').css('left', '#{visualItemMenu.menuWidth(7)}');
+		jQuery('#menuLabel8').css('width', '#{visualItemMenu.menuWidth(8)}');
+		//vi menu simulator ends
+
+
+		//on demand font size
+		var maxSize = #{stateBean.config.onDemandFontSizeMax};
+		var minSize = #{stateBean.config.onDemandFontSizeMin};
+		var defaultSize = #{stateBean.config.onDemandFontSizeDefault};
+
+		var ds = defaultSize + 'px';
+
+		jQuery('.csrgBodyClass').css('fontSize', ds);
+
+		jQuery('.on_demand_font a').click(function(){
+
+			var ourText = jQuery('.csrgBodyClass');
+			var currFontSize = ourText.css('fontSize');
+			//alert(currFontSize);
+			
+			var finalNum = parseFloat(currFontSize, 10);
+			var stringEnding = currFontSize.slice(-2);
+			if(this.id == 'font_increase') {
+				finalNum *= 1.1;
+				if(finalNum > maxSize)
+					finalNum = maxSize
+			}
+			else if (this.id == 'font_decrease'){
+				finalNum /=1.1;
+				if(finalNum < minSize)
+					finalNum = minSize
+			}
+			if (this.id == 'font_default'){
+				finalNum = defaultSize;
+			}
+			//alert(finalNum);
+
+
+			ourText.css('fontSize', finalNum + stringEnding);
+		});
+		//on demand font size ends
+	});
+
+	function topMenuSet()
+	{
+	}
+	
+	//]]>
+	</script>
+    <ui:insert name="head"/> 
+</head>
+  	<body class="csrgBodyClass">
+  		<!-- parameters for all xhtml files -->
+		<ui:param name="theme" value="/layout"></ui:param>
+		<ui:param name="myPath" value="#{stateBean.myPath()}"></ui:param>
+  	
+		<div class="#{identity.loggedIn==true ? 'main_top_log' : 'main_top'}"> <!-- Main Top Starts Here-->
+		<div class="navcontainer">
+			<ui:include src="#{theme}/menuTop.xhtml"></ui:include>
+		</div>
+		</div> <!-- Main Top Ends Here-->
+		
+		
+		<div style="clear:both"></div> <!-- Clear Both -->
+		
+		<div class="main_body"> <!-- Main Body Starts Here-->
+		<div class="content"> <!-- Content Starts Here -->
+		<div class="#{identity.loggedIn==false ? 'header_banner' : 'small_header_banner'}"></div> <!-- Header Banner // use <div class="small_header_banner"></div> instead for small banner-->
+		<div class="mid_space"><!-- Mid Cosmetic Starts Here -->
+		<div id="news"> <!-- Use to give a news, note or alert -->
+		</div>
+		<div style="clear:both;"></div> <!-- Clear Both -->
+		</div><!-- Mid Cosmetic Ends Here -->
+		
+		<div id="main_content"> <!-- Main Content Starts Here -->
+		
+		<s:div styleClass="newsDiv" ><!-- news ticker -->
+		    <h:outputText value="#{stateBean.echo(newsTicker.buildNewsTicker())}"/>
+		</s:div>
+		
+		<div id="left"> <!-- Left Side Starts Here -->
+			<br style="clear: both;"/>
+			<div class="viMenu">
+			<h:outputText value="#{stateBean.echo(visualItemMenu.buildMenu())}"/>
+			</div>
+			<br style="clear: both;"/>
+			
+			
+			<div id="login_box">
+				<ice:panelGroup rendered="#{not identity.loggedIn}">
+				<ice:form id="loginForm">
+					#{messages.LoginLabel}<br/>
+					<ice:inputText id="username" 
+                              value="#{credentials.username}"/><br/>
+					#{messages.UserPasswordLabel}<br/>
+					<ice:inputSecret id="password" 
+                                value="#{credentials.password}"/>
+					<br/>
+					<h:outputLabel for="rememberMe">#{messages.RememberMe}</h:outputLabel>
+					<ice:selectBooleanCheckbox id="rememberMe" value="#{rememberMe.enabled}"/>
+					<div class="actionButtons">
+			            <h:commandButton target="_blank" id="submit" value="#{messages.Login}" action="#{identity.login}"/>
+			            <!-- <s:link id="submit" view="/home.xhtml" action="#{identity.login}" value="Login"/> -->
+			        </div>
+				</ice:form>
+				</ice:panelGroup>
+				<ice:panelGroup rendered="#{identity.loggedIn}">
+				<ice:form id="logoutForm">
+					<div class="actionButtons">
+			            <!-- <ice:commandButton id="submit" value="#{messages.Logout}" action="#{authenticator.logoutUser}"/> -->
+			            <s:button id="menuLogoutId" view="/home.xhtml" action="#{identity.logout}" value="Logout" rendered="#{identity.loggedIn}" propagation="none"/>
+			        </div>
+			    </ice:form>
+				</ice:panelGroup>
+			</div>
+		<div style="clear:both"></div> <!-- Clear Both -->
+		</div> <!-- Left Side Ends Here -->
+		
+		<div id="right"><!-- Right Side Starts Here -->
+			<table>
+				<tr valign="top"><td>
+					<ui:include src="globalSearch.xhtml"></ui:include>
+					<div id="ajaxDiv" class="ajaxDiv">
+					<ui:insert name="body"/>
+					</div>
+				</td>
+				<td>
+				<table>
+					<s:fragment rendered="#{newsPanelController.newsCount>0}">
+						<tr><td width="200">
+							<ui:include src="#{theme}/newsPanel.xhtml"></ui:include>
+						</td></tr>
+					</s:fragment>
+					<s:fragment rendered="#{sessionChatAction.activeChats.size()>0}">
+						<tr><td width="200">
+							<ui:include src="#{theme}/chatPanel.xhtml"></ui:include>
+						</td></tr>
+					</s:fragment>
+					<s:fragment rendered="#{stateBean.canSeeOnlineUsers()==true}">
+						<tr><td width="200">
+							<ui:include src="#{theme}/onlineUsersPanel.xhtml"></ui:include>
+						</td></tr>
+					</s:fragment>
+				</table>
+				</td>
+				</tr>
+			</table>
+			
+		<div style="clear:both"></div><!-- Clear Both -->
+		</div> <!-- Right Side Ends Here -->
+		</div> <!-- Main Content Ends Here -->
+		
+		<div style="clear:both"></div><!-- Clear Both -->
+		
+		<div class="footer"><!-- Footer Starts Here -->
+			<table width="100%" border="0">
+				<tr><td style="text-align: left" width="250px">
+					<h:outputText value="#{messages.ProductVersion.concat(' '.concat(messages.ProductVersionNumber))}"/>
+				</td><td class="showcaseFooter">
+            		<h:outputText value="#{messages.CopyrightPrefixInfo}"/>&#160;&#169;&#160;
+            		<h:outputText value="#{messages.CopyrightSufixInfo}"/>
+            	</td><td width="235px">
+					<h:form>
+					<div align="right">
+					    <h:selectOneMenu value="#{localeSelector.localeString}">
+							<f:selectItems value="#{localeSelector.supportedLocales}"/>
+						</h:selectOneMenu>
+						<h:commandButton action="#{localeSelector.select()}" value="#{messages.ChangeLanguage}"/>
+					</div>
+					</h:form>
+				</td>
+				<td width="55px">
+					<div class="on_demand_font">
+						<a id="font_decrease" href="#" title="#{messages.OnDemandFontSizeDecrease}"><img src="#{request.contextPath}/img/font-decrease.gif" alt="A-" /></a>
+						<a id="font_default" href="#" title="#{messages.OnDemandFontSizeDefault}">	<img src="#{request.contextPath}/img/font-default.gif"  alt="A" /></a>
+						<a id="font_increase" href="#" title="#{messages.OnDemandFontSizeIncrease}">	<img src="#{request.contextPath}/img/font-increase.gif" alt="A+" /></a>
+					</div>
+				
+				</td>
+				</tr><tr>
+				<td colspan="4">
+					<ui:include src="usersCount.xhtml"></ui:include>
+				</td>
+				</tr>
+			</table>
+		</div><!-- Footer Ends Here -->
+
+		<div style="clear:both"></div><!-- Clear Both -->
+		</div> <!-- Content Ends Here -->
+		</div> <!-- Main Body Ends Here -->
+	</body> <!--BODY Ends Here -->
+</html>

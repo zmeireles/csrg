@@ -1,0 +1,107 @@
+<div xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ice="http://www.icesoft.com/icefaces/component"
+      xmlns:s="http://jboss.com/products/seam/taglib">
+
+	<div style="width: 25%; float:right;" >
+		<!-- thumbnail -->
+		<ui:include src="#{theme}/imagePanel.xhtml" >
+			<ui:param name="image" value="#{modelEditHome.priFile.data}" />
+			<ui:param name="newImage" value="#{modelEditHome.priFile.data}" />
+			<ui:param name="newImageContentType" value="#{modelEditHome.priFile.contentType}" />
+			<ui:param name="allowEdit" value="true" />
+			<ui:param name="imageDescription" value="#{messages.NewsThumbnail}" />
+		</ui:include>
+	</div>
+	
+	<div style="width: 70%; float:left;" >
+	    <s:decorate id="titleDecoration" template="/layout/edit.xhtml">
+	        <ui:define name="label">#{messages.NewsTitleLabel}</ui:define>
+	        <h:inputText id="title" required="true" style="width: 320px;"
+	                     value="#{modelEditHome.instance.title}"/>
+	    </s:decorate>
+	    
+	    <s:decorate id="beginDateDecoration" template="/layout/edit.xhtml">
+			<ui:define name="label">#{messages.BeginDateLabel}</ui:define>
+			<ice:selectInputDate renderMonthAsDropdown="true" renderYearAsDropdown="true"
+	                             value="#{modelEditHome.instance.beginDate}" 
+	                             renderAsPopup="true">
+	            <f:convertDateTime pattern="dd/MM/yyyy" timeZone="#{stateBean.timezone}"/>
+	        </ice:selectInputDate>
+		</s:decorate>
+		
+		<s:decorate id="endDateDecoration" template="/layout/edit.xhtml">
+			<ui:define name="label">#{messages.EndDateLabel}</ui:define>
+			<ice:selectInputDate renderMonthAsDropdown="true" renderYearAsDropdown="true"
+	                             value="#{modelEditHome.instance.endDate}" 
+	                             renderAsPopup="true">
+	            <f:convertDateTime pattern="dd/MM/yyyy" timeZone="#{stateBean.timezone}"/>
+	        </ice:selectInputDate>
+		</s:decorate>
+		
+		<s:decorate id="highlightDecoration" template="/layout/edit.xhtml">
+	              <ui:define name="label">#{messages.NewsHighlightLabel}</ui:define>
+	              <h:selectBooleanCheckbox value="#{modelEditHome.instance.highlight}" >
+			</h:selectBooleanCheckbox>
+		</s:decorate>
+		
+	    <s:decorate id="approvedDecoration" template="/layout/edit.xhtml">
+	              <ui:define name="label">#{messages.NewsApprovedLabel}</ui:define>
+	              <h:selectBooleanCheckbox value="#{modelEditHome.instance.approved}" >
+			</h:selectBooleanCheckbox>
+		</s:decorate>
+		
+		<s:decorate id="activeDecoration" template="/layout/edit.xhtml">
+			<ui:define name="label">#{messages.NewsActiveLabel}</ui:define>
+			<h:selectBooleanCheckbox value="#{modelEditHome.instance.active}" >
+			</h:selectBooleanCheckbox>
+		</s:decorate>
+		<!-- 
+		<s:decorate id="eventDecoration" template="/layout/edit.xhtml">
+			<ui:define name="label">#{messages.EventLabel}</ui:define>
+	        <h:selectBooleanCheckbox value="#{modelEditHome.instance.event}" >
+			</h:selectBooleanCheckbox>
+		</s:decorate>
+		
+		<s:decorate id="eventStartDecoration" template="/layout/edit.xhtml">
+			<ui:define name="label">#{messages.EventStartLabel}</ui:define>
+			<ice:selectInputDate renderMonthAsDropdown="true" renderYearAsDropdown="true"
+	                             value="#{modelEditHome.instance.eventStart}" 
+	                             renderAsPopup="true">
+	            <f:convertDateTime pattern="dd/MM/yyyy HH:mm" timeZone="#{stateBean.timezone}"/>
+	        </ice:selectInputDate>
+		</s:decorate>
+		
+		<s:decorate id="eventEndDecoration" template="/layout/edit.xhtml">
+			<ui:define name="label">#{messages.EventEndLabel}</ui:define>
+			<ice:selectInputDate renderMonthAsDropdown="true" renderYearAsDropdown="true"
+	                             value="#{modelEditHome.instance.eventEnd}" 
+	                             renderAsPopup="true">
+	            <f:convertDateTime pattern="dd/MM/yyyy HH:mm" timeZone="#{stateBean.timezone}"/>
+	        </ice:selectInputDate>
+		</s:decorate>
+		 -->
+	    <s:decorate id="createdByDecoration" template="/layout/edit.xhtml">
+	        <ui:define name="label">#{messages.NewsCreatedByLabel}</ui:define>
+	        <h:selectOneMenu id="createdBy" required="false" value="#{modelEditHome.instance.createdBy}" readonly="true">
+				<s:selectItems value="#{modelEditHome.getUserList()}" var="data" label="#{data.person.name}" 
+							noSelectionLabel="#{messages.NoSelectionLabel}" />
+		        <s:convertEntity />
+	        </h:selectOneMenu>
+	    </s:decorate>
+	    <!-- 
+	    <s:decorate id="approvedByDecoration" template="/layout/edit.xhtml">
+	        <ui:define name="label">#{messages.NewsApprovedByLabel}</ui:define>
+	        <h:selectOneMenu id="approvedBy" required="false" value="#{modelEditHome.instance.approvedBy}" readonly="true">
+				<s:selectItems value="#{modelEditHome.getUserList()}" var="data" label="#{data.person.name}" 
+							noSelectionLabel="#{messages.NoSelectionLabel}" />
+		        <s:convertEntity />
+	        </h:selectOneMenu>
+	    </s:decorate>
+	     -->
+	</div>
+    
+</div>
+	

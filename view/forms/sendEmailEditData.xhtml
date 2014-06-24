@@ -1,0 +1,67 @@
+<div xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:a4j="http://richfaces.org/a4j"
+      xmlns:ice="http://www.icesoft.com/icefaces/component"
+      xmlns:s="http://jboss.com/products/seam/taglib">
+      
+   <script type="text/javascript">
+     jQuery(document).ready(function(){
+    	  
+    	 jQuery(".email").focus();  
+
+     	 jQuery(".emailMes").html(""); 
+    	 
+
+     });
+
+	</script>  
+     <script type="text/javascript">
+
+	    function myIceSubmit(form,th,event)
+	    {
+	    	iceSubmit(form,th,event);
+	    	setTimeout("formFocus()",3000);
+	    	return false;
+	
+	    }
+
+
+		function formFocus()
+		{
+			jQuery(".email").focus();
+			
+		}
+     </script>
+      
+	<ice:form >
+		
+		<s:decorate id="toEmailDecoration" template="/layout/edit.xhtml">
+               <ui:define name="label">#{messages.SendEmailToEmailLabel}</ui:define>
+               <h:inputText required="true" style="width: 320px;" value="#{sendMessageAction.toEmail}" styleClass="email"/>
+		</s:decorate>
+		<s:decorate id="subjectDecoration" template="/layout/edit.xhtml">
+               <ui:define name="label">#{messages.SubjectLabel}</ui:define>
+               <h:inputText id="expirationTime" required="true" style="width: 320px;" value="#{sendMessageAction.subject}"/>
+		</s:decorate>
+		<s:decorate id="textDecoration" template="/layout/edit.xhtml">
+               <ui:define name="label">#{messages.MessageLabel}</ui:define>
+               <h:inputTextarea required="false" style="width: 320px;" rows="5" value="#{sendMessageAction.text}"/>
+		</s:decorate>
+		<br style="clear:both"/>
+		<div align="left">
+			<h:outputLabel style="padding-left:270px" value="#{sendMessageAction.feedback}" styleClass="emailMes"/>
+		</div>
+		<div class="actionButtons">
+            <h:commandButton id="send" styleClass="button" 
+                         value="#{messages.SendEmailButton}" 
+                         action="#{sendMessageAction.sendEmail}" 
+                         onclick="myIceSubmit(form,this,event); return false;"/>
+            
+        </div>
+        
+	</ice:form>
+	
+</div>
+	

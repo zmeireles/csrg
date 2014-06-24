@@ -1,0 +1,700 @@
+up=\u2191
+down=\u2193
+left=\u2039
+right=\u203A
+
+validator.assertFalse=validation failed
+validator.assertTrue=validation failed
+validator.future=must be a future date
+validator.length=length must be between {min} and {max}
+validator.max=must be less than or equal to {value}
+validator.min=must be greater than or equal to {value}
+validator.notNull=may not be null
+validator.past=must be a past date
+validator.pattern=must match "{regex}"
+validator.range=must be between {min} and {max}
+validator.size=size must be between {min} and {max}
+validator.email=must be a well-formed email address
+
+org.jboss.seam.loginFailed=Login failed
+org.jboss.seam.loginSuccessful=Welcome, #0!
+
+org.jboss.seam.TransactionFailed=Transaction failed
+org.jboss.seam.NoConversation=The conversation ended, timed out or was processing another request
+org.jboss.seam.IllegalNavigation=Illegal navigation
+org.jboss.seam.ProcessEnded=Process #0 already ended
+org.jboss.seam.ProcessNotFound=Process #0 not found
+org.jboss.seam.TaskEnded=Task #0 already ended
+org.jboss.seam.TaskNotFound=Task #0 not found
+org.jboss.seam.NotLoggedIn=Please log in first
+
+javax.faces.component.UIInput.CONVERSION=value could not be converted to the expected type
+javax.faces.component.UIInput.REQUIRED=value is required
+javax.faces.component.UIInput.UPDATE=an error occurred when processing your submitted information
+javax.faces.component.UISelectOne.INVALID=value is not valid
+javax.faces.component.UISelectMany.INVALID=value is not valid
+
+javax.faces.converter.BigDecimalConverter.DECIMAL=value must be a number
+javax.faces.converter.BigDecimalConverter.DECIMAL_detail=value must be a signed decimal number consisting of zero or more digits, optionally followed by a decimal point and fraction, eg. {1}
+javax.faces.converter.BigIntegerConverter.BIGINTEGER=value must be an integer
+javax.faces.converter.BigIntegerConverter.BIGINTEGER_detail=value must be a signed integer number consisting of zero or more digits
+javax.faces.converter.BooleanConverter.BOOLEAN=value must be true or false
+javax.faces.converter.BooleanConverter.BOOLEAN_detail=value must be true or false (any value other than true will evaluate to false)
+javax.faces.converter.ByteConverter.BYTE=value must be a number between 0 and 255
+javax.faces.converter.ByteConverter.BYTE_detail=value must be a number between 0 and 255
+javax.faces.converter.CharacterConverter.CHARACTER=value must be a character
+javax.faces.converter.CharacterConverter.CHARACTER_detail=value must be a valid ASCII character
+javax.faces.converter.DateTimeConverter.DATE=value must be a date
+javax.faces.converter.DateTimeConverter.DATE_detail=value must be a date,  eg. {1}
+javax.faces.converter.DateTimeConverter.TIME=value must be a time
+javax.faces.converter.DateTimeConverter.TIME_detail=value must be a time,  eg. {1}
+javax.faces.converter.DateTimeConverter.DATETIME=value must be a date and time
+javax.faces.converter.DateTimeConverter.DATETIME_detail=value must be a date and time,  eg. {1}
+javax.faces.converter.DateTimeConverter.PATTERN_TYPE=a pattern or type attribute must be specified to convert the value
+javax.faces.converter.DoubleConverter.DOUBLE=value must be a number
+javax.faces.converter.DoubleConverter.DOUBLE_detail=value must be a number between 4.9E-324 and 1.7976931348623157E308
+javax.faces.converter.EnumConverter.ENUM=value must be convertible to an enum
+javax.faces.converter.EnumConverter.ENUM_detail=value must be convertible to an enum or from the enum that contains the constant {1}
+javax.faces.converter.EnumConverter.ENUM_NO_CLASS=value must be convertible to an enum or from the enum, but no enum class provided
+javax.faces.converter.EnumConverter.ENUM_NO_CLASS_detail=value must be convertible to an enum or from the enum, but no enum class provided
+javax.faces.converter.FloatConverter.FLOAT=value must be a number
+javax.faces.converter.FloatConverter.FLOAT_detail=value must be a number between 1.4E-45 and 3.4028235E38
+javax.faces.converter.IntegerConverter.INTEGER=value must be an integer
+javax.faces.converter.IntegerConverter.INTEGER_detail=value must be an integer number between -2147483648 and 2147483647
+javax.faces.converter.LongConverter.LONG=value must be an integer
+javax.faces.converter.LongConverter.LONG_detail=value must be an integer number between -9223372036854775808 and 9223372036854775807
+javax.faces.converter.NumberConverter.CURRENCY=value must be a currency amount
+javax.faces.converter.NumberConverter.CURRENCY_detail=value must be a currency amount, eg. {1}
+javax.faces.converter.NumberConverter.PERCENT=value must be a percentage amount
+javax.faces.converter.NumberConverter.PERCENT_detail=value must be a percentage amount, eg. {1}
+javax.faces.converter.NumberConverter.NUMBER=value must be a number
+javax.faces.converter.NumberConverter.NUMBER_detail=value must be a number
+javax.faces.converter.NumberConverter.PATTERN=value must be a number
+javax.faces.converter.NumberConverter.PATTERN_detail=value must be a number
+javax.faces.converter.ShortConverter.SHORT=value must be an integer
+javax.faces.converter.ShortConverter.SHORT_detail=value must be an integer number between -32768 and 32767
+
+javax.faces.validator.DoubleRangeValidator.MAXIMUM=value must be less than or equal to {0}
+javax.faces.validator.DoubleRangeValidator.MINIMUM=value must be greater than or equal to {0}
+javax.faces.validator.DoubleRangeValidator.NOT_IN_RANGE=value must be between {0} and {1}
+javax.faces.validator.DoubleRangeValidator.TYPE=value is not of the correct type
+javax.faces.validator.LengthValidator.MAXIMUM=value must be shorter than or equal to {0} characters
+javax.faces.validator.LengthValidator.MINIMUM=value must be longer than or equal to {0} characters
+javax.faces.validator.LongRangeValidator.MAXIMUM=value must be less than or equal to {0}
+javax.faces.validator.LongRangeValidator.MINIMUM=value must be greater than or equal to {0}
+javax.faces.validator.LongRangeValidator.NOT_IN_RANGE=value must be between {0} and {1}
+javax.faces.validator.LongRangeValidator.TYPE=value is not of the correct type
+
+javax.faces.validator.NOT_IN_RANGE=value must be between {0} and {1}
+javax.faces.converter.STRING=value could not be converted to a string
+
+#--Config
+Config									=Configuração
+ConfigHeader							=Configuração
+ConfigCodigoEntidade					=Formato do Código das Entidades
+ConfigCodigoEntidadeLabel				=#{messages.ConfigCodigoEntidade} :
+ConfigSmsSource							=SMS ID
+ConfigSmsSourceLabel					=#{messages.ConfigSmsSource} :
+ConfigUrlSms							=URL SMS
+ConfigUrlSmsLabel						=#{messages.ConfigUrlSms} :
+ConfigUsernameSms						=Username SMS
+ConfigUsernameSmsLabel					=#{messages.ConfigUsernameSms} :
+ConfigPasswordSms						=Password SMS
+ConfigPasswordSmsLabel					=#{messages.ConfigPasswordSms} :
+ConfigAllowCSms							=Permitir SMS compostos
+ConfigAllowCSmsLabel					=#{messages.ConfigAllowCSms} :
+ConfigSendSmsOnRegistration				=Notificar registo por SMS
+ConfigSendSmsOnRegistrationLabel		=#{messages.ConfigSendSmsOnRegistration} :
+ConfigNotifyEntities					=Notificar entidades
+ConfigNotifyEntitiesLabel				=#{messages.ConfigNotifyEntities} :
+ConfigNotifyUtentes						=Notificar utentes
+ConfigNotifyUtentesLabel				=#{messages.ConfigNotifyUtentes} :
+ConfigSms								=Configuração de SMS's
+ConfigSMTP								=Configuração de SMTP
+ConfigSmtpHost							=Nome do servidor de SMTP
+ConfigSmtpHostLabel						=#{messages.ConfigSmtpHost} :
+ConfigSmtpPort							=Porta no servidor
+ConfigSmtpPortLabel						=#{messages.ConfigSmtpPort} :
+ConfigSmtpAuth							=Autenticação
+ConfigSmtpAuthLabel						=#{messages.ConfigSmtpAuth} :
+ConfigSmtpAuthUser						=User de autenticação
+ConfigSmtpAuthUserLabel					=#{messages.ConfigSmtpAuthUser} :
+ConfigSmtpAuthPwd						=Password de autenticação
+ConfigSmtpAuthPwdLabel					=#{messages.ConfigSmtpAuthPwd} :
+ConfigEmail								=Configuração de emails
+ConfigContactEmail						=Email para receber os contactos efectuados através do site
+ConfigContactEmailLabel					=#{messages.ConfigContactEmail} :
+ConfigOnRegistrationSender				=Nome e email de registos no CSRG
+ConfigOnRegistrationSenderLabel			=#{messages.ConfigOnRegistrationSender} :
+ConfigFax								=Configuração de faxes
+ConfigFaxAccount						=Conta de fax (email)
+ConfigFaxAccountLabel					=#{messages.ConfigFaxAccount} :
+ConfigFaxPwd							=Password
+ConfigFaxPwdLabel						=#{messages.ConfigFaxPwd} :
+ConfigFaxEmail							=Email destino
+ConfigFaxEmailLabel						=#{messages.ConfigFaxEmail} :
+ConfigSendEmailOnRegistration			=Notificar registo por Email
+ConfigSendEmailOnRegistrationLabel		=#{messages.ConfigSendEmailOnRegistration} :
+ConfigNotificationSource				=Nome e email para notificações
+ConfigNotificationSourceLabel			=#{messages.ConfigNotificationSource} :
+
+#--Department
+Department						=Departamento/serviço
+DepartmentLabel					=#{messages.Department} :
+DepartmentList					=Serviços/departamentos
+DeleteDepartmentOperation		=Remover departamento/serviço
+DepartmentEditTitle				=Edição de departamento/serviço
+DepartmentDataTab				=Geral
+DepartmentUsersTab				=Utilizadores
+DepartmentAddUsers				=Adicionar utilizadores
+DeleteDepartmentRelation		=Remover associação a departamento/serviço
+DepartmentsTab					=Departamentos/serviços
+DepartmentParent				=Parente
+DepartmentParentLabel			=#{messages.DepartmentParent} :
+AddDepartments					=Adicionar departamentos/serviços
+
+#--News
+News							=Noticias
+NewsLabel						=#{messages.News} :
+NewsList						=Notícias
+NewsEditTitle					=Edição de notícia
+NewsTitle						=Título
+NewsTitleLabel					=#{messages.NewsTitle} :
+NewsTab							=Notícias
+NewsContentTab					=Conteúdo
+NewsCreatedBy					=Criado por
+NewsCreatedByLabel				=#{messages.NewsCreatedBy} :
+NewsApprovedBy					=Aprovado por
+NewsApprovedByLabel				=#{messages.NewsApprovedBy} :
+NewsThumbnail					=Imagem destaque
+NewsImage						=Imagem notícia
+NewsApproved					=Aprovada
+NewsApprovedLabel				=#{messages.NewsApproved} :
+NewsActive						=Activa
+NewsActiveLabel					=#{messages.NewsActive} :
+NewsHighlight					=Destaque
+NewsHighlightLabel				=#{messages.NewsHighlight} :
+NewsTargetsTab					=Destinatários
+NewsCalculateUsersAction		=Calcular destinatários
+
+#--Notification
+Notification					=Notificação
+NotificationLabel				=#{messages.Notification} :
+NotificationList				=Notificações
+NotificationEditTitle			=Edição de notificação
+DeleteNotificationOperation		=Remover notificação
+NotificationTargetsTab			=Destinatários
+NotificationReadyToSend			=Activa
+NotificationReadyToSendLabel	=#{messages.NotificationReadyToSend} :
+NotificationSendAt				=Enviar a partir de
+NotificationSendAtLabel			=#{messages.NotificationSendAt} :
+NotificationEndAt				=Parar envio a partir de
+NotificationEndAtLabel			=#{messages.NotificationEndAt} :
+NotificationSender				=Enviado por
+NotificationSenderLabel			=#{messages.NotificationSender} :
+NotificationCalculateUsersAction=Calcular destinatários
+NotificationMedia				=Meio de notificação
+NotificationMediaLabel			=#{messages.NotificationMedia} :
+NotificationSendNowAction		=Enviar agora
+NotificationForceSendAction		=Forçar envio!
+
+#--Person
+PersonName						=Nome
+PersonNameLabel					=#{messages.PersonName} :
+PersonTab						=Dados pessoais
+PersonData						=Dados pessoais
+DeleteNewsOperation				=Remover notícia
+
+#--ProfCategory
+ProfCategory					=Categoria profissional
+ProfCategoryLabel				=#{messages.ProfCategory} :
+ProfCategoryList				=Categorias profissionais
+ProfCategoryDataTab				=Geral
+ProfCategoryUsersTab			=Utilizadores
+ProfCategoryAddUsers			=Adicionar utilizadores
+
+#--Profile
+Profile						=Perfil
+ProfileLabel				=#{messages.Profile} :
+
+#--ServiceArea
+ServiceArea						=Área profissional
+ServiceAreaLabel				=#{messages.ServiceArea} :
+ServiceAreaList					=Áreas Profissionais
+ServiceAreaEditTitle			=Edição de área profissional
+DeleteServiceAreaOperation		=Remover área profissional
+ServiceAreaDataTab				=Geral
+ServiceAreaUsersTab				=Utilizadores
+ServiceAreaAddUsers				=Adicionar utilizadores
+DeleteServiceAreaRelation		=Remover associção a área profissional
+ServiceAreasTab					=Áreas profissionais
+AddServiceAreas					=Adicionar áreas profissionais
+
+#--ServiceClassification
+ServiceClassification					=Classificação
+ServiceClassificationLabel				=#{messages.ServiceClassification} :
+ServiceClassificationList				=Classificações de serviços
+ServiceClassificationEditTitle			=Edição de classifcação de serviço
+DeleteServiceClassificationOperation	=Remover classificação de serviço
+
+#--SessionLog
+SessionLog						=Log de visitas
+SessionLogList					=Log de visitas
+DeleteSssionLogOperation		=Remover entrada do log
+SessionLogUserAgent				=Browser
+SessionLogAcceptLanguage		=Linguagem
+SessionLogPageCount				=# páginas
+
+#--User
+User							=Utilizador
+UserLabel						=#{messages.User} :
+UserList						=Lista de Utilizadores
+UserUsername					=Username
+UserUsernameLabel				=#{messages.Username} :
+UserName						=Nome
+UserNameLabel					=#{messages.UserName} :
+UserHeader						=Dados do Utilizador
+UserListEmpty					=Não existem utilizadores
+UserTipoUtilizador				=Tipo de utilizador
+UserPassword					=Senha
+UserPasswordLabel				=#{messages.UserPassword} :
+UserData						=Dados do utilizador
+UserEditTitle					=Edição de informação
+UserPhoto						=Fotografia do utilizador
+UserProfCategoriesTab			=Categoria profissional
+UserDepartmentsTab				=Departamentos/Serviços
+UserAddProfCategories			=Adicionar categorias profissionais
+UserAddDepartments				=Adicionar departamentos/serviços
+DeleteUserRelation				=Remover associação a utilizador
+
+#--UserDepartment
+DeleteUserDepartmentUser			=Remover associação a utilizador?
+DeleteUserDepartmentDepartment		=Remover associação a deartamento?
+
+#--UserProfCategory
+DeleteUserProfCategoryUser			=Remover utilizador associado à categoria?
+DeleteUserProfCategoryProfCategory	=Remover categoria profissional associado ao utilizador?
+
+#-- Visual Item
+VisualItemList						=Lista de páginas
+VisualItemMenuText					=Texto do menu
+VisualItemMenuTextLabel				=#{messages.VisualItemMenuText} :
+VisualItemFileName					=Ficheiro
+VisualItemEditTitle					=Editar página
+VisualItemDataTab					=Dados gerais
+VisualItemWebpageTab				=Editor de página
+VisualItemParent					=Parente
+VisualItemParentLabel				=#{messages.VisualItemParent} :
+VisualItemXhtmlFilename				=Ficheiro XHTML
+VisualItemXhtmlFilenameLabel		=#{messages.VisualItemXhtmlFilename} :
+VisualItemTargetsTab				=Destinatários
+VisualItemCalculateUsersAction		=Calcular destinatários
+VisualItemPublish					=Públicar conteúdo
+VisualItemPublishLabel				=#{messages.VisualItemPublish} :
+DeleteVisualItemOperation			=Remover conteúdo
+VisualItemPublished					=Publicado
+
+#--VisualItem integration with notification system (ns) messages
+VINotifIntegrationTab				=Notificação de utilizadores
+IntegrateWithNS						=Notificar destinatários
+IntegrateWithNSLabel				=#{messages.IntegrateWithNS} :
+PublishAfterNotification			=Publicar conteúdo após notificação
+PublishAfterNotificationLabel		=#{messages.PublishAfterNotification} :
+
+
+#--Webpage
+WebpageCheck						=Criar página web
+WebpageCheckLabel					=#{messages.WebpageCheck} :
+WebpageHtml							=Conteúdo
+WebpageHtmlLabel					=#{messages.WebpageHtml} :
+WebpagePageName						=Nome da página
+WebpagePageNameLabel				=#{messages.WebpagePageName} :
+webContentMes						=Please save or update before move to other Tab or Page
+#--non entity beans messages
+
+#--online support
+onlineSupportOnImg				=#{messages.UrlRoot}/img/live-support-on4.png
+onlineSupportOffImg				=#{messages.UrlRoot}/img/live-support-off4.png
+
+#--Contacts
+InstitutionName					=Centro de Saúde da RIbeira Grande
+InstitutionAddress				=Rua de São Francisco - Conceição - 9600-537 Ribeira Grande
+Headquarter						=Geral Sede
+HeadquarterLabel				=#{messages.Headquarter} :
+HeadquarterPhone				=296 470 500
+Dependency1Label    			=U.S. Rabo de Peixe \:\t      
+Dependency1Phone				=296 491 783
+Dependency2Label    			=U.S. Pico da Pedra :
+Dependency2Phone				=296 498 880
+Dependency3Label				=U.S da Maia :
+Dependency3Phone				=296 442 600
+Dependency4Label				=U.S. de Lomba da Maia             
+Dependency4Phone				=296 446 152
+Dependency5Label 				=U.S. dos Fenais da Ajuda
+Dependency5Phone				=296 462 555
+HeadquarterFax					=296 472 489
+HeadquarterEmail				=sras--csrg@azores.gov.pt
+
+#--TopMenu
+TopMenuItemHome				=Home
+TopMenuItemPersonData		=Dados Pessoais
+TopMenuItemContacts			=Contactos
+
+#--Login, logout, register
+Login										=Login
+LoginLabel									=#{messages.Login} :
+Logout										=Sair
+Access										=Acesso
+AccessLabel									=#{messages.Access} :
+RegisterUserTitle							=Registo de Utilizador
+LoginName									=Utilizador
+LoginPassword								=Senha
+RegisterSuccess1							=Registo efectuado com sucesso
+RegisterSuccess2							=foi lhe enviado um E-mail com informações úteis
+RegisterSuccessTitle						=Registado
+RegisterUsernameTip							=Palavra que será introduzida no processo de entrada no sistema (login)
+RegisterUserNull							=User nulo
+RegisterUserFirstNameInvalid				=Nome próprio inválido
+RegisterUserLastNameInvalid					=Último nome inválido
+RegisterUsernameInvalid						=Nome de utilizador já existente.
+RegisterUsernameValid						=Utilizador válido.
+RegisterUsernameLabel						=Utilizador (login) :
+RegisterGenerateUsername					=Gerar o username automaticamente no registo
+RegisterGenerateUsernameLabel				=#{messages.RegisterGenerateUsername} :
+RegisterExpireTime							=Tempo de expiração do registo (horas)
+RegisterExpireTimeLabel						=#{messages.RegisterExpireTime} :
+RegisterPasswordInvalid						=Password inválida ou não condizente
+RegisterUserSuccessMessage					=Utilizador foi adicionado com sucesso.
+
+#--Password
+PasswordInput						=Password
+PasswordInputLabel					=#{messages.PasswordInput} :
+PasswordVerify						=Confirmar Password
+PasswordVerifyLabel					=#{messages.PasswordVerify} :
+PasswordChanged						=Password alterada
+PasswordEmpty						=Tem de escrever a password
+PasswordNEqual						=Passwords não condizentes
+PasswordConfirmation				=Confirmar password
+PasswordConfirmationLabel			=#{messages.PasswordConfirmation} :
+
+#-- Specific messages
+
+#-- csrg messages
+TitleBrowser					=.:: C. S. Ribeira Grande ::.
+TitleHeader						=Intranet
+Description						=Descri\u00E7\u00E3o
+Keywords						=csrg, intranet
+Domain							=127.0.0.1
+Port							=80
+UrlRoot							=/csrg
+UrlDomain						=#{messages.Domain}:#{messages.Port}
+UrlAppBqecom					=http://#{messages.UrlDomain}#{messages.UrlRoot}
+UrlImageProject					=#{messages.UrlRoot}/img/
+UrlImage						=/img/
+UrlAplication					=http://localhost/csrg
+DevelopedBy						=Desenvolvido por:
+BackofficeTitle					=CSRG-Backoffice
+
+#Profiles
+UTENTE							= 0
+ADMIN     						= 1
+PROFILE_USER					=Utilizador normal
+PROFILE_ADMIN					=Administrador
+PROFILE_PUBLIC_USER				=Utilizador público
+PROFILE_PERSON					=Individuo
+PROFILE_CONTENT_MANAGER			=Gestor de conteúdos
+PROFILE_ACCESS_MANAGER			=Gestor de acessos
+PROFILE_ONLINE_SUPPORT			=Suporte online
+PROFILE_NOT_LOGGED_IN			=Anónimo
+
+#--civil state constants
+CIVIL_STATE_MARRRIED					=Casado
+CIVIL_STATE_SINGLE						=Solteiro
+CIVIL_STATE_OTHER						=Outro
+
+#--gender constants
+GENDER_MALE							=Masculino
+GENDER_FEMALE						=Feminino
+
+#--notification constants
+NOTIFICATION_NONE					=Nenhum
+NOTIFICATION_EMAIL					=Email
+NOTIFICATION_SMS					=Sms
+NOTIFICATION_NEWS					=Notícias
+NOTIFICATION_FAX					=Fax
+
+#-- Send email
+SendEmailHeader						=Enviar email
+SendEmailToEmail					=Para
+SendEmailToEmailLabel				=#{messages.SendEmailToEmail} :
+
+#-- Send sms
+SendSmsHeader						=Enviar Sms
+SendSmsMobilePrefix					=Código do país
+SendSmsMobilePhone					=Nº de telemóvel
+SendSmsCompositeNumber				=Código do país e telemovel destino
+SendSmsCompositeNumberLabel			=\#{messages.SendSmsCompositeNumber} \:\t
+
+#--Menus
+MenuManage							=Gerir
+MenuItemUsers						=Utilizadores
+MenuItemDepartments					=Departamentos
+MenuDefinitions						=Definições
+MenuItemConfig						=Configurações
+MenuItemProfCategories				=Categorias profissionais
+MenuItemServiceAreas				=Áreas profissionais
+MenuItemServiceClassifications		=Classificação de serviços
+MenuItemWebpage						=Páginas web
+MenuItemNews						=Notícias
+MenuItemNotifications				=Notificações
+MenuItemVisualItem					=Conteúdo dinâmico
+MenuItemSendEmail					=Enviar email
+MenuItemSendSms						=Enviar SMS
+MenuItemSessionLog					=Log de visitas
+
+#--Confirmation strings
+DeleteConfirmation					=Confirma remoção?
+DeleteUserConfirmation				=Confirma remoção do utilizador?
+DeleteUserOperation					=Remoção de utilizador
+DeleteProfCategoryConfirmation		=Confirma remoção de categoria profissional?
+DeleteProfCategoryOperation			=Remoção de categoria profissional
+
+#--Modal panel
+Draggable							=Amovível
+Modal								=Modal
+ModalPanelShow_true					=Mostrar
+ModalPanelShow_false				=Ocultar
+ImageSelect							=Selecção de imagem
+
+#-- Buttons
+OkButton							=Confirmar
+CancelButton						=Cancelar
+AddButton							=Adicionar
+CloseButton							=Fechar
+EditButton							=Editar
+UpdateButton						=Actualizar
+DeleteButton						=Remover
+SaveButton							=Gravar
+DoneButton							=Concluído
+ChangePasswordButton				=Mudar Password
+SearchButton						=Pesquisar
+RemoveButton						=Remover
+CleanButton							=Limpar
+LoginButton							=entrar
+LogoutButton						=sair
+RegisterButton						=Registar
+DeactivateButton					=Desactivar
+ActivateButton						=Activar
+ReactivateButton					=Re-activar
+BackButton							=Voltar
+ChangeUserPasswordButton			=Alterar a senha
+PaymentButton						=Pagamento
+NewPaymentButton					=Novo pagamento
+PaymentSaveButton					=Efectuar pagamento
+PaymentUpdateButton					=Alterar pagamento
+RefreshButton						=refrescar
+ContinueButton						=Continuar
+EndButton							=Finalizar
+SaveAndPublishNewsButton			=Gravar e publicar notícia
+UpdateAndPublishNewsButton			=Gravar e publicar notícia
+PublishNewsButton					=Publicar notícia
+UpdateNewsButton					=Actualizar notícia
+EditNewsButton						=Editar notícia
+DeleteNewsButton					=Remover notícia
+DefaultsButton						=Valores por defeito
+ChangeButton						=Alterar
+ChangePhotoButton					=Alterar foto
+
+#--Error messages
+EmailSendError						=Erro no envio de email
+EmailSendErrorLabel					=#{messages.EmailSendError} :
+SmsSendError						=Erro no envio de sms
+SmsSendErrorLabel					=#{messages.SmsSendError} :
+SmsFail								=Falha no envio da mensagem!
+
+#--Success messages
+EmailSendSuccess					=Email enviado com sucesso.
+SmsSendSuccess						=Sms enviado com sucesso.
+SmsSuccess							=Mensagem enviada com sucesso!
+
+#--Google messages
+GmapViewLargerMap					=Ver mapa ampliado
+
+#--Search system object types
+SOT_MODEL							=Modelo da base de dados
+SOT_XHTML_PAGE						=Página XHTML
+SOT_HTML_PAGE						=Página HTML
+
+#-- general messages
+RememberMe						=Lembrar-me
+JavaScriptWarning				=O correcto funcionamento deste site requer a activação do JavaScript no seu navegador.
+SeparadorDataChar				=/
+WellCome						=Benvindo
+LoginTitle						=Login
+Search							=Pesquisar
+SearchLabel						=#{messages.Search} :
+SearchEmprego					=Emprego
+SearchRecursosHumanos			=Recursos Humanos
+ResultadoVazio					=Nenhum Resultado
+ResultadoSingular				=Resultado
+ResultadoPlural					=Resultados
+SearchPanelHeader				=Filtrar lista
+DConverter						=dd/MM/yyyy
+DTConverter						=dd/MM/yyyy HH:mm:ss
+Date							=Data
+BeginDate						=Inicio
+BeginDateLabel					=#{messages.BeginDate} :
+EndDate							=Fim
+EndDateLabel					=#{messages.EndDate} :
+DateLabel						=#{messages.Date} :
+ImageNotDefined					=Imagem não definida
+NoSelectionLabel				=----------------
+SelectAll						=----- Tudo -----
+NullDate						=Não definida
+Email							=E-mail
+EmailLabel						=#{messages.Email} :
+EmailInvalid					=E-mail Inválido
+Age								=Idade
+AgeLabel						=#{messages.Age} :
+Activo							=Activo
+Desactivo						=Desactivo
+ActivoLabel						=Estado :
+General							=Geral
+GeneralTab						=#{messages.General}
+GeneralData						=Dados gerais
+GeneralDataTab					=#{messages.GeneralData}
+Codigo							=Nº
+CodigoLabel						=#{messages.Codigo} :
+ShortName						=Sigla
+ShortNameLabel					=#{messages.ShortName} :
+Name							=Nome
+NameLabel						=#{messages.Name} :
+DescriptionLabel				=#{messages.Description} :
+URL								=Endereço Internet
+URLLabel						=#{messages.URL} :
+IndicativoPais					=Indicativo do país
+IndicativoPaisLabel				=#{messages.IndicativoPais} :
+Parent							=Parente
+ParentLabel						=#{messages.Parent} :
+ListShuttleSourceLabel			=Items disponíveis
+ListShuttleTargetLabel			=Items seleccionados
+ListShuttleCopyAllLabel			=Seleccionar todos
+ListShuttleCopyLabel			=Seleccionar
+ListShuttleRemoveLabel			=Remover
+ListShuttleRemoveAllLabel		=Remover todos
+ListShuttleTopLabel				=Primeiro
+ListShuttleUpLabel				=Para cima
+ListShuttleDownLabel			=Para baixo
+ListShuttleBottomLabel			=Último
+ListShuttleFiltroTxt			=Filtrar items disponíveis
+ListShuttleFiltroTxtLabel		=#{messages.ListShuttleFiltroTxt} :
+TermosUtilizacaoLabel			=Termos de utilização :
+AceitarTermosUtilizacao			=Aceito os termos de utilização
+TermosAceitacaoEntidadeLabel	=Termos de aceitação das entidades :
+MinValueLabel					=Valor mínimo
+MaxValueLabel					=Valor máximo
+BooleanTrue						=Verdadeiro
+BooleanFalse					=Falso
+BooleanYes						=Sim
+BooleanNo						=Não
+OptionYes						=Sim
+OptionNo						=Não
+OptionIndifferent				=Indiferente
+EditImage						=Alterar imagem
+FirstPage						=««
+PreviousPage					=«
+NextPage						=»
+LastPage						=»»
+Pontuacao						=Pontuação
+Percentagem						=Percentagem
+PercentagemShort				=%
+PontuacaoPercentagem			=Pontuação (%)
+NivelQualquer					=Indiferente
+Nivel1							=1
+Nivel2							=2
+Nivel3							=3
+Nivel4							=4
+Nivel5							=5
+Nivel6							=6
+Operation						=Operação
+Operations						=Operações
+OperationAdd					=Adicionar
+OperationRemove					=Remover
+Option							=Opção
+QualquerOption					=Qualquer
+IndicativoTip					=(coloque o indicativo do país e o número)
+FicheiroAnexo					=Ficheiro Anexo
+FicheiroAnexoLabel				=#{messages.FicheiroAnexo} :
+FicheiroAnexoAbrir				=Download
+FicheiroAnexoEditar				=Alterar
+FicheiroAnexoApagar				=Apagar
+FicheiroAnexoEdit				=Alterar Ficheiro Anexo
+FicheiroAnexoEditLabel			=#{messages.FicheiroAnexoEdit} :
+NifInvalid						=Nº de contribuinte já existente
+NipcInvalid						=NIPC já existente
+RegitarBoxTitulo				=Registar
+RegitarBoxUtentes				=Utentes
+RegitarBoxEntidades				=Entidades
+AEmpregoNOferta					=Ofertas por área
+AEmpregoNRHumanos				=R. H. por área
+IlhaNOferta						=Ofertas por região
+IlhaNRHumanos					=R. H. por região
+SendButton						=Enviar
+Download						=Download
+EraseFile						=Apagar ficheiro
+Edit							=Editar
+EditLabel						=#{messages.Edit} :
+Habilitacoes					=Habilitações
+Estado							=Estado
+BlankSpace						=&#160;
+UsersOnline						=Utilizadores Online
+UsersOnlineLabel				=#{messages.UsersOnline} :
+DragAndDropText					=Movimentar os itens arrastando e largando
+AvailableItems					=Itens disponíveis
+SelectedItems					=Items seleccionados
+Data							=Dados
+Path							=Caminho
+Approved						=Aprovado
+ApprovedLabel					=#{messages.Approved} :
+Synopsis						=Sinopse
+SynopsisLabel					=#{messages.Synopsis} :
+Event							=Evento
+EventLabel						=#{messages.Event} :
+EventStart						=Inicio do evento
+EventStartLabel					=#{messages.EventStart} :
+EventEnd						=Fim do evento
+EventEndLabel					=#{messages.EventEnd} :
+Subject							=Assunto
+SubjectLabel					=#{messages.Subject} :
+Message							=Mensagem
+MessageLabel					=#{messages.Message} :
+Contact							=Contacto
+ContactLabel					=#{messages.Contact} :
+Contacts						=Contactos
+ContactsLabel					=#{messages.Contacts} :
+ContactsTab						=Contactos
+Fax								=Fax
+FaxLabel						=#{messages.Fax} :
+Telefax							=Telefax
+TelefaxLabel					=#{messages.Telefax} :
+Phone							=Telefone
+PhoneLabel						=#{messages.Phone} :
+Phones							=Telefones
+PhonesLabel						=#{messages.Phones} :
+MobilePhone						=Telemovel
+MobilePhoneLabel				=#{messages.MobilePhone} :
+SeeMore							=Ver mais...>>
+SelectAllCheck					=Seleccionar tudo
+RemoveSelection					=Retirar selecção
+ChangeLanguage					=Mudar linguagem
+SendEmailButton					=Enviar email
+SendSmsButton					=Enviar sms
+Timezone						=Timezone
+TimezoneLabel					=\#{messages.Timezone} \:
+LongEmail						=Endereço electrónico
+LongEmailLabel					=#{messages.LongEmail} :
+ProductVersion					=Versão:
+ProductVersionNumber			=0.0.63
+CopyrightPrefixInfo				=Copyright
+CopyrightSufixInfo				=Centro de saúde da Ribeira Grande - 2010
+IPAddress						=Endere\u00E7o IP

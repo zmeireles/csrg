@@ -1,0 +1,79 @@
+<div class="menuButtons" 
+		xmlns="http://www.w3.org/1999/xhtml"
+		xmlns:ui="http://java.sun.com/jsf/facelets"
+		xmlns:h="http://java.sun.com/jsf/html"
+		xmlns:f="http://java.sun.com/jsf/core"
+		xmlns:ice="http://www.icesoft.com/icefaces/component"  
+		xmlns:s="http://jboss.com/products/seam/taglib">
+		
+<ice:panelGroup id="menuPanelGroup" styleClass="formBorderHighlight">
+<ice:form id="menuForm">
+	<table width="100%" border="0" cellspacing="0" cellpadding="0">
+	   <tr>
+		<td class="iceDatTblColHdr2">
+         		<ice:panelGrid id="menuPanelGrid" columns="2" columnClasses="leftMenu,rightMenu">
+                        <ice:panelGroup id="menuPanelGroupLeft" >
+                        	<table width="100%" border="0" cellspacing="0" cellpadding="0">
+		                        <tr><td>                                    
+	                              <h:outputText id="menuProjectName" value="#{projectName}:"/>
+	                              <s:link id="menuHomeId" view="/home.xhtml" value="Home" propagation="none"/>
+		                          </td>
+		                          <td>
+	                              <!-- @newMenuItem@ -->
+	                              <ice:menuBar id="menuBar">
+				                        <ice:menuItem value="#{messages.MenuManage}" id="menuManage" onclick="return false;">
+											<ice:menuItem 	id="menuItemUsers" value="#{messages.MenuItemUsers}"
+															action="#{menuBar.showUserList}">
+											</ice:menuItem>
+											<ice:menuItem value="#{messages.MenuItemDepartments}" id="menuItemDepartments"
+															rendered="#{stateBean.hasRoleAdmin()}"
+															action="#{stateBean.getDir().concat('/departmentList.xhtml')}">
+											</ice:menuItem>
+											<ice:menuItem value="#{messages.MenuItemProfCategories}" id="menuItemProfCategories"
+															rendered="#{stateBean.hasRoleAdmin()}"
+															action="#{stateBean.getDir().concat('/profCategoryList.xhtml')}">
+											</ice:menuItem>
+											<ice:menuItem value="#{messages.MenuItemServiceAreas}" id="menuItemServiceAreas"
+															rendered="#{stateBean.hasRoleAdmin() or steateBean.hasRoleContentManager()}"
+															action="#{stateBean.getDir().concat('/serviceAreaList.xhtml')}">
+											</ice:menuItem>
+<<<<<<< .mine
+											<ice:menuItem value="#{messages.MenuItemServiceClassifications}" id="menuItemServiceClassifications"
+															rendered="#{stateBean.hasRoleAdmin() or steateBean.hasRoleContentManager()}"
+															action="#{stateBean.getDir().concat('/serviceClassificationList.xhtml')}">
+											</ice:menuItem>
+=======
+											<ice:menuItem value="#{messages.MenuItemWebpage}" id="menuItemWebpage"
+															rendered="#{stateBean.hasRoleAdmin()}"
+															action="#{stateBean.getDir().concat('/webpageList.xhtml')}">
+											</ice:menuItem>
+>>>>>>> .r8
+										</ice:menuItem>
+										<ice:menuItem value="#{messages.MenuDefinitions}" id="menuDefinitions" onclick="return false;">
+											<ice:menuItem value="#{messages.MenuItemConfig}" id="menuItemConfig"
+															action="#{stateBean.getDir().concat('/configEdit.xhtml')}">
+											</ice:menuItem>
+											
+										</ice:menuItem>
+									</ice:menuBar>
+									</td>
+								</tr>
+							</table>
+							<!-- 
+                            <ui:include src="subMenu/adminMenu.xhtml" />
+                             -->
+                        </ice:panelGroup>
+                        
+                        <ice:panelGroup id="menuPanelGroupRight" >
+                            <h:outputText id="menuWelcomeId" value="signed in as: #{credentials.username}" rendered="#{identity.loggedIn}"/>
+                            <s:link id="menuLoginId" view="/login.xhtml" value="Login" rendered="#{not identity.loggedIn}" propagation="none"/>
+                            <s:link id="menuLogoutId" view="/home.xhtml" action="#{identity.logout}" value="Logout" rendered="#{identity.loggedIn}" propagation="none"/>
+                        </ice:panelGroup>
+                </ice:panelGrid>
+           </td>
+		</tr>
+	</table>    
+</ice:form>        
+</ice:panelGroup>		
+      
+</div>

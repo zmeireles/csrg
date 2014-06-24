@@ -1,0 +1,134 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:s="http://jboss.com/products/seam/taglib"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:ice="http://www.icesoft.com/icefaces/component"
+                template="#{(identity.loggedIn==false or not stateBean.isManager()) ? 'layout/template.xhtml' : 'layout/templateBackoffice.xhtml'}">
+
+<ui:define name="body">
+
+    <div id="contactLeftBlock"  class="contactsLeft">
+    
+	    <table class="leftAlignedTable">
+	    	<tr>
+	    		<td>
+	        	<h:outputText  value="#{messages.ContactsLabel}" styleClass="contactsLabel"></h:outputText>
+	    		</td>
+	    	</tr>
+	    	<tr>
+	    		<td>
+	        	<h:outputText  value="#{messages.InstitutionName}" styleClass="contactsInsName"></h:outputText>
+	    		</td>
+	    	</tr>
+	    	<tr>
+	    		<td>
+	        	<h:outputText  value="#{messages.InstitutionAddress}" styleClass="contactsInsAddress"></h:outputText>
+	    		</td>
+	    	</tr>
+	    	<tr>
+	    		<td>
+	        	<h:outputText  value="#{messages.PhonesLabel}" styleClass="contactsPhone"></h:outputText>
+	    		</td>
+	    	</tr>
+	    	<tr>
+	    		<td>
+
+				<table class="leftAlignedTable insideTable">
+					<tr>
+						<td><h:outputText value="#{messages.HeadquarterLabel}" styleClass="contactsPhoneItemHead"></h:outputText></td>
+						<td><h:outputText value="#{messages.HeadquarterPhone}" styleClass="contactsPhoneItemHead"></h:outputText></td>
+					</tr>
+					<tr>
+						<td><h:outputText value="#{messages.Dependency1Label}" styleClass="contactsPhoneItem"></h:outputText></td>
+						<td><h:outputText value="#{messages.Dependency1Phone}" styleClass="contactsPhoneItem"></h:outputText></td>
+					</tr>
+					<tr>
+						<td><h:outputText value="#{messages.Dependency2Label}" styleClass="contactsPhoneItem"></h:outputText></td>
+						<td><h:outputText value="#{messages.Dependency2Phone}" styleClass="contactsPhoneItem"></h:outputText></td>
+					</tr>
+					<tr>
+						<td><h:outputText value="#{messages.Dependency3Label}" styleClass="contactsPhoneItem"></h:outputText></td>
+						<td><h:outputText value="#{messages.Dependency3Phone}" styleClass="contactsPhoneItem"></h:outputText></td>
+					</tr>
+					<tr>
+						<td><h:outputText value="#{messages.Dependency4Label}" styleClass="contactsPhoneItem"></h:outputText></td>
+						<td><h:outputText value="#{messages.Dependency4Phone}" styleClass="contactsPhoneItem"></h:outputText></td>
+					</tr>
+					<tr>
+						<td><h:outputText value="#{messages.Dependency5Label}" styleClass="contactsPhoneItem"></h:outputText></td>
+						<td><h:outputText value="#{messages.Dependency5Phone}" styleClass="contactsPhoneItem"></h:outputText></td>
+					</tr>
+				</table>
+
+	    		</td>
+	    	</tr>
+	    	<tr>
+	    		<td>
+	        	<h:outputText  value="#{messages.TelefaxLabel}" styleClass="contactsFax"></h:outputText>
+	    		</td>
+	    	</tr>
+	    	<tr>
+	    		<td>
+					<table class="leftAlignedTable insideTable">
+						<tr>
+							<td><h:outputText value="#{messages.HeadquarterLabel}" styleClass="contactsFaxItemHead"></h:outputText></td>
+							<td><h:outputText value="#{messages.HeadquarterFax}" styleClass="contactsFaxItemHead"></h:outputText></td>
+						</tr>
+					</table>
+
+	    		</td>
+	    	</tr>
+	    	<tr>
+	    		<td>
+	        	<h:outputText  value="#{messages.LongEmailLabel}" styleClass="contactsEmail"></h:outputText>
+	    		</td>
+	    	</tr>
+	        <tr>
+	    		<td>
+					<table class="leftAlignedTable insideTable">
+						<tr>
+							<td>							
+							<h:outputLink value="mailto:#{messages.HeadquarterEmail}" styleClass="contactsEmailItemHead">
+							<h:outputText value="#{messages.HeadquarterEmail}"/>
+							</h:outputLink>
+							</td>
+						</tr>
+					</table>
+
+	    		</td>
+	    	</tr>
+	    </table>
+    
+    
+    </div>
+    <s:fragment rendered="#{newsPanelController.newsCount>0}">
+    	<div id="contactRightBlock"  class="contactsRight" style="width:490">
+			<iframe width="100%" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps?source=s_q&amp;hl=en&amp;geocode=&amp;q=centro+saude+ribeira+grande&amp;sll=37.812496,-25.456009&amp;sspn=0.406848,0.469666&amp;ie=UTF8&amp;radius=12.83&amp;split=1&amp;filter=0&amp;rq=1&amp;ev=zi&amp;hq=centro+saude+ribeira+grande&amp;hnear=&amp;ll=37.913326,-25.493088&amp;spn=0.406848,0.469666&amp;z=11&amp;iwloc=A&amp;cid=15701464202973381376&amp;output=embed"></iframe>
+       			<br />
+       			<small>
+       				<a href="http://maps.google.com/maps?source=embed&amp;hl=en&amp;geocode=&amp;q=centro+saude+ribeira+grande&amp;sll=37.812496,-25.456009&amp;sspn=0.406848,0.469666&amp;ie=UTF8&amp;radius=12.83&amp;split=1&amp;filter=0&amp;rq=1&amp;ev=zi&amp;hq=centro+saude+ribeira+grande&amp;hnear=&amp;ll=37.913326,-25.493088&amp;spn=0.406848,0.469666&amp;z=11&amp;iwloc=A&amp;cid=15701464202973381376" style="color:#0000FF;text-align:left">
+       					#{messages.GmapViewLargerMap}
+       				</a>
+       			</small>       
+    	</div>
+    </s:fragment> 
+    
+    <s:fragment rendered="#{newsPanelController.newsCount==0}">
+		<div id="contactRightBlock"  class="contactsRight" style="width:690">
+			<iframe width="100%" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps?source=s_q&amp;hl=en&amp;geocode=&amp;q=centro+saude+ribeira+grande&amp;sll=37.812496,-25.456009&amp;sspn=0.406848,0.469666&amp;ie=UTF8&amp;radius=12.83&amp;split=1&amp;filter=0&amp;rq=1&amp;ev=zi&amp;hq=centro+saude+ribeira+grande&amp;hnear=&amp;ll=37.913326,-25.493088&amp;spn=0.406848,0.469666&amp;z=11&amp;iwloc=A&amp;cid=15701464202973381376&amp;output=embed"></iframe>
+       			<br />
+       			<small>
+       				<a href="http://maps.google.com/maps?source=embed&amp;hl=en&amp;geocode=&amp;q=centro+saude+ribeira+grande&amp;sll=37.812496,-25.456009&amp;sspn=0.406848,0.469666&amp;ie=UTF8&amp;radius=12.83&amp;split=1&amp;filter=0&amp;rq=1&amp;ev=zi&amp;hq=centro+saude+ribeira+grande&amp;hnear=&amp;ll=37.913326,-25.493088&amp;spn=0.406848,0.469666&amp;z=11&amp;iwloc=A&amp;cid=15701464202973381376" style="color:#0000FF;text-align:left">
+       					#{messages.GmapViewLargerMap}
+       				</a>
+       			</small>       
+    	</div>
+ 	</s:fragment>
+    
+       
+    
+</ui:define> 
+</ui:composition>

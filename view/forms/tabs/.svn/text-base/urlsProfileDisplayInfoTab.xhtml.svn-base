@@ -1,0 +1,36 @@
+<div xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ice="http://www.icesoft.com/icefaces/component"
+      xmlns:s="http://jboss.com/products/seam/taglib">
+
+	<s:decorate id="paginator" template="/layout/icePaginator.xhtml">
+	    <ice:dataTable id="dataTable" value="#{modelEditHome.urls}" var="data" rows="10">
+	 		<ice:column>
+	   			<f:facet name="header">
+	     			<ice:outputText value="#{messages.Profile}" />
+	   			</f:facet>
+	   			<ice:outputText value="#{data.profile eq null ? messages.UPDINullUrl : data.profile.returnName(messages)}" />
+	 		</ice:column>
+	 		<ice:column>
+	   			<f:facet name="header">
+	     			<ice:outputText value="#{messages.Url}" />
+	   			</f:facet>
+	   			<ice:inputText style="width: 90%;" value="#{data.url}" />
+	   			
+	 		</ice:column>
+	 		
+	 		<ice:column style="width: 100px">
+	   			<ice:commandButton value="#{messages.SaveButton}"
+	                              style="font-size:12px"
+	                              actionListener="#{modelEditHome.saveUrl}">
+	                   <f:attribute name="urlId" value="#{data.id}"></f:attribute>
+				</ice:commandButton>
+		  	</ice:column>
+	    </ice:dataTable>
+    	<ui:param name="dataTable" value="dataTable"></ui:param>
+    </s:decorate>
+    
+</div>
+	

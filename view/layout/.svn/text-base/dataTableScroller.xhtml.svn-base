@@ -1,0 +1,63 @@
+<ui:composition  xmlns="http://www.w3.org/1999/xhtml"
+                 xmlns:ui="http://java.sun.com/jsf/facelets"
+                 xmlns:h="http://java.sun.com/jsf/html"
+                 xmlns:f="http://java.sun.com/jsf/core"
+                 xmlns:a4j="http://richfaces.org/a4j"
+      			 xmlns:ice="http://www.icesoft.com/icefaces/component" 
+      			 xmlns:s="http://jboss.com/products/seam/taglib">
+	
+	<div id="paginatorTableContainer" align="center">
+	   
+	   		<div class="pageNumDiv">
+	   			<s:fragment rendered="#{report.showFirstPage}">
+	   				<img src="#{styleBean.imageLink}arrow-first-dis.gif" style="border:none;" title="#{messages.DataScrollingFirstPage}"/> 
+	   			</s:fragment>
+	   			<ice:commandLink rendered="#{not report.showFirstPage}" action="#{report.changePage}">
+	   				<f:param value="#{report.firstPage}" name="newPage"/>
+	   				<img src="#{styleBean.imageLink}arrow-first.gif" style="border:none;" title="#{messages.DataScrollingFirstPage}"/> 
+	   			</ice:commandLink>
+	   		</div>
+	   		<div class="pageNumDiv">
+	   			<s:fragment rendered="#{report.showFirstPage}">
+	   				<img src="#{styleBean.imageLink}arrow-previous-dis.gif" style="border:none;" title="#{messages.DataScrollingPreviousPage}"/> 
+	   			</s:fragment>
+				<ice:commandLink rendered="#{not report.showFirstPage}" action="#{report.changePage}">
+	   				<f:param value="#{report.previousPage}" name="newPage"/>
+	   				<img src="#{styleBean.imageLink}arrow-previous.gif" style="border:none;" title="#{messages.DataScrollingPreviousPage}"/> 
+	   			</ice:commandLink>
+	   		</div>
+	   		
+			<ice:panelSeries id="ips" value="#{report.scrollPageToRender}" var="page">
+				<ice:panelGroup id="pageNumber" rendered="#{page != report.page}" styleClass="pageNumDiv2">
+					<ice:commandLink  value="#{page}" action="#{report.changePage}">
+						<f:param value="#{page}" name="newPage"/>
+					</ice:commandLink>	
+				</ice:panelGroup>
+				<ice:panelGroup id="pageNumber" rendered="#{page == report.page}" styleClass="pageNumDiv3">
+					<ice:outputText value="#{page}"/>
+				</ice:panelGroup>
+				
+			</ice:panelSeries>
+			
+			<div class="pageNumDiv">
+				<s:fragment rendered="#{report.showLastPage}">
+	   				<img src="#{styleBean.imageLink}arrow-next-dis.gif" style="border:none;" title="#{messages.DataScrollingNextPage}"/> 
+	   			</s:fragment>
+				<ice:commandLink rendered="#{not report.showLastPage}" action="#{report.changePage}">
+					<f:param value="#{report.nextPage}" name="newPage"/>
+					<img src="#{styleBean.imageLink}arrow-next.gif" style="border:none;" title="#{messages.DataScrollingNextPage}"/>
+	   			</ice:commandLink>
+			</div>
+			<div class="pageNumDiv">
+				<s:fragment rendered="#{report.showLastPage}">
+	   				<img src="#{styleBean.imageLink}arrow-last-dis.gif" style="border:none;" title="#{messages.DataScrollingLastPage}"/> 
+	   			</s:fragment>
+				<ice:commandLink rendered="#{not report.showLastPage}" action="#{report.changePage}">
+	   				<f:param value="#{report.lastPage}" name="newPage"/>
+	   				<img src="#{styleBean.imageLink}arrow-last.gif" style="border:none;" title="#{messages.DataScrollingLastPage}"/> 
+	   			</ice:commandLink>
+			</div>
+		
+	</div>
+
+</ui:composition>

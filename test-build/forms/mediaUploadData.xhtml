@@ -1,0 +1,86 @@
+<div
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:s="http://jboss.com/products/seam/taglib"
+    xmlns:a4j="http://richfaces.org/a4j"
+    xmlns:ice="http://www.icesoft.com/icefaces/component">
+	
+<div align="left">	
+	<ice:form enctype="multipart/form-data">
+	
+	
+		<!-- file upload usage with progress callback. -->
+        <ice:inputFile id="inputFileName" width="600" autoUpload="#{mediaManagerHome.mediaController.autoUpload}"
+        				uniqueFolder="false"
+                       progressListener="#{mediaManagerHome.mediaController.fileUploadProgress}"
+                       actionListener="#{mediaManagerHome.mediaController.uploadFile}"/>
+        <!-- progress bar, percent value is upated via progressListener-->
+<br />
+        <ice:outputProgress value="#{mediaManagerHome.mediaController.fileProgress}"
+                            styleClass="uploadProgressBar"/>
+ <br />
+		<ice:panelGroup>
+            <h:messages layout="table"
+                    globalOnly="false"
+                    showDetail="true"
+                    showSummary="false"/>
+        </ice:panelGroup>
+
+ <br />
+ <!-- 
+<ice:outputText value="#{request.contextPath}"/>
+ -->
+<ice:panelGroup styleClass="exampleBox firstChildTitle inputFileContainer">
+
+        <ice:outputText
+                value="list"/>
+
+        <ice:dataTable
+                width="450px"
+                value="#{mediaManagerHome.mediaController.fileList}"
+                var="file">
+            <ice:column>
+                <f:facet name="header">
+                    <ice:outputLabel
+                            value="name"/>
+                </f:facet>
+                <ice:outputText value="#{file.fileInfo.fileName}"/>
+            </ice:column>
+            <ice:column>
+                <f:facet name="header">
+                    <ice:outputLabel
+                            value="size"/>
+                </f:facet>
+                <ice:outputText value="#{file.sizeFormatted}"/>
+            </ice:column>
+            <ice:column>
+                <f:facet name="header">
+                    <ice:outputText
+                            value="content"/>
+                </f:facet>
+                <ice:outputText value="#{file.fileInfo.contentType}"/>
+            </ice:column>
+            <ice:column>
+                <f:facet name="header">
+                    <ice:outputText
+                            value="remove"/>
+                </f:facet>
+                <ice:commandLink
+                        value="remove"
+                        actionListener="#{mediaManagerHome.mediaController.removeUploadedFile}">
+                    <f:param name="fileName" value="#{file.fileInfo.fileName}"/>
+                </ice:commandLink>
+            </ice:column>
+        </ice:dataTable>
+
+    </ice:panelGroup>
+	
+	
+	
+		
+	</ice:form>
+
+</div>	
+</div>

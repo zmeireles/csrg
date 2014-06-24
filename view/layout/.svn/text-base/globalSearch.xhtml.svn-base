@@ -1,0 +1,27 @@
+<div id="fastSearch"
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:s="http://jboss.com/products/seam/taglib"
+    xmlns:ice="http://www.icesoft.com/icefaces/component">
+	
+	<h:form>
+		
+		<div class="fastSearchBox">
+		<table border="0" cellspacing="0" cellpadding="0">
+		<tr><td valign="middle">
+				<h:inputText id="searchTxt" required="false" value="#{globalSearchReport.searchTxt}"/>
+		</td><td valign="middle">
+			<h:commandButton 	id="queryGlobalSearch" 
+        					 value="#{messages.SearchButton}" 
+							action="#{globalSearchReport.query()}"
+						  styleClass="button">
+			</h:commandButton>
+		</td></tr>
+		</table>
+		</div>
+	
+	</h:form>
+	
+</div>

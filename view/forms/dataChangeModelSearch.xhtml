@@ -1,0 +1,33 @@
+<s:decorate xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:a4j="http://richfaces.org/a4j"
+      xmlns:ice="http://www.icesoft.com/icefaces/component" 
+      xmlns:s="http://jboss.com/products/seam/taglib"
+      template="#{theme}/searchPanel.xhtml">
+	
+	
+	<ui:param name="report" value="#{dataChangeModelReport}" ></ui:param>
+	
+	<ui:define name="reportParam">
+    
+		<s:decorate id="searchDecoration" template="/layout/edit.xhtml">
+			<ui:define name="label">#{messages.SearchLabel}</ui:define>
+			<h:inputText id="search" required="false" value="#{report.searchTxt}">
+		    </h:inputText>
+		</s:decorate>
+	    	
+    	<div class="actionButtons" >
+    		<ice:commandButton action="#{report.query()}" id="refreshData" value="#{messages.SearchButton}" styleClass="button">
+    		</ice:commandButton>
+		</div>
+			
+	</ui:define>
+	
+	
+	<ui:define name="reportList">
+		<ui:include src="/forms/searchTable/dataChangeModelSearchTable.xhtml" />
+	</ui:define>
+	
+</s:decorate>

@@ -1,0 +1,38 @@
+<s:decorate xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:a4j="http://richfaces.org/a4j"
+      xmlns:ice="http://www.icesoft.com/icefaces/component"
+      xmlns:s="http://jboss.com/products/seam/taglib"
+      template="#{theme}/tabPanel.xhtml">
+	
+	<ice:panelTab label="#{messages.PersonTab}" title="#{messages.PersonTab}">
+		<ui:include src="/forms/tabs/userPersonDataTab.xhtml" />
+	</ice:panelTab>
+	<ice:panelTab label="#{messages.ContactsTab}" title="#{messages.ContactsTab}">
+		<ui:include src="/forms/tabs/userContactsTab.xhtml" />
+	</ice:panelTab>
+	<ice:panelTab label="#{messages.UserDepartmentsTab}" title="#{messages.UserDepartmentsTab}" 
+				rendered="#{modelEditHome.managed}">
+		<ui:include src="/forms/tabs/userDepartmentsTab.xhtml" />
+	</ice:panelTab>
+	
+	<div class="actionButtons">
+       <h:commandButton id="save" styleClass="button" 
+                     value="#{messages.SaveButton}" 
+                    action="#{userEditHome.persist}"
+                  rendered="#{!userEditHome.managed}"/>
+       <h:commandButton id="update" styleClass="button" 
+                     value="#{messages.UpdateButton}" 
+                    action="#{userEditHome.update}"
+                  rendered="#{userEditHome.managed}"/>                  
+       <h:commandButton id="delete" styleClass="button" 
+               	  value="#{messages.DeleteButton}" 
+              	     action="#{userEditHome.remove}"
+              	   rendered="#{userEditHome.mayRemove()}"/>
+       <ice:commandButton value="#{messages.ChangePasswordButton}" 
+	    		actionListener="#{modelEditHome.toggleShowChangePasswordPanel}"/>
+   </div>
+</s:decorate>
+	

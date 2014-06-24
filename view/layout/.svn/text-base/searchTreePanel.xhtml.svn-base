@@ -1,0 +1,24 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+		      xmlns:ui="http://java.sun.com/jsf/facelets"
+		      xmlns:h="http://java.sun.com/jsf/html"
+		      xmlns:f="http://java.sun.com/jsf/core"
+		      xmlns:a4j="http://richfaces.org/a4j"
+		      xmlns:ice="http://www.icesoft.com/icefaces/component"
+		      xmlns:s="http://jboss.com/products/seam/taglib">
+	
+	
+	<ice:form id="searchPanelList" >
+		
+		<div id="dataTableList">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" >
+	    	<tr><td>
+		    	<ui:insert name="treeList"/>
+			</td></tr>
+   			</table>
+	    </div>
+        
+	</ice:form>
+	
+	<ui:insert />
+	
+</ui:composition>

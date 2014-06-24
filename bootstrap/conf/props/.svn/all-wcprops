@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/csrg/!svn/ver/1/bootstrap/conf/props
+END
+messaging-users.properties
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/csrg/!svn/ver/1/bootstrap/conf/props/messaging-users.properties
+END
+messaging-roles.properties
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/csrg/!svn/ver/1/bootstrap/conf/props/messaging-roles.properties
+END

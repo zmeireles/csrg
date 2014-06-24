@@ -1,0 +1,109 @@
+<div 
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:s="http://jboss.com/products/seam/taglib"
+    xmlns:ice="http://www.icesoft.com/icefaces/component">
+	
+	<div class="img">
+	<s:span styleClass="imgDescription" rendered="#{(imageDescription!=null and imageDescription!='')}">
+		<h:outputText value="#{imageDescription}" />
+	</s:span>
+	
+	<table cellpadding="0" cellspacing="0" border="0"  >
+	
+	<!-- panel top -->
+	<tr>
+		<td style="width: 19px; height: 22px; background-image: url(#{messages.UrlImageProject}img_top_left.png);" >
+			<img src="#{messages.UrlImageProject}ghost.gif" width="19" height="1" border="0" />
+		</td>
+		<td style="height: 22px; background-image: url(#{messages.UrlImageProject}img_top.png); background-repeat: repeat-x;" >
+			<img src="#{messages.UrlImageProject}ghost.gif" width="1" height="20" border="0" />
+		</td>
+		<td style="width: 18px; height: 22px; background-image: url(#{messages.UrlImageProject}img_top_right.png);" >
+		</td>
+	</tr>
+	
+	<!-- panel body -->
+	<tr>
+		<td style="width: 19px; background-image: url(#{messages.UrlImageProject}img_left.png); background-repeat: repeat-y;" >
+		</td>
+		<td style="background-color: White;" >
+	
+			<s:div styleClass="imgContainer">
+			   	<s:graphicImage value="#{image}" rendered="#{image ne null}">
+					<s:transformImageSize width="120" maintainRatio="true" />
+				</s:graphicImage>
+				<h:outputText value="#{messages.ImageNotDefined}" rendered="#{image eq null}" >
+					<br /><br /><br /><br /><br />
+				</h:outputText>
+			</s:div>
+							
+		</td>
+		<td style="width: 18px; background-image: url(#{messages.UrlImageProject}img_right.png); background-repeat: repeat-y;" >
+		</td>
+	</tr>
+	
+	<!-- panel bottom -->
+	<tr>
+		<td style="width: 19px; height: 18px; background-image: url(#{messages.UrlImageProject}img_bottom_left.png);" >
+		</td>
+		<td style="height: 18px; background-image: url(#{messages.UrlImageProject}img_bottom.png); background-repeat: repeat-x;" >
+			<img src="#{messages.UrlImageProject}ghost.gif" width="18" height="1" border="0" />
+		</td>
+		<td style="width: 18px; height: 18px; background-image: url(#{messages.UrlImageProject}img_bottom_right.png);" >
+			<img src="#{messages.UrlImageProject}ghost.gif" width="18" height="1" border="0" />
+		</td>
+	</tr>
+	</table>
+	<!-- 
+	<s:div styleClass="imgEdit" rendered="#{allowEdit}">
+		<h:outputText value="#{messages.EditImage}" />
+		<s:span styleClass="imgEditInput" >
+			<s:fileUpload data="#{newImage}" accept="image/*" contentType="#{newImageContentType}" style="width: 140px;" />
+		</s:span>
+	</s:div>
+	 -->
+	<ice:commandLink id="toggleModal"
+                               value="#{messages.ChangePhotoButton}"
+                               disabled="#{popup.modalRendered}"
+                               style="margin-right: 20px;font-size:12px"
+                               actionListener="#{popup.toggleModal}"/>
+	</div>
+	<!-- Modal Panel Popup -->
+	
+	<ice:panelPopup id="modalPnlPop"
+	                draggable="false" modal="true"
+	                visible="#{popup.modalRendered}"
+	                autoCentre="#{popup.autoCentre}"
+	                styleClass="corePopup">
+	    <f:facet name="header">
+	        <ice:panelGroup styleClass="popupHeaderWrapper">
+	            <ice:outputText
+	                    value="#{messages.ImageSelect}"
+	                    styleClass="popupHeaderText"/>
+	            <ice:commandButton id="modalPnlCloseBtn" type="button"
+	                               actionListener="#{popup.toggleModal}"
+	                               styleClass="popupHeaderImage"
+	                               title="Close Popup" alt="Close" 
+	                               image="/img/popupclose.gif"/>
+	        </ice:panelGroup>
+	    </f:facet>
+	    <f:facet name="body">
+	        <ice:panelGroup styleClass="popupBody">
+	        	<ice:panelGroup>
+					<ice:inputFile id="inputFileName" autoUpload="true" accept="image/*" contentType="#{newImageContentType}"
+				                       progressListener="#{modelEditHome.inputFileController.fileUploadProgress}"
+				                       actionListener="#{modelEditHome.uploadFile}"/>
+				    <ice:outputProgress value="#{modelEditHome.inputFileController.fileProgress}"
+				                            styleClass="uploadProgressBar"/>
+				</ice:panelGroup>
+	            <ice:commandButton id="modalPnlCloseButton" type="submit"
+	                               value="#{messages.CloseButton}"
+	                               actionListener="#{popup.toggleModal}"/>
+	        </ice:panelGroup>
+	    </f:facet>
+	</ice:panelPopup>
+</div>
+	

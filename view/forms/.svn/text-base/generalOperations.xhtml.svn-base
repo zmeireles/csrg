@@ -1,0 +1,49 @@
+<div xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:a4j="http://richfaces.org/a4j"
+      xmlns:ice="http://www.icesoft.com/icefaces/component"
+      xmlns:s="http://jboss.com/products/seam/taglib">
+      
+      
+	<ice:form >
+		
+		<ice:panelCollapsible id="generaoOperationsPanel" expanded="true" >
+            <f:facet name="header">
+                <ice:panelGroup style="text-align: left;">
+                    <ice:outputText id="goHeader" value="#{messages.GOCreateKeywords}"/>
+                </ice:panelGroup>
+            </f:facet>
+            <ice:panelGroup style="text-align: left;">
+            	<ice:panelGroup styleClass="synopsisBox panelCollapsible">
+                <ice:outputText id="textDesc"
+                            escape="false"
+                            value="#{stateBean.echo(messages.GOCreateKeywordsDescription)}"/>
+             	</ice:panelGroup>
+            </ice:panelGroup>
+            
+            <s:decorate id="modelDecoration" template="/layout/edit.xhtml">
+				<ui:define name="label">#{messages.ProcessingTableLabel}</ui:define>
+				<h:selectOneMenu value="#{generalOperationsAction.selectedModel}" >
+					<f:selectItems value="#{generalOperationsAction.modelsList}"/>
+				</h:selectOneMenu>
+			</s:decorate>
+            <div class="actionButtons">
+	            <h:commandButton id="create" styleClass="button" 
+	                          value="#{messages.GOCreateKeywordsButton}" 
+	                         action="#{generalOperationsAction.createKeywords}"/>
+				<h:commandButton id="update" styleClass="button" 
+	                          value="#{messages.GOUpdateKeywordsButton}" 
+	                         action="#{generalOperationsAction.updateProperties}"/>
+				<h:commandButton id="clear" styleClass="button" 
+	                          value="#{messages.GOClearKeywordsButton}" 
+	                         action="#{generalOperationsAction.clearKeywords}"/>
+	        </div>
+        </ice:panelCollapsible>
+		
+        
+	</ice:form>
+	
+</div>
+	

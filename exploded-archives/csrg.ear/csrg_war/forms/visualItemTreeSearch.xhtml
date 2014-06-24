@@ -1,0 +1,149 @@
+<s:decorate xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:a4j="http://richfaces.org/a4j"
+      xmlns:ice="http://www.icesoft.com/icefaces/component" 
+      xmlns:s="http://jboss.com/products/seam/taglib"
+      template="#{theme}/searchTreePanel.xhtml">
+
+<ui:param name="tree" value="#{visualItemTree}" ></ui:param>
+
+<ui:define name="treeList">
+
+<table border="0">
+	<tr valign="top"><td width="100%">
+	<ice:panelGroup styleClass="exampleBox" style="width: 90%">
+		<ice:panelGroup style="text-align: left">
+			<ice:tree id="tree"
+		              value="#{tree.model}"
+		              var="node"
+		              hideRootNode="false"
+		              hideNavigation="false"
+		              imageDir="/csrg/img/">
+	              <ice:treeNode>
+			            <f:facet name="icon">
+			                <ice:panelGroup
+			                        style="display: inline" >
+			                    <ice:graphicImage
+			                         value="/img/#{node.userObject.icon}"/>
+			                </ice:panelGroup>
+			            </f:facet>
+			            <f:facet name="content">
+			                <ice:panelGroup
+			                        styleClass="selectedNode#{node.userObject eq tree.selectedUserObject}"
+			                        style="display: inline" >
+			                    <ice:commandLink
+			                            actionListener="#{tree.visualItemNodeSelected}">
+			                        <f:param name="visualItemId" value="#{node.userObject.instance.id}" />
+			                        <ice:outputText id="TreeNode"
+			                                        value="#{node.userObject.text}"/>
+			                    </ice:commandLink>
+			                </ice:panelGroup>
+			            </f:facet>
+			      </ice:treeNode>
+			</ice:tree>
+		</ice:panelGroup>
+	</ice:panelGroup>
+	</td><td width="350px">
+	<ice:panelGroup
+	        styleClass="exampleBox firstChildTitle backBeanChangeContainer">
+	
+	    <!-- backing bean title box -->
+	    <ice:panelGroup styleClass="backBeanChangeTitle" style="width:350px;">
+	        <ice:outputText value="#{messages.Data}"/>
+	    </ice:panelGroup>
+	
+	    <!-- actual backing bean values. -->
+	    <ice:panelGroup styleClass="backBeanChangeBody"
+	                    effect="#{tree.valueChangeEffect}">
+	            <ice:panelGroup style="margin: 0; padding: 0;width:350px;">
+	                <ice:panelGrid cellpadding="0" cellspacing="3" columns="2"
+	                        rendered="#{tree.selectedUserObject ne null and tree.selectedUserObject.instance ne null}">
+	                    <ice:outputLabel value="#{messages.Path}"/>
+	                    <ice:panelSeries id="icePnlSrs"
+	                                     value="#{tree.selectedTreePath}"
+	                                     var="treePath">
+	                        <ice:graphicImage
+	                                width="11" height="8"
+	                                style="margin-left:3px;margin-right:3px;"
+	                                value="/xmlhttp/css/rime/css-images/bullet.gif" />
+	                        <ice:outputText id="treePath" value="#{treePath}"/>
+	                    </ice:panelSeries>
+	        
+	                    <ice:outputLabel value="#{messages.VisualItemMenuText}" />
+	                    <ice:outputText id="modelCaption"
+	                            value="#{tree.selectedUserObject.instance.menuText}"/>
+	                            
+						<ice:outputLabel value="#{messages.VisualItemPublished}" />
+						<h:selectBooleanCheckbox value="#{tree.selectedUserObject.instance.publish}" readonly="true" disabled="true"/>
+						
+						
+					</ice:panelGrid>
+						<ice:panelGroup styleClass="exampleBox firstChildTitle backBeanChangeContainer">
+							<ice:panelGroup styleClass="backBeanChangeTitle" style="width:340px;">
+						        <ice:outputText value="#{messages.UserList}"/>
+						    </ice:panelGroup>
+						    <ice:panelGroup styleClass="backBeanChangeBody">
+						    	<ice:dataTable id="calculatedUsers" rows="10" 
+						    				value="#{tree.selectedUserObject.instance.users}" var="data">
+						    		<ice:column>
+						    			<f:facet name="header">
+						      				<ice:outputText value="#{messages.Name}" />
+						    			</f:facet>
+						    			<h:outputText value="#{data.user.person.name}"/>
+						    		</ice:column>
+						    	</ice:dataTable>
+						    	<ice:dataPaginator for="calculatedUsers" paginator="true" paginatorMaxPages="4"></ice:dataPaginator>
+						    </ice:panelGroup>
+						</ice:panelGroup>
+                    <s:button  id="editButton" 
+								style="font-size:12px"
+		                     	value="#{messages.Edit}" 
+		                     	view="#{myPath}/visualItemEdit.xhtml"
+		                     	rendered="#{tree.selectedUserObject.instance.id ne null}"
+		                     	propagation="begin" >
+	                    <f:param name="visualItemId" value="#{tree.selectedUserObject.instance.id}"/>
+	                </s:button>
+                    <ice:commandButton panelConfirmation="deleteConfirmPanel"
+	                               value="#{messages.DeleteButton}"
+	                               style="font-size:12px"
+	                               actionListener="#{operationsBean.deleteModel}"
+	                               rendered="#{tree.selectedUserObject.instance.id ne null}">
+	                    <f:attribute name="modelId" value="#{tree.selectedUserObject.instance.id}"/>
+	                    <f:attribute name="modelName" value="VisualItem"/>
+	                    <f:attribute name="report" value="#{null}"/>
+					</ice:commandButton>
+	                
+	            </ice:panelGroup>
+	    </ice:panelGroup>
+	</ice:panelGroup>
+	</td></tr>
+</table>
+<ice:panelConfirmation id="deleteConfirmPanel" message="#{messages.DeleteConfirmation} "
+                       acceptLabel="#{messages.DeleteButton}" cancelLabel="#{messages.BooleanNo}" 
+                       title="#{messages.DeleteVisualItemOperation.concat(' '.concat(tree.selectedUserObject.instance.menuText))}"/>
+</ui:define>
+
+	
+<table style="width:250px;">
+	<tr>
+		<td>
+	       <s:button id="addButton" styleClass="button" 
+               value="#{messages.AddButton}"
+                view="#{myPath}/visualItemEdit.xhtml" 
+         		propagation="begin" />	
+		</td>
+		<td>
+			      <s:button id="simulatorButton" styleClass="button" 
+	               value="#{messages.SimulatorButton}"
+	                view="#{myPath}/menuSimulator.xhtml" 
+	         		propagation="begin" />	
+		</td>
+	</tr>
+</table>
+
+
+</s:decorate>
+
+

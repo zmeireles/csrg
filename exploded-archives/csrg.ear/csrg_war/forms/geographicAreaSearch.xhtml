@@ -1,0 +1,90 @@
+<s:decorate xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:a4j="http://richfaces.org/a4j"
+      xmlns:ice="http://www.icesoft.com/icefaces/component" 
+      xmlns:s="http://jboss.com/products/seam/taglib"
+      template="#{theme}/searchPanel.xhtml">
+	
+	
+	<ui:param name="report" value="#{geographicAreaReport}" ></ui:param>
+	
+	<ui:define name="reportParam">
+    
+		<s:decorate id="searchDecoration" template="/layout/edit.xhtml">
+			<ui:define name="label">#{messages.SearchLabel}</ui:define>
+			<h:inputText id="search" required="false" value="#{report.searchTxt}">
+		    </h:inputText>
+		</s:decorate>
+	    	
+    	<div class="actionButtons" >
+    		<ice:commandButton action="#{report.query()}" id="refreshData" value="#{messages.SearchButton}" styleClass="button">
+    		</ice:commandButton>
+		</div>
+			
+	</ui:define>
+	
+	
+	<ui:define name="reportList">
+		
+		<ice:panelGroup>
+		<h:outputText value="#{report.getResultsMessage()}" styleClass="numberResults" />
+		<ice:dataTable id="dataTable" value="#{report.resultList}" var="data" rows="15">
+  			<ice:column>
+    			<f:facet name="header">
+      				<ice:outputText value="#{messages.Name}" />
+    			</f:facet>
+    			<s:link id="name" 
+                     value="#{data.name}" 
+                     view="#{myPath}/geographicAreaEdit.xhtml"
+                     propagation="begin" >
+                    <f:param name="geographicAreaId" value="#{data.id}"/>
+                </s:link>
+  			</ice:column>
+  			<ice:column>
+    			<f:facet name="header">
+      				<ice:outputText value="#{messages.Parent}" />
+    			</f:facet>
+    			<s:link id="parent" 
+                     value="#{data.parent}" 
+                     view="#{myPath}/geographicAreaEdit.xhtml"
+                     propagation="begin" >
+                    <f:param name="geographicAreaId" value="#{data.parent.id}"/>
+                </s:link>
+  			</ice:column>
+  			<ice:column>
+    			<f:facet name="header">
+      				<ice:outputText value="#{messages.Type}" />
+    			</f:facet>
+    			<h:outputText value="#{messages.get(data.level.name)}"/>
+  			</ice:column>
+  			<ice:column style="width: 200px">
+  				<ice:panelConfirmation id="deleteConfirmPanel" message="#{messages.DeleteConfirmation} "
+                       acceptLabel="#{messages.DeleteButton}" cancelLabel="#{messages.BooleanNo}" 
+                       title="#{messages.DeleteGeographicAreaOperation.concat(' '.concat(data.name))}"/>
+    			<f:facet name="header">
+      				<ice:outputText value="#{messages.Operations}" />
+    			</f:facet>
+    			<ice:commandButton panelConfirmation="deleteConfirmPanel"
+                               value="#{messages.DeleteButton}"
+                               style="font-size:12px"
+                               actionListener="#{operationsBean.deleteModel}">
+                    <f:attribute name="modelId" value="#{data.id}"/>
+                    <f:attribute name="modelName" value="GeographicArea"/>
+                    <f:attribute name="report" value="#{report}"/>
+				</ice:commandButton>
+  			</ice:column>
+		</ice:dataTable>
+		</ice:panelGroup>
+		
+	</ui:define>
+	
+	<div class="actionButtons">
+        <s:button styleClass="button" 
+		               value="#{messages.AddButton}"
+		                view="#{myPath}/geographicAreaEdit.xhtml" 
+		         propagation="begin" />			  
+	</div>
+	 
+</s:decorate>

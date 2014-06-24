@@ -1,0 +1,25 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ice="http://www.icesoft.com/icefaces/component"        
+      xmlns:s="http://jboss.com/products/seam/taglib">
+<head> 
+    <ice:outputDeclaration doctypeRoot="HTML"
+        doctypePublic="-//W3C//DTD XHTML 1.0 Transitional//EN"
+        doctypeSystem="http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"/>  
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="shortcut icon" href="#{request.contextPath}/favicon.ico"/>
+    <link rel="stylesheet" type="text/css" href="#{request.contextPath}/xmlhttp/css/rime/rime.css"/>
+    <link rel="stylesheet" type="text/css" href="#{request.contextPath}/stylesheet/theme.css"/>
+    <link rel="stylesheet" type="text/css" href="#{request.contextPath}/stylesheet/style.css"/>
+    <link rel="stylesheet" type="text/css" href="#{request.contextPath}/stylesheet/showcase_layout.css"/>
+    <link rel="stylesheet" type="text/css" href="#{request.contextPath}/stylesheet/showcase_overrides.css"/>
+    <link rel="stylesheet" type="text/css" href="#{request.contextPath}/stylesheet/showcase_style.css"/>
+</head>
+  	<body>
+    	 <h:outputText value="#{visualItemMenu.pageFactory()}"/>
+	</body>
+</html>

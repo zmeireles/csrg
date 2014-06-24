@@ -1,0 +1,57 @@
+<s:decorate xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:a4j="http://richfaces.org/a4j"
+      xmlns:ice="http://www.icesoft.com/icefaces/component"
+      xmlns:s="http://jboss.com/products/seam/taglib"
+      template="#{theme}/tabPanel.xhtml">
+	
+	<ui:define name="top">
+		<s:decorate id="nameDecoration" template="/layout/edit.xhtml">
+	        <ui:define name="label">#{messages.NameLabel}</ui:define>
+	        <h:inputText id="name" style="width: 120px;"
+	                     value="#{modelEditHome.instance.name}" readonly="true"/>
+	    </s:decorate>
+	    <s:decorate id="aliasDecoration" template="/layout/edit.xhtml">
+	        <ui:define name="label">#{messages.AliasLabel}</ui:define>
+	        <h:inputText id="alias" required="false" style="width: 220px;"
+	                     value="#{modelEditHome.instance.alias}"/>
+	    </s:decorate>
+	    <s:decorate id="includeAllPropertiesDecoration" template="/layout/edit.xhtml">
+	        <ui:define name="label">#{messages.DCMIncludeAllPropertiesLabel}</ui:define>
+	        <ice:selectBooleanCheckbox id="includeAllProperties" required="false"
+	        			disabled="#{modelEditHome.instance.notifyForAnyPropertyChange eq true}"
+	                    value="#{modelEditHome.instance.includeAllProperties}"/>
+	    </s:decorate>
+	    <s:decorate id="notifyForAnyPropertyChangeDecoration" template="/layout/edit.xhtml">
+	        <ui:define name="label">#{messages.DCMNotifyForAnyPropertyChangeLabel}</ui:define>
+	        <ice:selectBooleanCheckbox id="notifyForAnyPropertyChange" required="false"
+						value="#{modelEditHome.instance.notifyForAnyPropertyChange}"
+						partialSubmit="true" valueChangeListener="#{modelEditHome.valueChangeListener}" />
+	    </s:decorate>
+	    <br/><br/>
+    </ui:define>
+    
+    <ice:panelTab label="#{messages.DCMPropertiesTab}" title="#{messages.DCMPropertiesTab}">
+		<ui:include src="/forms/tabs/dataChangePropertiesTab.xhtml" />
+	</ice:panelTab>
+	
+	<ui:define name="bottom">
+		<div class="actionButtons">
+	       <h:commandButton id="save" styleClass="button" 
+	                     value="#{messages.SaveButton}" 
+	                    action="#{modelEditHome.persist}"
+	                  rendered="#{!modelEditHome.managed}"/>
+	       <h:commandButton id="update" styleClass="button" 
+	                     value="#{messages.UpdateButton}" 
+	                    action="#{modelEditHome.update}"
+	                  rendered="#{modelEditHome.managed}"/>                  
+	       <h:commandButton id="delete" styleClass="button" 
+	               	  value="#{messages.DeleteButton}" 
+	              	     action="#{modelEditHome.persist}"
+	              	   rendered="#{modelEditHome.mayRemove()}"/>
+	   </div>
+   </ui:define>
+</s:decorate>
+	

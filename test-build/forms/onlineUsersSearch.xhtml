@@ -1,0 +1,75 @@
+<s:decorate xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:a4j="http://richfaces.org/a4j"
+      xmlns:ice="http://www.icesoft.com/icefaces/component" 
+      xmlns:s="http://jboss.com/products/seam/taglib"
+      template="#{theme}/emptyPanel.xhtml">
+
+
+<ice:panelGroup>
+	<s:decorate id="dataTablePaginator" template="/layout/icePaginator.xhtml">
+   	<ice:dataTable id="dataTable" value="#{applicationBean.getUserIdentityList()}"
+   			var="data" rows="10">
+   		<ice:column style="width: 32px;">
+   			<f:facet name="header">
+   			</f:facet>
+   			<s:graphicImage value="#{data.user.person.photo}" rendered="#{data.user.person.photo ne null}">
+				<s:transformImageSize height="32" maintainRatio="true"/>
+			</s:graphicImage>
+			<s:graphicImage value="/img/user_no_image.jpg" rendered="#{data.user.person.photo eq null}">
+				<s:transformImageSize height="32" maintainRatio="true"/>
+			</s:graphicImage>
+		</ice:column>
+		<ice:column>
+   			<f:facet name="header">
+     			<ice:outputText value="#{messages.Username}" />
+   			</f:facet>
+   			<ice:outputText value="#{data.user.username}" />
+		</ice:column>
+		<ice:column>
+   			<f:facet name="header">
+     			<ice:outputText value="#{messages.Name}" />
+   			</f:facet>
+   			<ice:outputText value="#{data.user.person.name}" />
+		</ice:column>
+		<ice:column sortable="true" sortBy="#{data.ipAddress}" id="ip">
+			<f:facet name="header"><h:outputText styleClass="headerText" value="#{messages.IPAddress}"/></f:facet>
+			<h:outputText value="#{data.ipAddress}" />
+		</ice:column>
+		<ice:column>
+   			<f:facet name="header">
+     			<ice:outputText value="#{messages.Operations}" />
+   			</f:facet>
+   			<ice:commandButton value="#{messages.ForceLogout}"
+                              style="font-size:12px"
+                              actionListener="#{operationsBean.forceLogout}">
+				<f:attribute name="sessionId" value="#{data.sessionId}"/>
+			</ice:commandButton>&#160;
+			<ice:commandButton value="#{messages.StartChatAction}"
+                             style="font-size:12px"
+                             rendered="#{not sessionChatAction.isInActiveChatWith(data.user)}"
+                             disabled="#{stateBean.user.id==data.user.id}"
+                             actionListener="#{operationsBean.startChat}">
+				<f:attribute name="destinationUser" value="#{data.user}"/>
+			</ice:commandButton>
+			<ice:commandButton value="#{messages.LeaveChatAction}"
+                             style="font-size:12px"
+                             rendered="#{sessionChatAction.isInActiveChatWith(data.user)}"
+                             actionListener="#{operationsBean.leaveChat}">
+				<f:attribute name="roomId" value="#{sessionChatAction.getChatRoomId(data.user)}" />
+			</ice:commandButton>
+			<ice:commandButton value="#{messages.EndChatAction}"
+                             style="font-size:12px"
+                             rendered="#{sessionChatAction.isChatStarter(data.user) and sessionChatAction.isInActiveChatWith(data.user)}"
+                             actionListener="#{operationsBean.endChat}">
+				<f:attribute name="roomId" value="#{sessionChatAction.getChatStarterRoomId(data.user)}"/>
+			</ice:commandButton>
+  		</ice:column>
+   	</ice:dataTable>
+   	<ui:param name="dataTable" value="dataTable"></ui:param>
+	</s:decorate>
+</ice:panelGroup>
+</s:decorate>
+	

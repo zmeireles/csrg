@@ -1,0 +1,292 @@
+<div xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:a4j="http://richfaces.org/a4j"
+      xmlns:ice="http://www.icesoft.com/icefaces/component"
+      xmlns:s="http://jboss.com/products/seam/taglib">
+      
+      
+	<ice:form id="configForm" >
+		
+		<s:decorate id="timezoneDecoration" template="/layout/edit.xhtml" >
+			<ui:define name="label">#{messages.TimezoneLabel}</ui:define>
+			<ice:selectInputText id="AutoCmpTxt"
+	                             rows="#{configEditHome.timezoneListLength}"
+	                             width="300"
+	                             value="#{configEditHome.selectedTimezone}"
+	                             valueChangeListener="#{configEditHome.timezoneInputValueChanged}">
+	            <f:selectItems id="AutoCmpTxtItms"
+	                           value="#{configEditHome.matchedTimezones}"/>
+	        </ice:selectInputText>
+		</s:decorate>
+		
+		<s:decorate id="countryDecoration" template="/layout/edit.xhtml">
+			<ui:define name="label">#{messages.ConfigCountry}</ui:define>
+			<h:selectOneMenu value="#{configEditHome.instance.country}" >
+				<s:selectItems value="#{configEditHome.countryList}" 
+					var="data" label="#{data.name}" noSelectionLabel="#{messages.NoSelectionLabel}"/>
+				<s:convertEntity />
+			</h:selectOneMenu>
+		</s:decorate>
+		
+			<s:decorate id="generateUsernameDecoration" template="/layout/edit.xhtml">
+                <ui:define name="label">#{messages.RegisterGenerateUsernameLabel}</ui:define>
+                <h:selectBooleanCheckbox value="#{configEditHome.instance.generateUsername}" />
+			</s:decorate>
+			
+			<s:decorate id="expirationTimeDecoration" template="/layout/edit.xhtml">
+                <ui:define name="label">#{messages.RegisterExpireTimeLabel}</ui:define>
+                <h:inputText id="expirationTime" required="false" style="width: 60px;" value="#{configEditHome.instance.newRegistrationExpirationTime}"/>
+			</s:decorate>
+			
+			<s:decorate template="#{theme}/separatorLine.xhtml" >
+				<ui:define name="name">#{messages.ConfigSms}</ui:define>
+				<s:decorate id="smsSourceDecoration" template="/layout/edit.xhtml">
+	                <ui:define name="label">#{messages.ConfigSmsSourceLabel}</ui:define>
+	                <h:inputText id="smsSource" required="false" style="width: 100px;" value="#{configEditHome.instance.smsSource}"/>
+				</s:decorate>
+				
+				<s:decorate id="urlSmsDecoration" template="/layout/edit.xhtml">
+	                <ui:define name="label">#{messages.ConfigUrlSmsLabel}</ui:define>
+	                <h:inputText id="urlSms" required="false" style="width: 320px;" value="#{configEditHome.instance.urlSms}"/>
+				</s:decorate>
+				
+				<s:decorate id="usernameSmsDecoration" template="/layout/edit.xhtml">
+	                <ui:define name="label">#{messages.ConfigUsernameSmsLabel}</ui:define>
+	                <h:inputText id="usernameSms" required="false" style="width: 100px;" value="#{configEditHome.instance.usernameSms}"/>
+				</s:decorate>
+				
+				<s:decorate id="passwordSmsDecoration" template="/layout/edit.xhtml">
+	                <ui:define name="label">#{messages.ConfigPasswordSmsLabel}</ui:define>
+	                <h:inputSecret id="passwordSms" redisplay="true" required="false" style="width: 100px;" value="#{configEditHome.instance.passwordSms}"/>
+				</s:decorate>
+			
+				<s:decorate id="allowCSmsDecoration" template="/layout/edit.xhtml">
+	                <ui:define name="label">#{messages.ConfigAllowCSmsLabel}</ui:define>
+	                <h:selectBooleanCheckbox value="#{configEditHome.instance.allowCSms}" >
+					</h:selectBooleanCheckbox>
+				</s:decorate>
+				
+				<s:decorate id="sendSmsOnRegistrationDecoration" template="/layout/edit.xhtml">
+	                <ui:define name="label">#{messages.ConfigSendSmsOnRegistrationLabel}</ui:define>
+	                <h:selectBooleanCheckbox value="#{configEditHome.instance.sendSmsOnRegistration}" >
+					</h:selectBooleanCheckbox>
+				</s:decorate>
+				
+			</s:decorate>
+			
+			<s:decorate template="#{theme}/separatorLine.xhtml" >
+				<ui:define name="name">#{messages.ConfigSMTP}</ui:define>
+				
+				<s:decorate id="smtpHostDecoration" template="/layout/edit.xhtml">
+	                <ui:define name="label">#{messages.ConfigSmtpHostLabel}</ui:define>
+	                <h:inputText id="smtpHost" required="false" style="width: 320px;" value="#{configEditHome.instance.smtpHost}"/>
+				</s:decorate>
+				
+				<s:decorate id="smtpPortDecoration" template="/layout/edit.xhtml">
+	                <ui:define name="label">#{messages.ConfigSmtpPortLabel}</ui:define>
+	                <h:inputText id="smtpPort" required="false" style="width: 75px;" value="#{configEditHome.instance.smtpPort}"/>
+				</s:decorate>
+				
+				<s:decorate id="smtpAuthDecoration" template="/layout/edit.xhtml">
+	                <ui:define name="label">#{messages.ConfigSmtpAuthLabel}</ui:define>
+	                <h:selectBooleanCheckbox id="smtpAuth" value="#{configEditHome.smtpAuth}">
+	                	<a4j:support event="onclick" ajaxSingle="true" limitToList="true" requestDelay="600"  
+	                			reRender="smtpAuthUserDecoration,smtpAuthPwdDecoration" />
+	                </h:selectBooleanCheckbox>
+				</s:decorate>
+				
+				<s:decorate id="smtpAuthUserDecoration" template="/layout/edit.xhtml">
+	                <ui:define name="label">#{messages.ConfigSmtpAuthUserLabel}</ui:define>
+	                <h:inputText id="smtpAuthUser" required="#{configEditHome.smtpAuth}" 
+	                		style="width: 320px;" value="#{configEditHome.instance.smtpAuthUser}"/>
+				</s:decorate>
+				
+				<s:decorate id="smtpAuthPwdDecoration" template="/layout/edit.xhtml">
+	                <ui:define name="label">#{messages.ConfigSmtpAuthPwdLabel}</ui:define>
+	                <h:inputSecret id="smtpAuthPwd" required="#{configEditHome.smtpAuth}" 
+	                		style="width: 320px;" redisplay="true" value="#{configEditHome.instance.smtpAuthPwd}"/>
+				</s:decorate>
+				
+			</s:decorate>
+			
+			<s:decorate template="#{theme}/separatorLine.xhtml" >
+				<ui:define name="name">#{messages.ConfigEmail}</ui:define>
+				
+				<s:decorate id="contactEmailDecoration" template="/layout/edit.xhtml">
+	                <ui:define name="label">#{messages.ConfigContactEmailLabel}</ui:define>
+	                <h:inputText id="emailContacto" required="true" style="width: 320px;" value="#{configEditHome.contactEmail}"/>
+				</s:decorate>
+				
+				<s:decorate id="onRegistrationEmailDecoration" template="/layout/edit.xhtml">
+	                <ui:define name="label">#{messages.ConfigOnRegistrationSenderLabel}</ui:define>
+	                <h:inputText id="onRegistrationSenderName" required="true" style="width: 120px;" value="#{configEditHome.instance.onRegistrationSenderName}"/>
+	                <h:inputText id="onRegistrationSenderEmail" required="true" style="width: 320px;" value="#{configEditHome.onRegistrationSenderEmail}"/>
+				</s:decorate>
+				
+				<s:decorate id="sendEmailOnRegistration" template="/layout/edit.xhtml">
+	                <ui:define name="label">#{messages.ConfigSendEmailOnRegistrationLabel}</ui:define>
+	                <h:selectBooleanCheckbox value="#{configEditHome.instance.sendEmailOnRegistration}" >
+					</h:selectBooleanCheckbox>
+				</s:decorate>
+				
+				<s:decorate id="notificationEmailDecoration" template="/layout/edit.xhtml">
+	                <ui:define name="label">#{messages.ConfigNotificationSourceLabel}</ui:define>
+	                <h:inputText id="notificationSourceName" required="true" style="width: 120px;" value="#{configEditHome.instance.notificationSourceName}"/>
+	                <h:inputText id="notificationSourceEmail" required="true" style="width: 320px;" value="#{configEditHome.instance.notificationSourceEmail}"/>
+				</s:decorate>
+				
+				<s:decorate id="dataChangeNotificationEmailDecoration" template="/layout/edit.xhtml">
+	                <ui:define name="label">#{messages.ConfigDataChangeNotificationEmailLabel}</ui:define>
+	                <h:inputText id="dataChangeNotificationEmail" required="true" style="width: 320px;" 
+	                	value="#{configEditHome.instance.dataChangeNotificationEmail}"/>
+				</s:decorate>
+				
+			</s:decorate>
+			
+			<s:decorate template="#{theme}/separatorLine.xhtml" >
+				<ui:define name="name">#{messages.ConfigFax}</ui:define>
+				
+				<s:decorate id="faxAccountDecoration" template="/layout/edit.xhtml">
+	                <ui:define name="label">#{messages.ConfigFaxAccountLabel}</ui:define>
+	                <h:inputText id="faxAccount" required="false" 
+	                		style="width: 320px;" value="#{configEditHome.instance.faxAccount}"/>
+				</s:decorate>
+				
+				<s:decorate id="faxPwdDecoration" template="/layout/edit.xhtml">
+	                <ui:define name="label">#{messages.ConfigFaxPwdLabel}</ui:define>
+	                <h:inputSecret id="faxPwd" required="false" 
+	                		style="width: 320px;" redisplay="true" value="#{configEditHome.instance.faxPwd}"/>
+				</s:decorate>
+				
+				<s:decorate id="faxEmailDecoration" template="/layout/edit.xhtml">
+	                <ui:define name="label">#{messages.ConfigFaxEmailLabel}</ui:define>
+	                <h:inputText id="faxEmail" required="false" 
+	                		style="width: 320px;" value="#{configEditHome.instance.faxEmail}"/>
+				</s:decorate>
+				
+			</s:decorate>
+			
+			<s:decorate template="#{theme}/separatorLine.xhtml" >
+				<ui:define name="name">#{messages.ConfigTopMenu}</ui:define>
+				
+				<s:decorate id="menuBarWidthDecoration" template="/layout/edit.xhtml">
+	                <ui:define name="label">#{messages.ConfigTopMenuBarWidthLabel}</ui:define>
+	                <h:inputText id="menuBarWidth" required="false" 
+	                		style="width: 75px;" value="#{configEditHome.instance.menuBarItemWidth}"/>
+				</s:decorate>
+				
+				<s:decorate id="menuItemWidthDecoration" template="/layout/edit.xhtml">
+	                <ui:define name="label">#{messages.ConfigTopMenuItemWidthLabel}</ui:define>
+	                <h:inputText id="menuItemWidth" required="false" 
+	                		style="width: 75px;" redisplay="true" value="#{configEditHome.instance.menuItemWidth}"/>
+				</s:decorate>
+			</s:decorate>
+			
+			<s:decorate template="#{theme}/separatorLine.xhtml" >
+				<ui:define name="name">#{messages.ConfigViMenu}</ui:define>
+				
+				<s:decorate id="viMenuWidthDecoration" template="/layout/edit.xhtml">
+	                <ui:define name="label">#{messages.ConfigViMenuWidthLabel}</ui:define>
+	                <h:inputText id="viMenuWidth" required="false" 
+	                		style="width: 75px;" value="#{configEditHome.instance.viMenuMaxWidth}"/>
+				</s:decorate>
+			</s:decorate>
+			
+		    <s:decorate template="#{theme}/separatorLine.xhtml" >
+				<ui:define name="name">#{messages.ConfigNewsTicker}</ui:define>
+				
+				<s:decorate id="animationTypeDecoration" template="/layout/edit.xhtml">
+	                <ui:define name="label">#{messages.ConfigNewsTickerAnimationTypeLabel}</ui:define>
+	                <h:selectOneMenu value="#{configEditHome.instance.animationType}" required="false" id="animationType">
+		                <f:selectItem itemLabel="Slide" itemValue="slide"/>
+		                <f:selectItem itemLabel="Fade" itemValue="fade"/>
+	                </h:selectOneMenu>
+				</s:decorate>
+				
+				<s:decorate id="speedDecoration" template="/layout/edit.xhtml">
+	                <ui:define name="label">#{messages.ConfigNewsTickerSpeedLabel}</ui:define>
+	                <h:inputText id="speed" required="false" 
+	                		style="width: 75px;" value="#{configEditHome.speed}"/>
+				</s:decorate>
+				
+				<s:decorate id="timeOutDecoration" template="/layout/edit.xhtml">
+	                <ui:define name="label">#{messages.ConfigNewsTickerTimeOutLabel}</ui:define>
+	                <h:inputText id="timeOut" required="false" 
+	                		style="width: 75px;" redisplay="true" value="#{configEditHome.timeOut}"/>
+				</s:decorate>
+				
+			</s:decorate>
+			
+			<s:decorate template="#{theme}/separatorLine.xhtml" >
+				<ui:define name="name">#{messages.ConfigOndemandFontSize}</ui:define>
+				
+				<s:decorate id="ondemandFontSizeMaxDecoration" template="/layout/edit.xhtml">
+	                <ui:define name="label">#{messages.ConfigOndemandFontSizeMaxLabel}</ui:define>
+	                <h:inputText id="ondemandFontSizeMax" required="false" 
+	                		style="width: 75px;" value="#{configEditHome.instance.onDemandFontSizeMax}"/>
+				</s:decorate>
+				
+				<s:decorate id="ondemandFontSizeMinDecoration" template="/layout/edit.xhtml">
+	                <ui:define name="label">#{messages.ConfigOndemandFontSizeMinLabel}</ui:define>
+	                <h:inputText id="ondemandFontSizeMin" required="false" 
+	                		style="width: 75px;" value="#{configEditHome.instance.onDemandFontSizeMin}"/>
+				</s:decorate>
+				
+				<s:decorate id="ondemandFontSizeDefaultDecoration" template="/layout/edit.xhtml">
+	                <ui:define name="label">#{messages.ConfigOndemandFontSizeDefaultLabel}</ui:define>
+	                <h:inputText id="ondemandFontSizeDefault" required="false" 
+	                		style="width: 75px;" value="#{configEditHome.instance.onDemandFontSizeDefault}"/>
+				</s:decorate>
+				
+			</s:decorate>
+						<s:decorate template="#{theme}/separatorLine.xhtml" >
+				<ui:define name="name">#{messages.ConfigMms}</ui:define>
+				
+				<s:decorate id="mmsUploadDirectory" template="/layout/edit.xhtml">
+	                <ui:define name="label">#{messages.ConfigMmsUploadDirectoryLabel}</ui:define>
+	                <h:inputText id="uploadDirectory" required="false" 
+	                		style="width: 200px;" value="#{configEditHome.instance.uploadDirectory}"/>
+				</s:decorate>
+				
+				<s:decorate id="mmsMaxFileSize" template="/layout/edit.xhtml">
+	                <ui:define name="label">#{messages.ConfigMmsMaxFileSizeLabel}</ui:define>
+	                <h:inputText id="maxFileSize" required="false" 
+	                		style="width: 75px;" value="#{configEditHome.instance.maxFileSize}"/>
+				</s:decorate>
+				
+				<s:decorate id="mmsAllowedFileExtensions" template="/layout/edit.xhtml">
+	                <ui:define name="label">#{messages.ConfigMmsAllowedFileExtensionsLabel}</ui:define>
+	                <h:inputText id="allowedFileExtensions" required="false" 
+	                		style="width: 200px;" value="#{configEditHome.instance.allowedFileExtensions}"/>
+				</s:decorate>
+				
+				<s:decorate id="mmsMaxDiskSpace" template="/layout/edit.xhtml">
+	                <ui:define name="label">#{messages.ConfigMmsMaxDiskSpaceLabel}</ui:define>
+	                <h:inputText id="maxDiskSpace" required="false" 
+	                		style="width: 75px;" value="#{configEditHome.instance.maxDiskSpace}"/>
+				</s:decorate>
+				
+			</s:decorate>
+			
+			
+		<div class="actionButtons">
+            <h:commandButton id="save" styleClass="button" 
+                          value="#{messages.SaveButton}" 
+                         action="#{configEditHome.persist}"
+                       rendered="#{!configEditHome.managed}"/>
+            <h:commandButton id="update" styleClass="button" 
+                          value="#{messages.UpdateButton}" 
+                         action="#{configEditHome.update}"
+                       rendered="#{configEditHome.managed}"/>                  
+            <h:commandButton id="delete" styleClass="button" 
+                    	  value="#{messages.DeleteButton}" 
+                   	     action="#{configEditHome.remove}"
+                   	   rendered="#{configEditHome.mayRemove()}"/>
+        </div>
+        
+	</ice:form>
+	
+</div>
+	

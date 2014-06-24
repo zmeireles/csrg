@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    
+<dwr>
+	<allow>
+		<create creator="jsf" javascript="dwrAction" scope="request">
+	        <param name="class" value="com.obc.csrg.local.DwrLocal"/>
+	        <param name="managedBeanName" value="dwrAction"/>
+	    </create>
+	</allow>
+</dwr>

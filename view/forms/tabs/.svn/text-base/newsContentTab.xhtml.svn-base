@@ -1,0 +1,26 @@
+<div xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ice="http://www.icesoft.com/icefaces/component"
+      xmlns:s="http://jboss.com/products/seam/taglib">
+
+
+	<!-- image -->
+	<!-- 
+	<ui:include src="#{theme}/imagePanel.xhtml" >
+		<ui:param name="image" value="#{modelEditHome.secFile.data}" />
+		<ui:param name="newImage" value="#{modelEditHome.secFile.data}" />
+		<ui:param name="newImageContentType" value="#{modelEditHome.secFile.contentType}" />
+		<ui:param name="allowEdit" value="true" />
+		<ui:param name="imageDescription" value="#{messages.NewsImage}" />
+	</ui:include>
+	 -->
+    <s:decorate id="synopsisDecoration" template="/layout/edit.xhtml">
+        <ui:define name="label">#{messages.SynopsisLabel}</ui:define>
+        <h:inputTextarea id="synopsis" required="false" cols="40" rows="3"
+                     value="#{modelEditHome.instance.synopsis}"/>
+    </s:decorate>
+    
+</div>
+	

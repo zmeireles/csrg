@@ -1,0 +1,44 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+		      xmlns:ui="http://java.sun.com/jsf/facelets"
+		      xmlns:h="http://java.sun.com/jsf/html"
+		      xmlns:f="http://java.sun.com/jsf/core"
+		      xmlns:a4j="http://richfaces.org/a4j"
+		      xmlns:ice="http://www.icesoft.com/icefaces/component"
+		      xmlns:s="http://jboss.com/products/seam/taglib">
+	
+	
+	<h:form id="searchPanelParam" >
+		<ice:panelCollapsible id="searchPanel" expanded="true" >
+			<f:facet name="header">
+                <ice:panelGroup>
+                    <ice:outputText id="imageHeader"
+                            value="#{messages.Search}"/>
+                </ice:panelGroup>
+            </f:facet>
+			<ui:insert name="reportParam"/>
+        </ice:panelCollapsible>
+	
+	</h:form>
+	
+	<br/>
+	
+	<ice:form id="searchPanelList" >
+		
+		<div id="dataTableList">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" >
+			<tr><td align="center" >
+		    	<ui:insert name="reportList"/>
+			</td></tr>
+			<tr><td align="center" >
+	        	<ui:include src="/layout/dataTableScroller.xhtml" >
+	        		<ui:param name="reRender" value="searchPanelList" />
+	        	</ui:include>
+            </td></tr>
+   			</table>
+	    </div>
+        
+	</ice:form>
+	
+	<ui:insert />
+	
+</ui:composition>

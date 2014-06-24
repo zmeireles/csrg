@@ -1,0 +1,767 @@
+K 25
+svn:wc:ra_dav:version-url
+V 24
+/svn/csrg/!svn/ver/1/lib
+END
+ejb-api.jar
+K 25
+svn:wc:ra_dav:version-url
+V 36
+/svn/csrg/!svn/ver/1/lib/ejb-api.jar
+END
+jboss-seam-pdf.jar
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/csrg/!svn/ver/1/lib/jboss-seam-pdf.jar
+END
+jboss-el.jar
+K 25
+svn:wc:ra_dav:version-url
+V 37
+/svn/csrg/!svn/ver/1/lib/jboss-el.jar
+END
+jta.jar
+K 25
+svn:wc:ra_dav:version-url
+V 32
+/svn/csrg/!svn/ver/1/lib/jta.jar
+END
+log4j.jar
+K 25
+svn:wc:ra_dav:version-url
+V 34
+/svn/csrg/!svn/ver/1/lib/log4j.jar
+END
+cglib.jar
+K 25
+svn:wc:ra_dav:version-url
+V 34
+/svn/csrg/!svn/ver/1/lib/cglib.jar
+END
+gwt-servlet.jar
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/svn/csrg/!svn/ver/1/lib/gwt-servlet.jar
+END
+jboss-seam-debug.jar
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/csrg/!svn/ver/1/lib/jboss-seam-debug.jar
+END
+commons-collections.jar
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/csrg/!svn/ver/1/lib/commons-collections.jar
+END
+drools-core.jar
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/svn/csrg/!svn/ver/1/lib/drools-core.jar
+END
+jgroups.jar
+K 25
+svn:wc:ra_dav:version-url
+V 36
+/svn/csrg/!svn/ver/1/lib/jgroups.jar
+END
+jboss-deployers-client-spi.jar
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/csrg/!svn/ver/1/lib/jboss-deployers-client-spi.jar
+END
+jxl.jar
+K 25
+svn:wc:ra_dav:version-url
+V 32
+/svn/csrg/!svn/ver/1/lib/jxl.jar
+END
+jaxrs-api.jar
+K 25
+svn:wc:ra_dav:version-url
+V 38
+/svn/csrg/!svn/ver/1/lib/jaxrs-api.jar
+END
+openxri-client.jar
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/csrg/!svn/ver/1/lib/openxri-client.jar
+END
+openid4java.jar
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/svn/csrg/!svn/ver/1/lib/openid4java.jar
+END
+hibernate-entitymanager.jar
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/csrg/!svn/ver/1/lib/hibernate-entitymanager.jar
+END
+jboss-seam-ioc.jar
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/csrg/!svn/ver/1/lib/jboss-seam-ioc.jar
+END
+hsqldb.jar
+K 25
+svn:wc:ra_dav:version-url
+V 35
+/svn/csrg/!svn/ver/1/lib/hsqldb.jar
+END
+metawidget-backend.jar
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/csrg/!svn/ver/1/lib/metawidget-backend.jar
+END
+commons-io.jar
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/svn/csrg/!svn/ver/1/lib/commons-io.jar
+END
+antlr.jar
+K 25
+svn:wc:ra_dav:version-url
+V 34
+/svn/csrg/!svn/ver/1/lib/antlr.jar
+END
+resteasy-jaxrs.jar
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/csrg/!svn/ver/1/lib/resteasy-jaxrs.jar
+END
+hibernate-core.jar
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/csrg/!svn/ver/1/lib/hibernate-core.jar
+END
+slf4j-api.jar
+K 25
+svn:wc:ra_dav:version-url
+V 38
+/svn/csrg/!svn/ver/1/lib/slf4j-api.jar
+END
+xml-apis.jar
+K 25
+svn:wc:ra_dav:version-url
+V 37
+/svn/csrg/!svn/ver/1/lib/xml-apis.jar
+END
+jboss-seam-jul.jar
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/csrg/!svn/ver/1/lib/jboss-seam-jul.jar
+END
+drools-templates.jar
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/csrg/!svn/ver/1/lib/drools-templates.jar
+END
+antlr-runtime.jar
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/csrg/!svn/ver/1/lib/antlr-runtime.jar
+END
+testng.jar
+K 25
+svn:wc:ra_dav:version-url
+V 35
+/svn/csrg/!svn/ver/1/lib/testng.jar
+END
+drools-api.jar
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/svn/csrg/!svn/ver/1/lib/drools-api.jar
+END
+jfreechart.jar
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/svn/csrg/!svn/ver/1/lib/jfreechart.jar
+END
+janino.jar
+K 25
+svn:wc:ra_dav:version-url
+V 35
+/svn/csrg/!svn/ver/1/lib/janino.jar
+END
+jsf-impl.jar
+K 25
+svn:wc:ra_dav:version-url
+V 37
+/svn/csrg/!svn/ver/1/lib/jsf-impl.jar
+END
+xstream.jar
+K 25
+svn:wc:ra_dav:version-url
+V 36
+/svn/csrg/!svn/ver/1/lib/xstream.jar
+END
+FastInfoset.jar
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/svn/csrg/!svn/ver/1/lib/FastInfoset.jar
+END
+stax-api.jar
+K 25
+svn:wc:ra_dav:version-url
+V 37
+/svn/csrg/!svn/ver/1/lib/stax-api.jar
+END
+ojdbc14.jar
+K 25
+svn:wc:ra_dav:version-url
+V 36
+/svn/csrg/!svn/ver/1/lib/ojdbc14.jar
+END
+commons-codec.jar
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/csrg/!svn/ver/1/lib/commons-codec.jar
+END
+hibernate-annotations.jar
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/csrg/!svn/ver/1/lib/hibernate-annotations.jar
+END
+jboss-common-core.jar
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/csrg/!svn/ver/1/lib/jboss-common-core.jar
+END
+commons-fileupload.jar
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/csrg/!svn/ver/1/lib/commons-fileupload.jar
+END
+meldware-mailjmx.jar
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/csrg/!svn/ver/1/lib/meldware-mailjmx.jar
+END
+jboss-system.jar
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/csrg/!svn/ver/1/lib/jboss-system.jar
+END
+hibernate-commons-annotations.jar
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/csrg/!svn/ver/1/lib/hibernate-commons-annotations.jar
+END
+javassist.jar
+K 25
+svn:wc:ra_dav:version-url
+V 38
+/svn/csrg/!svn/ver/1/lib/javassist.jar
+END
+joda-time.jar
+K 25
+svn:wc:ra_dav:version-url
+V 38
+/svn/csrg/!svn/ver/1/lib/joda-time.jar
+END
+jbpm-jpdl.jar
+K 25
+svn:wc:ra_dav:version-url
+V 38
+/svn/csrg/!svn/ver/1/lib/jbpm-jpdl.jar
+END
+saaj-api.jar
+K 25
+svn:wc:ra_dav:version-url
+V 37
+/svn/csrg/!svn/ver/1/lib/saaj-api.jar
+END
+resteasy-atom-provider.jar
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/csrg/!svn/ver/1/lib/resteasy-atom-provider.jar
+END
+jboss-seam-remoting.jar
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/csrg/!svn/ver/1/lib/jboss-seam-remoting.jar
+END
+icefaces-facelets.jar
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/csrg/!svn/ver/1/lib/icefaces-facelets.jar
+END
+jsf-api.jar
+K 25
+svn:wc:ra_dav:version-url
+V 36
+/svn/csrg/!svn/ver/1/lib/jsf-api.jar
+END
+groovy-all.jar
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/svn/csrg/!svn/ver/1/lib/groovy-all.jar
+END
+slf4j-log4j12.jar
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/csrg/!svn/ver/1/lib/slf4j-log4j12.jar
+END
+jsp-api.jar
+K 25
+svn:wc:ra_dav:version-url
+V 36
+/svn/csrg/!svn/ver/1/lib/jsp-api.jar
+END
+sjsxp.jar
+K 25
+svn:wc:ra_dav:version-url
+V 34
+/svn/csrg/!svn/ver/1/lib/sjsxp.jar
+END
+jboss-seam-rss.jar
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/csrg/!svn/ver/1/lib/jboss-seam-rss.jar
+END
+urlrewritefilter.jar
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/csrg/!svn/ver/1/lib/urlrewritefilter.jar
+END
+yarfraw.jar
+K 25
+svn:wc:ra_dav:version-url
+V 36
+/svn/csrg/!svn/ver/1/lib/yarfraw.jar
+END
+dom4j.jar
+K 25
+svn:wc:ra_dav:version-url
+V 34
+/svn/csrg/!svn/ver/1/lib/dom4j.jar
+END
+icefaces-comps.jar
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/csrg/!svn/ver/1/lib/icefaces-comps.jar
+END
+htmlparser.jar
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/svn/csrg/!svn/ver/1/lib/htmlparser.jar
+END
+wicket-extensions.jar
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/csrg/!svn/ver/1/lib/wicket-extensions.jar
+END
+itext-rtf.jar
+K 25
+svn:wc:ra_dav:version-url
+V 38
+/svn/csrg/!svn/ver/1/lib/itext-rtf.jar
+END
+core.jar
+K 25
+svn:wc:ra_dav:version-url
+V 33
+/svn/csrg/!svn/ver/1/lib/core.jar
+END
+metawidget.jar
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/svn/csrg/!svn/ver/1/lib/metawidget.jar
+END
+jbosscache-core.jar
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/csrg/!svn/ver/1/lib/jbosscache-core.jar
+END
+commons-lang.jar
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/csrg/!svn/ver/1/lib/commons-lang.jar
+END
+servlet-api.jar
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/svn/csrg/!svn/ver/1/lib/servlet-api.jar
+END
+persistence-api.jar
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/csrg/!svn/ver/1/lib/persistence-api.jar
+END
+wicket-ioc.jar
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/svn/csrg/!svn/ver/1/lib/wicket-ioc.jar
+END
+jcommon.jar
+K 25
+svn:wc:ra_dav:version-url
+V 36
+/svn/csrg/!svn/ver/1/lib/jcommon.jar
+END
+jboss-deployers-core-spi.jar
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/csrg/!svn/ver/1/lib/jboss-deployers-core-spi.jar
+END
+ejb3-persistence.jar
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/csrg/!svn/ver/1/lib/ejb3-persistence.jar
+END
+metawidget-frontend.jar
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/csrg/!svn/ver/1/lib/metawidget-frontend.jar
+END
+resteasy-jaxb-provider.jar
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/csrg/!svn/ver/1/lib/resteasy-jaxb-provider.jar
+END
+drools-compiler.jar
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/csrg/!svn/ver/1/lib/drools-compiler.jar
+END
+jboss-seam-ui.jar
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/csrg/!svn/ver/1/lib/jboss-seam-ui.jar
+END
+emma.jar
+K 25
+svn:wc:ra_dav:version-url
+V 33
+/svn/csrg/!svn/ver/1/lib/emma.jar
+END
+commons-digester.jar
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/csrg/!svn/ver/1/lib/commons-digester.jar
+END
+wicket-datetime.jar
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/csrg/!svn/ver/1/lib/wicket-datetime.jar
+END
+mail.jar
+K 25
+svn:wc:ra_dav:version-url
+V 33
+/svn/csrg/!svn/ver/1/lib/mail.jar
+END
+mvel2.jar
+K 25
+svn:wc:ra_dav:version-url
+V 34
+/svn/csrg/!svn/ver/1/lib/mvel2.jar
+END
+wicket.jar
+K 25
+svn:wc:ra_dav:version-url
+V 35
+/svn/csrg/!svn/ver/1/lib/wicket.jar
+END
+commons-httpclient.jar
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/csrg/!svn/ver/1/lib/commons-httpclient.jar
+END
+jms.jar
+K 25
+svn:wc:ra_dav:version-url
+V 32
+/svn/csrg/!svn/ver/1/lib/jms.jar
+END
+itext.jar
+K 25
+svn:wc:ra_dav:version-url
+V 34
+/svn/csrg/!svn/ver/1/lib/itext.jar
+END
+commons-logging.jar
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/csrg/!svn/ver/1/lib/commons-logging.jar
+END
+jettison.jar
+K 25
+svn:wc:ra_dav:version-url
+V 37
+/svn/csrg/!svn/ver/1/lib/jettison.jar
+END
+activation.jar
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/svn/csrg/!svn/ver/1/lib/activation.jar
+END
+jboss-seam.jar
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/svn/csrg/!svn/ver/1/lib/jboss-seam.jar
+END
+jaxws-api.jar
+K 25
+svn:wc:ra_dav:version-url
+V 38
+/svn/csrg/!svn/ver/1/lib/jaxws-api.jar
+END
+hibernate-search.jar
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/csrg/!svn/ver/1/lib/hibernate-search.jar
+END
+commons-logging-api.jar
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/csrg/!svn/ver/1/lib/commons-logging-api.jar
+END
+el-api.jar
+K 25
+svn:wc:ra_dav:version-url
+V 35
+/svn/csrg/!svn/ver/1/lib/el-api.jar
+END
+openxri-syntax.jar
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/csrg/!svn/ver/1/lib/openxri-syntax.jar
+END
+jboss-jmx.jar
+K 25
+svn:wc:ra_dav:version-url
+V 38
+/svn/csrg/!svn/ver/1/lib/jboss-jmx.jar
+END
+jboss-embedded-api.jar
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/csrg/!svn/ver/1/lib/jboss-embedded-api.jar
+END
+concurrent.jar
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/svn/csrg/!svn/ver/1/lib/concurrent.jar
+END
+jboss-seam-mail.jar
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/csrg/!svn/ver/1/lib/jboss-seam-mail.jar
+END
+hibernate-validator.jar
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/csrg/!svn/ver/1/lib/hibernate-validator.jar
+END
+dbunit.jar
+K 25
+svn:wc:ra_dav:version-url
+V 35
+/svn/csrg/!svn/ver/1/lib/dbunit.jar
+END
+drools-decisiontables.jar
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/csrg/!svn/ver/1/lib/drools-decisiontables.jar
+END
+jsr250-api.jar
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/svn/csrg/!svn/ver/1/lib/jsr250-api.jar
+END
+guice.jar
+K 25
+svn:wc:ra_dav:version-url
+V 34
+/svn/csrg/!svn/ver/1/lib/guice.jar
+END
+jboss-logging-spi.jar
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/csrg/!svn/ver/1/lib/jboss-logging-spi.jar
+END
+portlet-api.jar
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/svn/csrg/!svn/ver/1/lib/portlet-api.jar
+END
+lucene-core.jar
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/svn/csrg/!svn/ver/1/lib/lucene-core.jar
+END
+meldware-mailapi.jar
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/csrg/!svn/ver/1/lib/meldware-mailapi.jar
+END
+jboss-vfs.jar
+K 25
+svn:wc:ra_dav:version-url
+V 38
+/svn/csrg/!svn/ver/1/lib/jboss-vfs.jar
+END
+bsh.jar
+K 25
+svn:wc:ra_dav:version-url
+V 32
+/svn/csrg/!svn/ver/1/lib/bsh.jar
+END
+ehcache.jar
+K 25
+svn:wc:ra_dav:version-url
+V 36
+/svn/csrg/!svn/ver/1/lib/ehcache.jar
+END
+jboss-cache.jar
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/svn/csrg/!svn/ver/1/lib/jboss-cache.jar
+END
+cglib-nodep.jar
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/svn/csrg/!svn/ver/1/lib/cglib-nodep.jar
+END
+quartz.jar
+K 25
+svn:wc:ra_dav:version-url
+V 35
+/svn/csrg/!svn/ver/1/lib/quartz.jar
+END
+junit.jar
+K 25
+svn:wc:ra_dav:version-url
+V 34
+/svn/csrg/!svn/ver/1/lib/junit.jar
+END
+jaxb-api.jar
+K 25
+svn:wc:ra_dav:version-url
+V 37
+/svn/csrg/!svn/ver/1/lib/jaxb-api.jar
+END
+dwr.jar
+K 25
+svn:wc:ra_dav:version-url
+V 34
+/svn/csrg/!svn/ver/228/lib/dwr.jar
+END
+xpp3_min.jar
+K 25
+svn:wc:ra_dav:version-url
+V 37
+/svn/csrg/!svn/ver/1/lib/xpp3_min.jar
+END
+jsr181-api.jar
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/svn/csrg/!svn/ver/1/lib/jsr181-api.jar
+END
+commons-beanutils.jar
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/csrg/!svn/ver/1/lib/commons-beanutils.jar
+END
+ant-antlr.jar
+K 25
+svn:wc:ra_dav:version-url
+V 38
+/svn/csrg/!svn/ver/1/lib/ant-antlr.jar
+END
+backport-util-concurrent.jar
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/csrg/!svn/ver/1/lib/backport-util-concurrent.jar
+END
+jboss-seam-excel.jar
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/csrg/!svn/ver/1/lib/jboss-seam-excel.jar
+END
+icefaces.jar
+K 25
+svn:wc:ra_dav:version-url
+V 37
+/svn/csrg/!svn/ver/1/lib/icefaces.jar
+END
+spring.jar
+K 25
+svn:wc:ra_dav:version-url
+V 35
+/svn/csrg/!svn/ver/1/lib/spring.jar
+END

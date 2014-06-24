@@ -1,0 +1,15 @@
+<div id="masterPanel"
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:s="http://jboss.com/products/seam/taglib"
+    xmlns:ice="http://www.icesoft.com/icefaces/component">
+	
+	
+	<h:outputText value="#{incTitle}#{(incObjectName!=null and incObjectName!='')? '&#160;-&#160;'.concat(incObjectName) : ''}" styleClass="bodyInfoTitle" />
+	<div class="bodyInfoBody">
+		<ui:include src="/forms/#{incBodySrc}" />
+	</div>
+	
+</div>

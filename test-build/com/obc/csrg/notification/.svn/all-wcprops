@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/csrg/!svn/ver/41/src/shared/com/obc/csrg/notification
+END
+FaxNotification.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/csrg/!svn/ver/1/src/shared/com/obc/csrg/notification/FaxNotification.java
+END
+Notification.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/csrg/!svn/ver/1/src/shared/com/obc/csrg/notification/Notification.java
+END
+EmailNotification.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/csrg/!svn/ver/41/src/shared/com/obc/csrg/notification/EmailNotification.java
+END

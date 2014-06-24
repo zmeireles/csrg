@@ -1,0 +1,72 @@
+<div xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ice="http://www.icesoft.com/icefaces/component"
+      xmlns:s="http://jboss.com/products/seam/taglib">
+
+
+	<s:decorate id="integrateWithNSDecoration" template="/layout/edit.xhtml">
+        <ui:define name="label">#{messages.IntegrateWithNSLabel}</ui:define>
+        <ice:selectBooleanCheckbox value="#{modelEditHome.integrateWithNS}" 
+        			valueChangeListener="#{modelEditHome.integrateWithNSValueChangeListener}"
+        			partialSubmit="true">
+		</ice:selectBooleanCheckbox>
+	</s:decorate>
+	
+	<ice:panelGroup visible="#{modelEditHome.integrateWithNS}" styleClass="exampleBox firstChildTitle backBeanChangeContainer">
+
+            <!-- backing bean title box -->
+            <ice:panelGroup styleClass="backBeanChangeTitle">
+                <ice:outputText value="#{messages.Notification}"/>
+            </ice:panelGroup>
+		<ice:panelGroup  styleClass="backBeanChangeBody"
+						effect="#{modelEditHome.baseBean.valueChangeEffect}">
+			<ice:panelGroup>
+			<s:decorate id="publishAfterNotificationDecoration" template="/layout/edit.xhtml">
+		        <ui:define name="label">#{messages.PublishAfterNotificationLabel}</ui:define>
+		        <h:selectBooleanCheckbox value="#{modelEditHome.instance.publishAfterNotification}" >
+				</h:selectBooleanCheckbox>
+			</s:decorate>
+			
+			<s:decorate template="/layout/edit.xhtml" >
+				<ui:define id="usersNotificationMediaDecoration" name="label">#{messages.NotificationMediaLabel}</ui:define>
+				<h:selectOneMenu value="#{modelEditHome.notification.usersNotificationMedia}" required="false" >
+					<f:selectItems value="#{modelEditHome.getNotificationsMedia()}" />
+				</h:selectOneMenu>
+			</s:decorate>
+					
+		    <s:decorate id="subjectDecoration" template="/layout/edit.xhtml">
+		        <ui:define name="label">#{messages.SubjectLabel}</ui:define>
+		        <h:inputText id="subject" required="#{modelEditHome.integrateWithNS}" style="width: 320px;"
+		                     value="#{modelEditHome.notification.subject}"/>
+		    </s:decorate>
+		    
+		    <s:decorate id="messageDecoration" template="/layout/edit.xhtml">
+		        <ui:define name="label">#{messages.MessageLabel}</ui:define>
+		        <h:inputTextarea id="synopsis" required="false" cols="40" rows="3"
+		                     value="#{modelEditHome.notification.message}"/>
+		    </s:decorate>
+		    
+			<s:decorate id="sendAtDecoration" template="/layout/edit.xhtml">
+				<ui:define name="label">#{messages.NotificationSendAtLabel}</ui:define>
+				<ice:selectInputDate renderMonthAsDropdown="true" renderYearAsDropdown="true"
+		                             value="#{modelEditHome.notification.sendAt}" 
+		                             renderAsPopup="true">
+		            <f:convertDateTime pattern="dd/MM/yyyy HH:mm" timeZone="#{stateBean.timezone}"/>
+		        </ice:selectInputDate>
+			</s:decorate>
+			
+			<s:decorate id="endAtDecoration" template="/layout/edit.xhtml">
+				<ui:define name="label">#{messages.NotificationEndAtLabel}</ui:define>
+				<ice:selectInputDate renderMonthAsDropdown="true" renderYearAsDropdown="true"
+		                             value="#{modelEditHome.notification.endAt}" 
+		                             renderAsPopup="true">
+		            <f:convertDateTime pattern="dd/MM/yyyy HH:mm" timeZone="#{stateBean.timezone}"/>
+		        </ice:selectInputDate>
+			</s:decorate>
+			</ice:panelGroup>
+		</ice:panelGroup>
+	</ice:panelGroup>
+</div>
+	

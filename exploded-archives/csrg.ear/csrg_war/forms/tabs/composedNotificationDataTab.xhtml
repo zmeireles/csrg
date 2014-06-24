@@ -1,0 +1,49 @@
+<div xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ice="http://www.icesoft.com/icefaces/component"
+      xmlns:s="http://jboss.com/products/seam/taglib">
+
+    <s:decorate id="subjectDecoration" template="/layout/edit.xhtml">
+        <ui:define name="label">#{messages.SubjectLabel}</ui:define>
+        <h:inputText id="subject" required="true" style="width: 320px;"
+                     value="#{modelEditHome.instance.subject}"/>
+    </s:decorate>
+    
+	<s:decorate id="readyToSendDecoration" template="/layout/edit.xhtml">
+        <ui:define name="label">#{messages.NotificationReadyToSendLabel}</ui:define>
+        <h:selectBooleanCheckbox value="#{modelEditHome.instance.readyToSend}" >
+		</h:selectBooleanCheckbox>
+	</s:decorate>
+	
+	<s:decorate id="sendAtDecoration" template="/layout/edit.xhtml">
+		<ui:define name="label">#{messages.NotificationSendAtLabel}</ui:define>
+		<ice:selectInputDate renderMonthAsDropdown="true" renderYearAsDropdown="true"
+                             value="#{modelEditHome.instance.sendAt}" 
+                             renderAsPopup="true">
+            <f:convertDateTime pattern="dd/MM/yyyy HH:mm" timeZone="#{stateBean.timezone}"/>
+        </ice:selectInputDate>
+	</s:decorate>
+	
+	<s:decorate id="endAtDecoration" template="/layout/edit.xhtml">
+		<ui:define name="label">#{messages.NotificationEndAtLabel}</ui:define>
+		<ice:selectInputDate renderMonthAsDropdown="true" renderYearAsDropdown="true"
+                             value="#{modelEditHome.instance.endAt}" 
+                             renderAsPopup="true">
+            <f:convertDateTime pattern="dd/MM/yyyy HH:mm" timeZone="#{stateBean.timezone}"/>
+        </ice:selectInputDate>
+	</s:decorate>
+	
+    <s:decorate id="senderDecoration" template="/layout/edit.xhtml">
+        <ui:define name="label">#{messages.NotificationSenderLabel}</ui:define>
+        <h:selectOneMenu id="sender" required="false" value="#{modelEditHome.instance.sender}" readonly="true">
+			<s:selectItems value="#{modelEditHome.getUserList()}" var="data" label="#{data.person.name}" 
+						noSelectionLabel="#{messages.NoSelectionLabel}" />
+	        <s:convertEntity />
+        </h:selectOneMenu>
+    </s:decorate>
+    
+    
+</div>
+	

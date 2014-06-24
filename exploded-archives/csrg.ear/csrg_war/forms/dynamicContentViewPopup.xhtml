@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ice="http://www.icesoft.com/icefaces/component"        
+      xmlns:s="http://jboss.com/products/seam/taglib">
+<head>
+<title>CSRG</title>
+    <script type="text/javascript" src="#{request.contextPath}/js/jquery-1.3.2.js"></script>
+    
+     <script type="text/javascript">
+     //<![CDATA[
+
+	$(document).ready(function() {
+
+		jQuery('.dynamicContent a').click(function(){
+
+			var link = jQuery(this).attr("href");//getting current link
+			link = link + "?popup=yes";//setting new link with parameters
+			jQuery(this).attr("href", link);
+
+			var newLink =jQuery(this).attr("href");
+			//alert(newLink);
+		});
+	});
+
+	//]]>
+	</script>
+	
+</head>
+<body>
+  	 <div  id="dynamicContent" align="left" class="dynamicContent">
+  	 
+  	 	<h:outputText value="#{visualItemMenu.pageFactory()}"/>
+  	 
+  	 </div>
+ </body>	 
+</html>

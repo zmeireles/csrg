@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/svn/csrg/!svn/ver/253/resources/WEB-INF
+END
+faces-config.xml
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/csrg/!svn/ver/1/resources/WEB-INF/faces-config.xml
+END
+components.xml
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/csrg/!svn/ver/248/resources/WEB-INF/components.xml
+END
+.faces-config.mex
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/csrg/!svn/ver/1/resources/WEB-INF/.faces-config.mex
+END
+dwr.xml
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/csrg/!svn/ver/229/resources/WEB-INF/dwr.xml
+END
+web.xml
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/csrg/!svn/ver/248/resources/WEB-INF/web.xml
+END
+pages.xml
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/csrg/!svn/ver/253/resources/WEB-INF/pages.xml
+END

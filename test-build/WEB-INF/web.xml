@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5"
+         xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:web="http://jboss.com/products/seam/web"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+	
+	<!-- HTTP Session timeout -->
+	<session-config>
+       <session-timeout>60</session-timeout>
+   	</session-config>
+    <!-- Seam (using Icefaces) generated project-->
+
+	<security-constraint>
+		<display-name>Test</display-name>
+		<web-resource-collection>
+			<web-resource-name>internal link</web-resource-name>
+			<url-pattern>/internal_link/*</url-pattern>
+			<http-method>GET</http-method>
+            <http-method>POST</http-method>
+            <http-method>HEAD</http-method>
+            <http-method>PUT</http-method>
+            <http-method>OPTIONS</http-method>
+            <http-method>TRACE</http-method>
+            <http-method>DELETE</http-method> 
+		</web-resource-collection>
+	</security-constraint>
+    <!-- listeners required for this application -->
+    <listener>
+        <listener-class>org.jboss.seam.servlet.SeamListener</listener-class>
+    </listener>
+
+    <listener>
+        <listener-class>com.icesoft.faces.util.event.servlet.ContextEventRepeater</listener-class>
+    </listener>
+
+    <!-- filters -->
+    <filter>
+        <filter-name>Seam Filter</filter-name>
+        <filter-class>org.jboss.seam.servlet.SeamFilter</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>Seam Filter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+<!-- 
+	<filter> 
+        <filter-name>Touch Session</filter-name> 
+        <filter-class>com.obc.csrg.util.TouchSessionFilter</filter-class> 
+    </filter> 
+    <filter-mapping> 
+        <filter-name>Touch Session</filter-name> 
+        <url-pattern>/seam/resource/*</url-pattern> 
+    </filter-mapping>
+ -->
+    <context-param>
+        <param-name>javax.faces.STATE_SAVING_METHOD</param-name>
+        <param-value>server</param-value>
+    </context-param>
+
+    <!-- Facelets development mode (disable in production) -->
+    <context-param>
+        <param-name>facelets.DEVELOPMENT</param-name>
+        <param-value>@debug@</param-value>
+    </context-param>
+
+    <context-param>
+        <param-name>javax.faces.DEFAULT_SUFFIX</param-name>
+        <param-value>.xhtml</param-value>
+    </context-param>
+
+    <context-param>
+        <param-name>com.icesoft.faces.actionURLSuffix</param-name>
+        <param-value>.seam</param-value>
+    </context-param>
+
+    <context-param>
+        <param-name>com.icesoft.faces.synchronousUpdate</param-name>
+        <param-value>false</param-value>
+    </context-param>
+
+    <context-param>
+        <param-name>com.icesoft.faces.doJSFStateManagement</param-name>
+	<param-value>true</param-value>
+    </context-param>
+
+    <context-param>
+        <param-name>org.icesoft.examples.serverClock</param-name>
+        <param-value>false</param-value>
+    </context-param>
+
+    <context-param>
+        <param-name>com.icesoft.faces.standardRequestScope</param-name>
+        <param-value>true</param-value>
+    </context-param>
+    
+    <context-param>
+        <param-name>com.icesoft.faces.uploadDirectory</param-name>
+        <param-value>upload</param-value>
+    </context-param>
+
+    <!-- servlets -->
+    <servlet>
+        <servlet-name>Faces Servlet</servlet-name>
+        <servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+
+	<!-- Seam remoting -->
+    <servlet>
+        <servlet-name>Seam Resource Servlet</servlet-name>
+        <servlet-class>org.jboss.seam.servlet.SeamResourceServlet</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>Persistent Faces Servlet</servlet-name>
+        <servlet-class>com.icesoft.faces.webapp.xmlhttp.PersistentFacesServlet</servlet-class>
+        <load-on-startup> 1 </load-on-startup>
+    </servlet>
+    
+    <servlet>
+        <servlet-name>Blocking Servlet</servlet-name>
+        <servlet-class>com.icesoft.faces.webapp.xmlhttp.BlockingServlet</servlet-class>
+        <load-on-startup> 1 </load-on-startup>
+    </servlet>
+	<!-- file upload Servlet -->
+    <servlet>
+         <servlet-name>uploadServlet</servlet-name>
+         <servlet-class>com.icesoft.faces.component.inputfile.FileUploadServlet</servlet-class>
+         <load-on-startup> 1 </load-on-startup>
+    </servlet>
+	<!-- download servlet -->
+	<servlet>
+    	<servlet-name>Download</servlet-name>
+    	<servlet-class>com.obc.csrg.servlet.Download</servlet-class>
+	</servlet>
+	<!-- internal link servlet -->
+	<servlet>
+    	<servlet-name>InternalLink</servlet-name>
+    	<servlet-class>com.obc.csrg.servlet.InternalLink</servlet-class>
+	</servlet>
+	<!-- MMS download servlet -->
+	<servlet>
+    	<servlet-name>MMS Servlet</servlet-name>
+    	<servlet-class>com.obc.csrg.servlet.MmsDownload</servlet-class>
+	</servlet>
+	
+	<!-- DWR servlet -->
+	<servlet>
+		<servlet-name>dwr-invoker</servlet-name>
+		<servlet-class>org.directwebremoting.servlet.DwrServlet</servlet-class>
+		<init-param>
+			<param-name>debug</param-name>
+			<param-value>true</param-value>
+		</init-param>
+		<init-param>
+			<param-name>allowGetForSafariButMakeForgeryEasier</param-name>
+			<param-value>true</param-value>
+		</init-param>
+		<init-param>
+			<param-name>crossDomainSessionSecurity</param-name>
+			<param-value>false</param-value>
+		</init-param>
+		<init-param>
+			<param-name>activeReverseAjaxEnabled</param-name>
+			<param-value>true</param-value>
+		</init-param>
+		<init-param>
+			<param-name>pollAndCometEnabled</param-name>
+			<param-value>true</param-value>
+		</init-param>
+		<init-param>
+			<param-name>url:/about</param-name>
+			<param-value>null</param-value>
+		</init-param>
+	</servlet>
+	
+    <!-- servlet mappings -->
+    <servlet-mapping>
+		<servlet-name>dwr-invoker</servlet-name>
+		<url-pattern>/dwr/*</url-pattern>
+	</servlet-mapping>
+	
+	<filter>
+	    <filter-name>DwrFacesFilter</filter-name>
+	    <filter-class>org.directwebremoting.faces.FacesExtensionFilter</filter-class>
+	</filter>
+	
+	<filter-mapping>
+	    <filter-name>DwrFacesFilter</filter-name>
+	    <url-pattern>/dwr/*</url-pattern>
+	</filter-mapping>
+	
+    <servlet-mapping>
+        <servlet-name>Persistent Faces Servlet</servlet-name>
+        <url-pattern>*.seam</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>Persistent Faces Servlet</servlet-name>
+        <url-pattern>/xmlhttp/*</url-pattern>
+    </servlet-mapping>
+    
+    <servlet-mapping>
+         <servlet-name>uploadServlet</servlet-name>
+         <url-pattern>/uploadHtml</url-pattern>
+    </servlet-mapping>
+    
+    <servlet-mapping>
+      <servlet-name>Download</servlet-name>
+      <url-pattern>/download/*</url-pattern>
+    </servlet-mapping>
+    
+    <servlet-mapping>
+      <servlet-name>InternalLink</servlet-name>
+      <url-pattern>/internal_link/*</url-pattern>
+    </servlet-mapping>
+    
+    <servlet-mapping>
+      <servlet-name>MMS Servlet</servlet-name>
+      <url-pattern>/mms_files/*</url-pattern>
+    </servlet-mapping>
+
+    <!-- Blocking Servlet Mapping -->
+    <servlet-mapping>
+        <servlet-name>Blocking Servlet</servlet-name>
+        <url-pattern>/block/*</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>Seam Resource Servlet</servlet-name>
+        <url-pattern>/seam/resource/*</url-pattern>
+    </servlet-mapping>
+
+    <security-constraint>
+       <display-name>Restrict raw XHTML Documents</display-name>
+       <web-resource-collection>
+          <web-resource-name>XHTML</web-resource-name>
+          <url-pattern>*.xhtml</url-pattern>
+       </web-resource-collection>
+       <auth-constraint/>
+    </security-constraint>
+
+   <!-- uncomment <ejb-local-ref> entries when deploying to GlassFish and (optionally) JBoss AS 5 -->
+   <!--
+   <ejb-local-ref>
+      <ejb-ref-name>csrg/AuthenticatorBean/local</ejb-ref-name>
+      <ejb-ref-type>Session</ejb-ref-type>
+      <local-home/>
+      <local>com.obc.csrg.action.Authenticator</local>
+   </ejb-local-ref>
+   -->
+
+   <!-- Add entries for each EJB session bean which is also a Seam component (not required on JBoss AS) -->
+
+   <persistence-unit-ref>
+      <persistence-unit-ref-name>csrg/pu</persistence-unit-ref-name>
+      <persistence-unit-name>../csrg.jar#csrg</persistence-unit-name>
+      <!-- The relative reference doesn't work on GlassFish. Instead, set the <persistence-unit-name> to "csrg",
+           package persistence.xml in the WAR, and add a <jar-file> element in persistence.xml with value "../../csrg.jar".
+      <persistence-unit-name>csrg</persistence-unit-name>
+      -->
+   </persistence-unit-ref>
+
+</web-app>

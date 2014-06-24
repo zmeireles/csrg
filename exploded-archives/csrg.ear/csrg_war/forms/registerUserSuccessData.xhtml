@@ -1,0 +1,45 @@
+<div 
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:s="http://jboss.com/products/seam/taglib"
+    xmlns:ice="http://www.icesoft.com/icefaces/component">
+	
+	
+	<center>
+		
+		<br /><br /><br />
+		<h:outputText>#{messages.RegisterSuccess1}</h:outputText>
+		<br />
+		<!-- <h:outputText>#{messages.RegisterSuccess2}</h:outputText> -->
+		
+		<br /><br />
+		
+		<table cellpadding="0" cellspacing="0" border="0" style="font-size: 16px;" >
+        <tr>
+        	<td>#{messages.LoginName}:</td>
+        	<td>&#160;&#160;#{registerUser.newUser.username}</td>
+		</tr>
+		<tr>
+        	<td>#{messages.LoginPassword}:</td>
+        	<td>&#160;&#160;#{registerUser.password}</td>
+		</tr>
+		</table>
+		
+		<br /><br />
+		
+		<div class="actionButtons">
+	        <s:button styleClass="button" 
+			               value="#{messages.AddAnotherUserButton}"
+			                view="#{myPath}/registerUser.xhtml" 
+			         propagation="begin" />			  
+		</div>
+		<!-- <s:button id="login2" styleClass="button" 
+        	   value="#{messages.Login}" 
+        	    view="/login.html" 
+         propagation="begin" /> -->
+		
+	</center>
+	
+</div>

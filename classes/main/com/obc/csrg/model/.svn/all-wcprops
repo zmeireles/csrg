@@ -1,0 +1,287 @@
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/csrg/!svn/ver/310/src/main/com/obc/csrg/model
+END
+Profile.java
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/csrg/!svn/ver/165/src/main/com/obc/csrg/model/Profile.java
+END
+ChatProfile.java
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/csrg/!svn/ver/141/src/main/com/obc/csrg/model/ChatProfile.java
+END
+DataChangeModel.java
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/csrg/!svn/ver/279/src/main/com/obc/csrg/model/DataChangeModel.java
+END
+UserDepartment.java
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/csrg/!svn/ver/141/src/main/com/obc/csrg/model/UserDepartment.java
+END
+ModelDisplayInfo.java
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/csrg/!svn/ver/165/src/main/com/obc/csrg/model/ModelDisplayInfo.java
+END
+Department.java
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/csrg/!svn/ver/304/src/main/com/obc/csrg/model/Department.java
+END
+Person.java
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/csrg/!svn/ver/279/src/main/com/obc/csrg/model/Person.java
+END
+KeywordsLang.java
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/csrg/!svn/ver/141/src/main/com/obc/csrg/model/KeywordsLang.java
+END
+SearchProperty.java
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/csrg/!svn/ver/279/src/main/com/obc/csrg/model/SearchProperty.java
+END
+DepartmentNotification.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/csrg/!svn/ver/189/src/main/com/obc/csrg/model/DepartmentNotification.java
+END
+ServiceClassification.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/csrg/!svn/ver/141/src/main/com/obc/csrg/model/ServiceClassification.java
+END
+DataChangeValue.java
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/csrg/!svn/ver/279/src/main/com/obc/csrg/model/DataChangeValue.java
+END
+User.java
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/csrg/!svn/ver/292/src/main/com/obc/csrg/model/User.java
+END
+FaxLog.java
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/csrg/!svn/ver/141/src/main/com/obc/csrg/model/FaxLog.java
+END
+ComposedNotification.java
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/csrg/!svn/ver/189/src/main/com/obc/csrg/model/ComposedNotification.java
+END
+ServiceClassificationNotification.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/csrg/!svn/ver/189/src/main/com/obc/csrg/model/ServiceClassificationNotification.java
+END
+SessionLog.java
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/csrg/!svn/ver/141/src/main/com/obc/csrg/model/SessionLog.java
+END
+DBFile.java
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/csrg/!svn/ver/141/src/main/com/obc/csrg/model/DBFile.java
+END
+UserNotification.java
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/csrg/!svn/ver/287/src/main/com/obc/csrg/model/UserNotification.java
+END
+Notification.java
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/csrg/!svn/ver/304/src/main/com/obc/csrg/model/Notification.java
+END
+ServiceArea.java
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/csrg/!svn/ver/141/src/main/com/obc/csrg/model/ServiceArea.java
+END
+Doctor.java
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/csrg/!svn/ver/141/src/main/com/obc/csrg/model/Doctor.java
+END
+TaskArg.java
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/csrg/!svn/ver/141/src/main/com/obc/csrg/model/TaskArg.java
+END
+DepartmentArea.java
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/csrg/!svn/ver/141/src/main/com/obc/csrg/model/DepartmentArea.java
+END
+GeographicAreaParents.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/csrg/!svn/ver/141/src/main/com/obc/csrg/model/GeographicAreaParents.java
+END
+UserProfile.java
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/csrg/!svn/ver/141/src/main/com/obc/csrg/model/UserProfile.java
+END
+Model.java
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/csrg/!svn/ver/310/src/main/com/obc/csrg/model/Model.java
+END
+ServiceAreaNotification.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/csrg/!svn/ver/189/src/main/com/obc/csrg/model/ServiceAreaNotification.java
+END
+GeographicArea.java
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/csrg/!svn/ver/297/src/main/com/obc/csrg/model/GeographicArea.java
+END
+SearchValue.java
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/csrg/!svn/ver/304/src/main/com/obc/csrg/model/SearchValue.java
+END
+SmsLog.java
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/csrg/!svn/ver/141/src/main/com/obc/csrg/model/SmsLog.java
+END
+ProfCategory.java
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/csrg/!svn/ver/141/src/main/com/obc/csrg/model/ProfCategory.java
+END
+Config.java
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/csrg/!svn/ver/287/src/main/com/obc/csrg/model/Config.java
+END
+Webpage.java
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/csrg/!svn/ver/141/src/main/com/obc/csrg/model/Webpage.java
+END
+MediaManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/csrg/!svn/ver/170/src/main/com/obc/csrg/model/MediaManager.java
+END
+ProfCategoryNotification.java
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/csrg/!svn/ver/189/src/main/com/obc/csrg/model/ProfCategoryNotification.java
+END
+News.java
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/csrg/!svn/ver/141/src/main/com/obc/csrg/model/News.java
+END
+VisualItem.java
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/csrg/!svn/ver/141/src/main/com/obc/csrg/model/VisualItem.java
+END
+DataChangeProperty.java
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/csrg/!svn/ver/279/src/main/com/obc/csrg/model/DataChangeProperty.java
+END
+UrlProfileDisplayInfo.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/csrg/!svn/ver/165/src/main/com/obc/csrg/model/UrlProfileDisplayInfo.java
+END
+PropertyDisplayInfo.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/csrg/!svn/ver/141/src/main/com/obc/csrg/model/PropertyDisplayInfo.java
+END
+FaxAttachment.java
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/csrg/!svn/ver/141/src/main/com/obc/csrg/model/FaxAttachment.java
+END
+EmailLog.java
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/csrg/!svn/ver/141/src/main/com/obc/csrg/model/EmailLog.java
+END
+DBCronTask.java
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/csrg/!svn/ver/141/src/main/com/obc/csrg/model/DBCronTask.java
+END
+SearchObject.java
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/csrg/!svn/ver/141/src/main/com/obc/csrg/model/SearchObject.java
+END
+ParentsModel.java
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/csrg/!svn/ver/1/src/main/com/obc/csrg/model/ParentsModel.java
+END
+AccessLogExclusion.java
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/csrg/!svn/ver/141/src/main/com/obc/csrg/model/AccessLogExclusion.java
+END

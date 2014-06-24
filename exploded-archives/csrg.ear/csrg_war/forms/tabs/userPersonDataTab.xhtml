@@ -1,0 +1,115 @@
+<div xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ice="http://www.icesoft.com/icefaces/component"
+      xmlns:s="http://jboss.com/products/seam/taglib">
+
+
+	<div style="width: 25%; float:right;" >
+		<!-- user photo -->
+		<ui:include src="#{theme}/imagePanel.xhtml" >
+			<ui:param name="image" value="#{modelEditHome.priFile.data}" />
+			<ui:param name="newImage" value="#{modelEditHome.priFile.data}" />
+			<ui:param name="newImageContentType" value="#{modelEditHome.priFile.contentType}" />
+			<ui:param name="allowEdit" value="true" />
+			<!-- <ui:param name="imageDescription" value="#{messages.UserPhoto}" /> -->
+		</ui:include>
+	
+	</div>
+	
+	<div style="width: 70%; float:left;" >
+		<s:decorate id="usernameDecoration" template="/layout/edit.xhtml" rendered="#{stateBean.isManager()}">
+            <ui:define name="label">#{messages.UserUsernameLabel}</ui:define>
+            <ice:inputText id="username" required="true" style="width: 120px;" 
+            	value="#{modelEditHome.newUsername}" styleClass="username" 
+            	valueChangeListener="#{modelEditHome.validateUsername}"
+            	partialSubmit="true"/>
+		</s:decorate>
+		
+		<s:decorate id="activeDecoration" template="/layout/edit.xhtml" rendered="#{stateBean.isManager()}">
+            <ui:define name="label">#{messages.UserActiveLabel}</ui:define>
+            <h:selectBooleanCheckbox id="active" value="#{modelEditHome.instance.active}" />
+		</s:decorate>
+		
+    	<s:decorate id="nameDecoration" template="/layout/edit.xhtml">
+	        <ui:define name="label">#{messages.NameLabel}</ui:define>
+	        <h:inputText id="name" required="true" style="width: 320px;"
+	                     value="#{modelEditHome.instance.person.name}"/>
+	    </s:decorate>
+	    
+	    <s:decorate id="serviceAreaDecoration" template="/layout/edit.xhtml">
+	        <ui:define name="label">#{messages.ServiceAreaLabel}</ui:define>
+	        <h:selectOneMenu id="serviceArea" required="false" value="#{modelEditHome.instance.serviceArea}">
+				<s:selectItems value="#{modelEditHome.getServiceAreaList()}" var="data" label="#{data.name}" 
+							noSelectionLabel="#{messages.NoSelectionLabel}" />
+		        <s:convertEntity />
+	        </h:selectOneMenu>
+	    </s:decorate>
+	    
+	    <s:decorate id="profCategoryDecoration" template="/layout/edit.xhtml">
+	        <ui:define name="label">#{messages.ProfCategoryLabel}</ui:define>
+	        <h:selectOneMenu id="profCategory" required="false" value="#{modelEditHome.instance.profCategory}">
+				<s:selectItems value="#{modelEditHome.getProfCategoryList()}" var="data" label="#{data.name}" 
+							noSelectionLabel="#{messages.NoSelectionLabel}" />
+		        <s:convertEntity />
+	        </h:selectOneMenu>
+	    </s:decorate>
+
+	    <s:decorate id="nibDecoration" template="/layout/edit.xhtml">
+	        <ui:define name="label">#{messages.PersonNibLabel}</ui:define>
+			<h:inputText id="nib" required="false" size="21"
+	                     value="#{modelEditHome.instance.person.nib}" maxlength="21"/>
+	    </s:decorate>
+    </div>
+<!-- Modal Panel Popup to change password -->
+<ice:panelGroup visible="#{modelEditHome.changePassword}">
+<ice:panelPopup id="modalPnlPop"
+                draggable="false" modal="true"
+                visible="#{modelEditHome.changePassword}"
+                autoCentre="true"
+                styleClass="corePopup" resizable="false" style="width: 350px">
+    <f:facet name="header">
+        <ice:panelGroup styleClass="popupHeaderWrapper">
+            <ice:outputText
+                    value="#{messages.UserChangePassword}"
+                    styleClass="popupHeaderText"/>
+            <ice:commandButton id="modalPnlCloseBtn" type="button"
+                               actionListener="#{modelEditHome.toggleShowChangePasswordPanel}"
+                               styleClass="popupHeaderImage"
+                               title="Close Popup" alt="Close" 
+                               image="../img/popupclose.gif"/>
+        </ice:panelGroup>
+    </f:facet>
+    <f:facet name="body"> 
+        <ice:panelGroup styleClass="popupBody">
+        	
+        	<s:decorate id="pwdDecoration" template="/layout/edit.xhtml">
+	              <ui:define name="label">#{messages.PasswordInputLabel}</ui:define>
+	              <ice:inputSecret id="pwd" 
+	              		style="width: 120px;" redisplay="false" value="#{modelEditHome.newPassword}"/>
+			</s:decorate>
+			<s:decorate id="pwdConfirmationDecoration" template="/layout/edit.xhtml">
+	              <ui:define name="label">#{messages.PasswordConfirmationLabel}</ui:define>
+	              <ice:inputSecret id="pwdConfirmation" 
+	              		style="width: 120px;" redisplay="false" value="#{modelEditHome.newPasswordConfirmation}"/>
+			</s:decorate>
+			<div class="actionButtons">
+			<ice:outputText id="pwdChangeFeedback" rendered="#{modelEditHome.newPasswordOk eq false}" 
+	              		value="#{messages.RegisterPasswordInvalid}"/>
+			</div>
+			<div class="actionButtons">
+				<ice:commandButton id="modalPnlSaveButton" type="submit"
+	                               value="#{messages.SaveButton}"
+	                               actionListener="#{modelEditHome.saveNewPassword}"/>
+	            <ice:commandButton id="modalPnlCloseButton" type="submit"
+	                               value="#{messages.CancelButton}"
+	                               actionListener="#{modelEditHome.toggleShowChangePasswordPanel}"/>
+			</div>
+        </ice:panelGroup>
+    </f:facet>
+</ice:panelPopup>
+</ice:panelGroup>
+<!--modal popup ends -->
+</div>
+	

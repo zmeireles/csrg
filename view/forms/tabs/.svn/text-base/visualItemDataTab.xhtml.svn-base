@@ -1,0 +1,238 @@
+<div xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ice="http://www.icesoft.com/icefaces/component"
+      xmlns:s="http://jboss.com/products/seam/taglib">
+
+    <style type="text/css">
+		.html{
+			visibility:hidden;
+		}
+		.popupLink a{
+		border: #ccc solid thin; padding:3px;
+		font-weight: bold;
+		
+		}
+		
+		.popupLink a:hover{
+		border: #ccc solid thin; padding:3px;
+		background-color: #ccc; color:#000;
+		font-weight: bold;
+		text-decoration:none;
+		}
+		
+	</style>
+	
+	<link type="text/css" href="#{request.contextPath}/jquery/themes/ui-lightness/ui.all.css" rel="stylesheet" />
+	<link rel="stylesheet" href="#{request.contextPath}/mms/galleriffic.css" type="text/css" />
+ 	<link rel="stylesheet" type="text/css" href="#{request.contextPath}/mms//fileBrowser.css" />
+ 	
+ 	<script src="#{request.contextPath}/jquery/ui/jquery-ui-1.7.custom.js"  type="text/javascript"></script>
+	<script type="text/javascript" src="#{request.contextPath}/ckeditor/ckeditor.js"></script>
+
+    <script type="text/javascript">
+    //<![CDATA[
+
+		jQuery('.MidMid a').mouseover(function() {
+
+			if(jQuery('.editorSt').val() == "1")
+			{
+				fillContent();
+				jQuery('.editorSt').val("0");
+			}
+
+		});
+	
+	//]]>
+	</script>
+
+	
+	<script type="text/javascript">
+	//<![CDATA[
+
+	var editor;
+
+	function createEditor()
+	{
+		if ( editor )
+		{
+			editor.destroy();
+			editor = null;
+		}
+	
+		//var h = document.getElementById( 'j_id54:dataForm:masterTabSet:0:html' );
+
+		var html = jQuery('.html').val();//h.value;
+		
+		editor = CKEDITOR.replace( 'editorDiv' );
+
+		//alert(html);
+		editor.setData( html );
+		jQuery('.editorSt').val("1");
+	}
+	
+	function fillContent()
+	{		
+		var oEditor = CKEDITOR.instances.editorDiv;
+		var html = oEditor.getData();
+		//document.getElementById("j_id54:dataForm:masterTabSet:0:html").value = html; 
+		jQuery('.html').val(html);
+		//alert(html);
+	}
+
+	window.onload = createEditor();
+
+	//]]>
+	</script>	
+
+
+	<script>
+	//<![CDATA[
+	jQuery(function() {
+	
+		jQuery('.popupLink a').click(function(){
+
+			var type = jQuery(this).attr("rel");
+			
+			//alert("test2");
+			
+			if(type == "file")
+			{
+				jQuery('#dialog2').css('visibility','visible');
+				jQuery('#dialog2').dialog('open');
+			}
+			else if(type == "image")
+			{
+				jQuery('#dialog').css('visibility','visible');
+				jQuery('#dialog').dialog('open');
+			}
+			
+			
+			return false;
+		});
+
+		// Dialog Link
+		jQuery('#thumbs img').click(function(){
+	
+			var newHref = jQuery(this).attr("src");
+			//alert(newHref);
+			
+			jQuery('.selectedImage').html(newHref);
+			
+			return false;
+		});
+
+		jQuery('.fileThumbs a').click(function(){
+			
+			var newHref = jQuery(this).attr("href");
+			//alert(newHref);
+			
+			jQuery('.selectedFile').html(newHref);
+			
+			return false;
+		});
+		
+		jQuery("#dialog").dialog({
+			autoOpen: false,
+			bgiframe: true,
+			resizable: true,
+			height:395,
+			width:375,
+			modal: false
+
+		});
+
+		jQuery("#dialog2").dialog({
+			autoOpen: false,
+			bgiframe: true,
+			resizable: true,
+			height:424,
+			width:366,
+			modal: false
+
+		});
+		
+	});	
+	//]]>
+	</script>
+
+	
+	
+	<input type="hidden" class="editorSt" value="0" />
+	
+	<s:decorate id="itemOrderDecoration" template="/layout/edit.xhtml">
+        <ui:define name="label">#{messages.SortOrderLabel}</ui:define>
+       	<h:inputText id="menuText" required="false" style="width: 20px;"
+                     value="#{modelEditHome.instance.itemOrder}"/>
+    </s:decorate>
+    
+	<s:decorate id="menuTextDecoration" template="/layout/edit.xhtml">
+        <ui:define name="label">#{messages.VisualItemMenuTextLabel}</ui:define>
+        <h:inputText id="menuText" required="false" style="width: 220px;"
+                     value="#{modelEditHome.instance.menuText}"/>
+    </s:decorate>
+    
+    <s:decorate id="parentDecoration" template="/layout/edit.xhtml">
+        <ui:define name="label">#{messages.VisualItemParentLabel}</ui:define>
+        
+        <h:selectOneMenu id="parent" required="false" value="#{modelEditHome.newParent}">
+			<s:selectItems value="#{modelEditHome.getParentList()}" var="data" label="#{data.menuText}" 
+						noSelectionLabel="#{messages.NoSelectionLabel}" />
+	        <s:convertEntity />
+        </h:selectOneMenu>
+    </s:decorate>
+
+    
+    <s:decorate id="publishDecoration" template="/layout/edit.xhtml">
+        <ui:define name="label">#{messages.VisualItemPublishLabel}</ui:define>
+       	<h:selectBooleanCheckbox  value="#{modelEditHome.instance.publish}" id="publishCheck"/>
+    </s:decorate>
+    
+    <s:decorate id="xhtmlFilenameDecoration" template="/layout/edit.xhtml">
+        <ui:define name="label">#{messages.VisualItemXhtmlFilenameLabel}</ui:define>
+        <h:inputText id="menuText" required="false" style="width: 220px;"
+                     value="#{modelEditHome.instance.xhtmlFilename}" />
+    </s:decorate>
+	
+   	<s:decorate id="pageNameDecoration" template="/layout/edit.xhtml">
+        <ui:define name="label">#{messages.WebpagePageNameLabel}</ui:define>
+        <h:inputText id="pageName" required="false" style="width: 220px;"
+                     value="#{modelEditHome.instance.webpage.pageName}"/>
+    </s:decorate> 
+    
+    <s:decorate id="htmlDecoration" template="/layout/edit.xhtml">
+        <ui:define name="label">#{messages.WebContentMes}</ui:define>
+        <h:inputText id="html" value="#{modelEditHome.instance.webpage.html}"  styleClass="html" />
+    </s:decorate> 
+    <br style="clear: both;"/>
+    
+    <div align="right" style="padding-right:5px;padding-bottom:5px; margin-bottom:5px;"   class="popupLink"> 
+    	 <a rel="image" href="#" >#{messages.MmsImageViewerTitle}</a> <a rel="file" href="#" >#{messages.MmsFileBrowserTitle}</a>
+   </div>
+    
+    
+	<div id="editorDiv" align="left" style="padding:10px; border: solid thin #cccc;"></div>
+ 	
+ 	<script type="text/javascript" >
+ 		if ( !editor )
+ 		{	
+ 			createEditor();
+   		   
+ 	 	}
+ 		window.onload = createEditor();
+ 	</script>
+	
+ 
+<div id="dialog" style="visibility:hidden;" title="#{messages.MmsImageViewerTitle}">
+ <h:outputText value="#{messages.MmsInstruction}" styleClass="selectedImage"/>
+ <h:outputText value="#{stateBean.echo(imageViewer.buildImageList())}"/>
+</div>
+
+<div id="dialog2" style="visibility:hidden;" title="#{messages.MmsFileBrowserTitle}">
+ <h:outputText value="#{messages.MmsInstructionFile}" styleClass="selectedFile"/>
+ <h:outputText value="#{stateBean.echo(fileBrowser.buildFileList())}"/>
+</div>	
+	
+</div>
+	

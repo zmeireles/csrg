@@ -1,0 +1,63 @@
+ul.fileThumbs {
+	clear: both;
+	margin: 0;
+	padding: 0;
+}
+
+
+ul.fileThumbs li {
+	float: left;
+	padding: 0;
+	margin: 5px 10px 5px 0;
+	list-style: none;
+	background-image: none;
+	width:97px; 
+	overflow:hidden;
+	font-family: Tahoma, Arial, Helvetica, sans-serif;
+	font-size:12px;
+	
+}
+
+a.fileThumb {
+	padding: 2px;
+	display: block;
+	border: 1px solid #ccc;
+}
+
+
+#fileThumbs{
+	width:95px; 
+	height:95px; 
+	border:thin solid #ccc;
+}
+
+.fileThumbsName{
+	width:95px; 
+	height:16px; 
+	overflow:hidden;
+	font-family: Tahoma, Arial, Helvetica, sans-serif;
+	font-size:12px;
+	padding-top:2px;
+}
+.default{
+	background-image: url('icons/default.jpg');
+	background-repeat: no-repeat;
+	background-position:center;
+}
+.doc{
+	background-image: url('icons/doc.png');
+	background-repeat: no-repeat;
+	background-position:center;
+}
+
+.pdf{
+	background-image: url('icons/pdf.gif');
+	background-repeat: no-repeat;
+	background-position:center;
+}
+
+.xls{
+	background-image: url('icons/xls.gif');
+	background-repeat: no-repeat;
+	background-position:center;
+}

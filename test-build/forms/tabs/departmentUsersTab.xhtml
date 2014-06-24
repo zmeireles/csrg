@@ -1,0 +1,196 @@
+<ice:panelGroup xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ice="http://www.icesoft.com/icefaces/component"
+      xmlns:s="http://jboss.com/products/seam/taglib">
+
+
+	<ice:panelGroup>	
+	<s:decorate id="dataTablePaginator" template="/layout/icePaginator.xhtml">
+	   	<ice:dataTable id="dataTable2" value="#{modelEditHome.userList}"
+	   			var="data" rows="10">
+	   		<ice:column style="width: 32px;">
+	   			<f:facet name="header">
+	   			</f:facet>
+	   			<s:graphicImage value="#{data.user.person.photo}" rendered="#{data.user.person.photo ne null}">
+					<s:transformImageSize height="32" maintainRatio="true"/>
+				</s:graphicImage>
+				<s:graphicImage value="/img/user_no_image.jpg" rendered="#{data.user.person.photo eq null}">
+					<s:transformImageSize height="32" maintainRatio="true"/>
+				</s:graphicImage>
+	 			</ice:column>
+	 			<ice:column>
+	   			<f:facet name="header">
+	     				<ice:outputText value="#{messages.Username}" />
+	   			</f:facet>
+	   			<ice:outputText value="#{data.user.username}" />
+ 			</ice:column>
+ 			<ice:column>
+	   			<f:facet name="header">
+	     				<ice:outputText value="#{messages.Name}" />
+	   			</f:facet>
+	   			<ice:outputText value="#{data.user.person.name}" />
+	 		</ice:column>
+ 			<ice:column style="width: 200px">
+  				<ice:panelConfirmation id="deleteConfirmPanel" message="#{messages.DeleteConfirmation} "
+                       acceptLabel="#{messages.DeleteButton}" cancelLabel="#{messages.BooleanNo}" 
+                       title="#{messages.DeleteUserRelation.concat(' '.concat(data.user.person.name))}"/>
+    			<f:facet name="header">
+      				<ice:outputText value="#{messages.Operations}" />
+    			</f:facet>
+    			<ice:commandButton panelConfirmation="deleteConfirmPanel"
+                               value="#{messages.DeleteButton}"
+                               style="font-size:12px"
+                               actionListener="#{operationsBean.deleteModel}">
+                    <f:attribute name="modelId" value="#{data.id}"/>
+                    <f:attribute name="modelName" value="UserDepartment"/>
+                    <f:attribute name="report" value="#{null}"/>
+				</ice:commandButton>
+	  		</ice:column>
+	   	</ice:dataTable>
+   	<ui:param name="dataTable" value="dataTable2"></ui:param>
+	</s:decorate>
+	   	<h:commandButton id="addUser"
+	   			value="#{messages.DepartmentAddUsers}"
+	   			disabled="#{modelEditHome.showPopup}"
+	   			actionListener="#{modelEditHome.togglePopup}"/>
+	   	
+	   </ice:panelGroup>
+	   	
+	   	 
+		<!-- Modal Panel Popup to add users-->
+		<ice:panelGroup visible="#{modelEditHome.showPopup}">
+			<ice:panelPopup id="modalPnlPop"
+			                draggable="false" modal="true"
+			                visible="#{modelEditHome.showPopup}"
+			                autoCentre="true"
+			                styleClass="corePopup"
+			                resizable="true" style="width: 500px">
+			    <f:facet name="header">
+			        <ice:panelGroup styleClass="popupHeaderWrapper">
+			            <ice:outputText
+			                    value="#{messages.DepartmentAddUsers}"
+			                    styleClass="popupHeaderText"/>
+			            <ice:commandButton id="modalPnlCloseBtn" type="button"
+			                               actionListener="#{modelEditHome.togglePopup}"
+			                               styleClass="popupHeaderImage"
+			                               title="Close Popup" alt="Close" 
+			                               image="../img/popupclose.gif"/>
+			        </ice:panelGroup>
+			    </f:facet>
+		    <f:facet name="body"> 
+		        <ice:panelGroup styleClass="popupBody">
+		        	<!-- User list goes here -->
+		        	<ice:outputText value="#{messages.DragAndDropText}"/>
+		        	<table border="0">
+		        		<tr valign="top">
+		        		<td>
+			        		<ice:panelGroup id="availableItemsDropBox"  style="vertical-align: top"
+				                		hoverclass="cartDropTarget"
+			                			dropTarget="true">
+				                <ice:panelGroup>
+					                <s:decorate id="sourcePaginator" template="/layout/icePaginator.xhtml">
+					               	<ice:dataTable id="availableUsers" value="#{modelEditHome.usersNotInList}"
+														var="data" rows="8">
+									    <ice:column>
+							    			<f:facet name="header">
+							    				<ice:outputText value="#{messages.AvailableItems}"/>
+							    			</f:facet>
+							    			<ice:panelGroup 
+							    					draggable="true"
+							    					dragListener="#{modelEditHome.addDndOperation}"
+							    					dragValue="#{data}"
+							    					dragOptions="dragGhost"
+							    					dragMask="dragging,drag_cancel,hover_start,hover_end"
+					               					dropMask="dragging,drag_cancel,hover_start,hover_end">
+								    			<!-- 
+								    			<s:graphicImage value="#{data.person.photo ne null ? data.person.photo : '/img/user_no_image.jpg'}"
+						                            	        style="float: left; padding: 1px;">
+						                            <s:transformImageSize height="32" maintainRatio="true"/>
+						                        </s:graphicImage>
+						                         -->
+						                        <ice:outputText value="#{data.person.name}" />
+					                        </ice:panelGroup>
+							    		</ice:column>
+					                </ice:dataTable>
+					                <ui:param name="dataTable" value="availableUsers"></ui:param>
+			                    	</s:decorate>
+				                </ice:panelGroup><br/><br/>
+				                <!--  drop target to use the table is empty -->
+				                <ice:panelGroup styleClass="chartContainer backBeanChangeContainer" 
+				                				style="padding:2px;" 
+								                rendered="#{true or empty modelEditHome.usersNotInList}">
+								    <ice:panelGroup  style="text-align: center;background-color:white;padding:20px;" >
+								        <ice:graphicImage value="/img/shopping-cart.png"
+								                          width="55" height="45"/>
+								    </ice:panelGroup>
+								</ice:panelGroup>
+								<ice:panelGroup>
+									<ice:inputText value="#{modelEditHome.searchUsersTxt}"/>
+									<ice:commandButton value="#{messages.Search}" action="#{modelEditHome.searchAvailableUsers}"/>
+								</ice:panelGroup>
+							</ice:panelGroup>
+						</td>
+						<td>
+			                <ice:panelGroup id="selectedItemsDropBox"
+				                		hoverclass="cartDropTarget"
+			                			dropTarget="true" 
+			                			style="vertical-align: top">
+				                <ice:panelGroup>
+					                <s:decorate id="destinationPaginator" template="/layout/icePaginator.xhtml">
+				                    <ice:dataTable id="selectedUsers" value="#{modelEditHome.selectedUsers}"
+				 									var="data" rows="8">
+				 						<ice:column>
+							    			<f:facet name="header">
+							    				<ice:outputText value="#{messages.SelectedItems}"/>
+							    			</f:facet>
+							    			<ice:panelGroup
+							    					draggable="true"
+							    					dragListener="#{modelEditHome.removeDndOperation}"
+							    					dragValue="#{data}"
+							    					dragOptions="dragGhost"
+							    					dragMask="dragging,drag_cancel,hover_start,hover_end"
+					               					dropMask="dragging,drag_cancel,hover_start,hover_end">
+								    			<!--  
+								    			<s:graphicImage value="#{data.person.photo ne null ? data.person.photo : '/img/user_no_image.jpg'}"
+						                            	        style="float: left; padding: 1px;">
+						                            <s:transformImageSize height="32" maintainRatio="true"/>
+						                        </s:graphicImage>
+						                        -->
+						                        <ice:outputText value="#{data.person.name}" />
+					                        </ice:panelGroup>
+							    		</ice:column>
+				                    </ice:dataTable>
+				                    <ui:param name="dataTable" value="selectedUsers"></ui:param>
+			                    	</s:decorate>
+			                    </ice:panelGroup><br/><br/>
+			                    <!--  drop target to use the table is empty -->
+				                <ice:panelGroup styleClass="chartContainer backBeanChangeContainer" 
+				                				style="padding:2px;" 
+								                rendered="#{true or empty modelEditHome.selectedUsers}">
+								    <ice:panelGroup  style="text-align: center;background-color:white;padding:20px;"  >
+								        <ice:graphicImage value="/img/shopping-cart.png"
+								                          width="55" height="45"/>
+								    </ice:panelGroup>
+								</ice:panelGroup>
+			                </ice:panelGroup>
+		                </td>
+		               </tr>
+					</table>
+					<br style="clear: both;"/>
+					<ice:commandButton id="modalPnlSaveButton" type="submit"
+		                               value="#{messages.SaveButton}"
+		                               actionListener="#{modelEditHome.savePopupSelectedUsers}"/>
+		            <ice:commandButton id="modalPnlCloseButton" type="submit"
+		                               value="#{messages.CancelButton}"
+		                               actionListener="#{modelEditHome.togglePopup}"/>
+		        </ice:panelGroup>
+		    </f:facet>
+			</ice:panelPopup>
+		</ice:panelGroup>
+		<!-- Modal Panel Popup to add users ends-->
+		
+		
+</ice:panelGroup>
+	

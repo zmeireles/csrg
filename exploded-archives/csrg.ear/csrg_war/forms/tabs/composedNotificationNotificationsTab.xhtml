@@ -1,0 +1,45 @@
+<div xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ice="http://www.icesoft.com/icefaces/component"
+      xmlns:s="http://jboss.com/products/seam/taglib">
+
+    <s:decorate id="paginator" template="/layout/icePaginator.xhtml">
+		<ice:dataTable id="dataTable" value="#{modelEditHome.notificationList}" var="data" rows="5">
+			<ice:column>
+	   			<f:facet name="header">
+	     			<ice:outputText value="#{messages.NotificationMedia}" />
+	   			</f:facet>
+	   			<h:selectOneMenu value="#{data.usersNotificationMedia}" required="false" >
+					<f:selectItems value="#{modelEditHome.getNotificationsMedia()}" />
+				</h:selectOneMenu>
+	 		</ice:column>
+			<ice:column>
+	   			<f:facet name="header">
+	     			<ice:outputText value="#{messages.Message}" />
+	   			</f:facet>
+	   			<ice:inputTextarea value="#{data.message}" rows="3" cols="60"/>
+	 		</ice:column>
+	 		<ice:column>
+	   			<f:facet name="header">
+	     			<ice:outputText value="#{messages.Operations}" />
+	   			</f:facet>
+	   			<!-- save operation will take place when saving composed notification
+	   			<ice:commandButton id="saveNotification" value="#{messages.SaveButton}" 
+	   					actionListener="#{modelEditHome.saveNotification}">
+	   				<f:attribute name="notification" value="#{data}" />
+	   			</ice:commandButton>
+	   			 -->
+	   			<ice:commandButton id="removeNotification" value="#{messages.RemoveButton}" 
+	   					actionListener="#{modelEditHome.removeNotification}" disabled="#{modelEditHome.notificationList.size() eq 1}">
+	   				<f:attribute name="notification" value="#{data}" />
+	   			</ice:commandButton>
+	 		</ice:column>
+		</ice:dataTable>
+		<ui:param name="dataTable" value="dataTable"></ui:param>
+    </s:decorate>
+    <ice:commandButton id="addNotification" value="#{messages.AddButton}" actionListener="#{modelEditHome.addNotification}"/>
+    
+</div>
+	

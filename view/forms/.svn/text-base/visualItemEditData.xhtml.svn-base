@@ -1,0 +1,46 @@
+<s:decorate xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:a4j="http://richfaces.org/a4j"
+      xmlns:ice="http://www.icesoft.com/icefaces/component"
+      xmlns:s="http://jboss.com/products/seam/taglib"
+      template="#{theme}/tabPanel.xhtml">
+	
+	<ice:panelTab label="#{messages.VisualItemDataTab}" title="#{messages.VisualItemDataTab}" >
+		<ui:include src="/forms/tabs/visualItemDataTab.xhtml" />
+	</ice:panelTab>
+	<!-- 
+	<ice:panelTab label="#{messages.VisualItemWebpageTab}" title="#{messages.VisualItemWebpageTab}" 
+				rendered="#{not modelEditHome.xhtmlpage}">
+		<ui:include src="/forms/tabs/visualItemWebpageTab.xhtml" />
+	</ice:panelTab>
+	 -->
+	<ice:panelTab label="#{messages.VisualItemTargetsTab}" title="#{messages.VisualItemTargetsTab}" >
+		<ui:include src="/forms/tabs/visualItemTargetsTab.xhtml" />
+	</ice:panelTab>
+	<ice:panelTab label="#{messages.VINotifIntegrationTab}" title="#{messages.VINotifIntegrationTab}" >
+		<ui:include src="/forms/tabs/visualItemNSIntegrationTab.xhtml" />
+	</ice:panelTab>
+	
+	
+	<div class="actionButtons">
+       <h:commandButton id="save" styleClass="button" 
+                     value="#{messages.SaveButton}" 
+                    action="#{modelEditHome.persist}"
+                  rendered="#{!modelEditHome.managed}" onclick="fillContent(); "/>
+       <h:commandButton id="update" styleClass="button" 
+                     value="#{messages.UpdateButton}" 
+                    action="#{modelEditHome.update}"
+                  rendered="#{modelEditHome.managed}" onclick="fillContent(); "/>                  
+       <h:commandButton id="delete" styleClass="button" 
+               	  value="#{messages.DeleteButton}" 
+              	     action="#{modelEditHome.remove}"
+              	   rendered="#{modelEditHome.mayRemove()}"/>
+		<s:button styleClass="button" rendered="#{modelEditHome.managed}"
+		               value="#{messages.AddNewButton}"
+		                view="#{myPath}/visualItemEdit.xhtml" 
+		         propagation="begin" />
+   </div>
+</s:decorate>
+	

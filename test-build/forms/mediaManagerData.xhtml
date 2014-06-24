@@ -1,0 +1,131 @@
+<s:decorate xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:a4j="http://richfaces.org/a4j"
+      xmlns:ice="http://www.icesoft.com/icefaces/component" 
+      xmlns:s="http://jboss.com/products/seam/taglib"
+      template="#{theme}/searchTreePanel.xhtml">
+	
+	
+<ui:param name="tree" value="#{mediaTree}" ></ui:param>
+
+<ui:define name="treeList">
+<div><h:outputText value="#{mediaTree.actionMessage}" /></div>
+
+<div align="left" class="upload" style="padding-left:3px;padding-top:20px;padding-bottom:20px">	
+	
+		<!-- file upload usage with progress callback. -->
+        <ice:inputFile id="inputFileName" width="600" autoUpload="#{mediaTree.autoUpload}"
+        				uniqueFolder="false"
+                       progressListener="#{mediaTree.fileUploadProgress}"
+                       actionListener="#{mediaTree.uploadFile}"/>
+        <!-- progress bar, percent value is upated via progressListener-->
+		<br />
+        <ice:outputProgress value="#{mediaTree.fileProgress}"
+                            styleClass="uploadProgressBar"/>
+
+</div>
+	
+<table border="0">
+	<tr valign="top">
+	<td width="100%">
+	
+	<ice:panelGroup styleClass="exampleBox" style="width: 90%">
+		<ice:panelGroup style="text-align: left">
+			
+			
+			<ice:tree id="tree"
+		              value="#{tree.model}"
+		              var="node"
+		              hideRootNode="false"
+		              hideNavigation="false"
+		              imageDir="/csrg/img/">
+	              <ice:treeNode>
+			            <f:facet name="icon">
+			                <ice:panelGroup
+			                        style="display: inline" >
+			                    <ice:graphicImage
+			                         value="/img/#{node.userObject.icon}"/>
+			                </ice:panelGroup>
+			            </f:facet>
+			            <f:facet name="content">
+			                <ice:panelGroup
+			                        styleClass="selectedNode#{node.userObject eq tree.selectedUserObject}"
+			                        style="display: inline" >
+			                    <ice:commandLink
+			                            actionListener="#{tree.mediaNodeSelected}">
+			                        <f:param name="mediaPath" value="#{node.userObject.path}" />
+			                        <ice:outputText id="TreeNode"
+			                                        value="#{node.userObject.text}"/>
+			                    </ice:commandLink>
+			                </ice:panelGroup>
+			            </f:facet>
+			      </ice:treeNode>
+			</ice:tree>
+			
+			
+		</ice:panelGroup>
+	</ice:panelGroup>
+	
+
+	</td>
+	<td width="400px">
+	<ice:panelGroup
+	        styleClass="exampleBox firstChildTitle backBeanChangeContainer">
+	
+	    <!-- backing bean title box -->
+	    <ice:panelGroup styleClass="backBeanChangeTitle" style="width:350px;">
+	        <ice:outputText value="#{messages.Data}"/>
+	    </ice:panelGroup>
+	
+	    <!-- actual backing bean values. -->
+	    <ice:panelGroup styleClass="backBeanChangeBody"
+	                    effect="#{tree.valueChangeEffect}">
+	    <div id="mmsRightContent" align="left" style="width:398px">		
+	    	
+			<table id="MMSoption" style="width:396px;">
+				<tr>
+					<td><h:outputText value="#{messages.MmsSeletedItem}" /></td>
+					<td>:</td>
+					<td colspan="2">						
+						<h:outputText value="#{tree.aliasRoot}" /><!-- this path value will be change later -->				
+						<input type="hidden"  id="fileName" value="#{tree.selectedUserObject.path}" />	
+					</td>
+				</tr>
+				<tr>
+					<td><h:outputText value="#{messages.MmsFileFolderName}" /></td>
+					<td>:</td>
+					<td colspan="2"><h:inputText id="newFolderName" value="#{tree.newFolderName}"/></td>					
+					
+				</tr>
+				<tr>					
+					<td colspan="4">
+						<h:commandButton id="delete" styleClass="button" 
+                     		value="#{messages.DeleteButton}" 
+                   			actionListener="#{tree.deleteFileOrFolder}" style="margin-left:20px;"/>
+                  	
+						<h:commandButton id="save" styleClass="button" 
+                     		value="#{messages.CreateButton}" 
+                   			actionListener="#{tree.createNewFolder}" style="margin-left:15px;"/>
+                  	
+						<h:commandButton id="reaname" styleClass="button" 
+                     		value="#{messages.RenameButton}" 
+                   			actionListener="#{tree.renameFileOrFolder}" style="margin-left:15px;"/>
+                  	</td>
+				</tr>
+
+			</table>	
+
+		</div>
+		</ice:panelGroup>
+	    <!-- end backing bean values. -->
+	    
+	</ice:panelGroup>
+	</td></tr>
+</table>
+
+
+</ui:define>
+ 
+</s:decorate>

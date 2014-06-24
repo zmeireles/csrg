@@ -1,0 +1,101 @@
+<ice:panelGroup xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ice="http://www.icesoft.com/icefaces/component"
+      xmlns:s="http://jboss.com/products/seam/taglib"
+      styleClass="newsBox panelSeriesContainer">
+    
+ 
+    
+<ice:form id="chatForm">
+
+    <ice:panelSeries id="icePnlSrs"
+                         value="#{sessionChatAction.activeChats}"
+                         var="data" style="float:left">
+        
+    <div id="cb" class="chatbox">
+        <ice:panelGroup id="chatBox">
+		<div class="chatboxhead"  align="left">
+		   <div id="cbt" class="chatboxtitle" onclick="javascript:chatBoxToggel('#{sessionChatAction.getHtmlUsersStringButMe(data.roomId)}')">#{sessionChatAction.obtainFirstLastName(data.getTargetUser(stateBean.user).person.name, 19)}</div>	
+
+		   <div class="chatboxoptions">
+		    	<a href="javascript:void(0)" onclick="javascript:chatBoxToggel('#{sessionChatAction.getHtmlUsersStringButMe(data.roomId)}')" class="titleText">_</a> 
+				<ice:panelGroup style="display:inline">
+		    		<ice:commandLink value="X"
+		    				actionListener="#{operationsBean.leaveChat}" onclick="removeChatbox();">
+		    			<f:attribute name="roomId" value="#{data.roomId}" />
+		    		</ice:commandLink>
+		        </ice:panelGroup>
+		 	</div>
+		 
+		     <br clear="all"/>
+			</div>
+			<div class="chatboxcontent" align="left" id="cbc">
+			<!-- 
+		    <img height="40" alt="image" width="45" style="margin-top: -28px; z-index: 5555;position:absolute; border:#ccc solid thin" src="csrg/view/img/user_no_image.jpg" />
+		     -->
+				<div id="cbImage">
+					<s:graphicImage heiegt="40" value="#{data.getTargetUser(stateBean.user).person.photo}" 
+									rendered="#{data.getTargetUser(stateBean.user).person.photo ne null}"
+		         					style="margin-top: -28px; z-index: 5555;position:absolute; border:#ccc solid 2px" styleClass="cbImage">
+						<s:transformImageSize height="40" maintainRatio="true"/>
+					</s:graphicImage>
+				</div>
+				<s:graphicImage width="40" value="/img/user_no_image.jpg" 
+						rendered="#{data.getTargetUser(stateBean.user).person.photo eq null}"
+						style="margin-top: -28px; z-index: 5555;position:absolute; border:#ccc solid 2px" styleClass="cbImage">
+					<s:transformImageSize height="40" maintainRatio="true"/>
+				</s:graphicImage>
+				<br/>
+			    <div id="cbtx" class="chatboxtext">
+				    <ice:panelGroup id="chatLogPanel" >
+				    	#{stateBean.echo(data.messageLogToHtml())}
+				    	
+					     <script type="text/javascript">
+					         jQuery("#cbtx").attr("id","cbtx_"+"#{sessionChatAction.getHtmlUsersStringButMe(data.roomId)}");  
+							 setScroll("cbtx_"+"#{sessionChatAction.getHtmlUsersStringButMe(data.roomId)}");
+							 topMenuSet();
+						 </script>
+				    </ice:panelGroup>
+				</div>
+			</div>
+		
+		</ice:panelGroup>
+	  
+	  <div class="chatboxinput" id="cbi">
+	  	   <script type="text/javascript">
+			     jQuery("#cb" ).attr("id","cb_"+"#{sessionChatAction.getHtmlUsersStringButMe(data.roomId)}");
+				 jQuery("#cbc" ).attr("id","cbc_"+"#{sessionChatAction.getHtmlUsersStringButMe(data.roomId)}");
+				 jQuery("#cbi" ).attr("id","cbi_"+"#{sessionChatAction.getHtmlUsersStringButMe(data.roomId)}");
+				 jQuery("#cbt" ).attr("id","cbt_"+"#{sessionChatAction.getHtmlUsersStringButMe(data.roomId)}");
+				 jQuery("#cbImage" ).attr("id","cbImage_"+"#{sessionChatAction.getHtmlUsersStringButMe(data.roomId)}");
+
+				 chatBoxTitelSet("#{sessionChatAction.getHtmlUsersStringButMe(data.roomId)}");
+				 arrangeChatboxes("#{sessionChatAction.getHtmlUsersStringButMe(data.roomId)}");
+				 topMenuSet();
+			 </script>
+	    <ice:panelGroup>
+	    	<ice:column>
+				<ice:inputText id="message" value="#{sessionChatAction.getMessageObject(data.roomId).message}" 
+						partialSubmit="true"
+						actionListener="#{sessionChatAction.sendMessage}" style="width: 194px" >
+					<f:attribute name="roomId" value="#{data.roomId}"/>
+					<f:attribute name="message" value="#{sessionChatAction.getMessageObject(data.roomId).message}"/>
+				</ice:inputText>
+				<!-- 
+				<ice:commandButton value="#{messages.SendChatMessage}"
+						actionListener="#{sessionChatAction.sendMessage}">
+					<f:attribute name="roomId" value="#{data.roomId}"/>
+					<f:attribute name="message" value="#{sessionChatAction.getMessageObject(data.roomId).message}"/>
+				</ice:commandButton>
+				 -->
+			</ice:column>
+		</ice:panelGroup>
+		</div>
+	</div>
+	
+	
+	</ice:panelSeries>
+</ice:form>
+</ice:panelGroup>

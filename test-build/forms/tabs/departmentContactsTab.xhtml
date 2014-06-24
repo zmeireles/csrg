@@ -1,0 +1,42 @@
+<div xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ice="http://www.icesoft.com/icefaces/component"
+      xmlns:s="http://jboss.com/products/seam/taglib">
+
+	<s:decorate id="phoneDecoration" template="/layout/edit.xhtml">
+        <ui:define name="label">#{messages.PhoneLabel}</ui:define>
+        <h:outputText value="+ "/>
+        <h:inputText id="phonePrefix" required="false" style="width: 40px;"
+                     value="#{modelEditHome.instance.phonePrefix}" maxlength="4"></h:inputText>&#160;
+		<h:inputText id="phone" required="false" style="width: 100px;"
+                     value="#{modelEditHome.instance.phone}"/>
+    </s:decorate>
+    
+    <s:decorate id="mobilePhoneDecoration" template="/layout/edit.xhtml">
+        <ui:define name="label">#{messages.MobilePhoneLabel}</ui:define>
+        <h:outputText value="+ "/>
+        <h:inputText id="mobilePhonePrefix" required="false" style="width: 40px;"
+                     value="#{modelEditHome.instance.mobilePhonePrefix}" maxlength="4"></h:inputText>&#160;
+		<h:inputText id="mobilePhone" required="false" style="width: 100px;"
+                     value="#{modelEditHome.instance.mobilePhone}"/>
+    </s:decorate>
+    
+    <s:decorate id="faxDecoration" template="/layout/edit.xhtml">
+        <ui:define name="label">#{messages.FaxLabel}</ui:define>
+        <h:outputText value="+ "/>
+        <h:inputText id="faxPrefix" required="false" style="width: 40px;"
+                     value="#{modelEditHome.instance.faxPrefix}" maxlength="4"></h:inputText>&#160;
+		<h:inputText id="fax" required="false" style="width: 100px;"
+                     value="#{modelEditHome.instance.fax}"/>
+    </s:decorate>
+    
+    <s:decorate id="emailDecoration" template="/layout/edit.xhtml">
+        <ui:define name="label">#{messages.EmailLabel}</ui:define>
+		<h:inputText id="email" required="false" style="width: 320px;"
+                     value="#{modelEditHome.instance.email}"/>
+    </s:decorate>
+    
+</div>
+	

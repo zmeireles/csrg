@@ -1,0 +1,33 @@
+<div xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ice="http://www.icesoft.com/icefaces/component"
+      xmlns:s="http://jboss.com/products/seam/taglib">
+
+	<s:decorate id="nameDecoration" template="/layout/edit.xhtml">
+        <ui:define name="label">#{messages.NameLabel}</ui:define>
+        <h:inputText id="name" required="true" style="width: 320px;"
+                     value="#{modelEditHome.instance.name}"/>
+    </s:decorate>
+    
+    <s:decorate id="parentDecoration" template="/layout/edit.xhtml">
+        <ui:define name="label">#{messages.DepartmentParentLabel}</ui:define>
+        <h:selectOneMenu id="parent" required="false" value="#{modelEditHome.newParent}">
+			<s:selectItems value="#{modelEditHome.getParentList()}" var="data" label="#{data.name}" 
+						noSelectionLabel="#{messages.NoSelectionLabel}" />
+	        <s:convertEntity />
+        </h:selectOneMenu>
+    </s:decorate>
+    
+    <s:decorate id="serviceClassificationDecoration" template="/layout/edit.xhtml">
+        <ui:define name="label">#{messages.ServiceClassificationLabel}</ui:define>
+        <h:selectOneMenu id="serviceClassification" required="false" value="#{modelEditHome.instance.serviceClassification}">
+			<s:selectItems value="#{modelEditHome.getServiceClassificationList()}" var="data" label="#{data.name}" 
+						noSelectionLabel="#{messages.NoSelectionLabel}" />
+	        <s:convertEntity />
+        </h:selectOneMenu>
+    </s:decorate>
+    
+</div>
+	

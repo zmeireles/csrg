@@ -1,0 +1,175 @@
+.chatbox {
+	position: fixed;
+	position:expression("absolute");
+	/*right:247px;*/
+	bottom:0px;
+	width: 225px;
+	
+}
+
+
+.chatList {
+	position: fixed;
+	position:expression("absolute");
+	right:20px;
+	bottom:24px;
+	width: 225px;
+	
+}
+
+.chatListBottom {
+	position: fixed;
+	position:expression("absolute");
+	right:20px;
+	bottom:0px;
+	width: 213px;
+    border: #ccc solid thin;
+    padding:2px;
+    height:12px;
+    padding:5px;
+    font-weight:bold;
+}
+
+.chatListBottom:hover{
+	background-color: #ccc;
+}
+
+.chatboxhead {
+	background-color: #f99d39;
+	padding:5px;
+	color: #ffffff;
+	border-right:1px solid #f99d39;
+	border-left:1px solid #f99d39;
+	font-size: 12px;
+}
+
+
+.chatListHead {
+	background-color: #f99d39;
+	padding:0px;
+	color: #ffffff;
+	padding:5px;
+	border-right:1px solid #f99d39;
+	border-left:1px solid #f99d39;
+	font-size: 12px;
+}
+
+
+.chatboxblink {
+	background-color: #176689;
+	border-right:1px solid #176689;
+	border-left:1px solid #176689;
+}
+
+.chatboxcontent {
+	font-family: arial,sans-serif;
+	font-size: 12px;
+	color: #333333;
+	height:200px;
+	width:209px;
+	padding:7px;
+	border-left:1px solid #cccccc;
+	border-right:1px solid #cccccc;
+	border-bottom:1px solid #eeeeee;
+	background-color: #ffffff;
+	line-height: 1.3em;
+}
+
+.chatboxtext{
+
+	height:190px;
+	width:216px;
+	overflow-y:auto;
+	overflow-x:auto;
+
+}
+
+.chatListContent {
+	font-family: arial,sans-serif;
+	font-size: 13px;
+	color: #333333;
+	height:211px;
+	width:209px;
+	overflow-y:auto;
+	overflow-x:auto;
+	padding:7px;
+	border-left:1px solid #cccccc;
+	border-right:1px solid #cccccc;
+	border-bottom:1px solid #eeeeee;
+	background-color: #ffffff;
+	line-height: 1.3em;
+}
+
+.chatboxinput {
+	padding: 5px;
+	background-color: #ffffff;
+	border-left:1px solid #cccccc;
+	border-right:1px solid #cccccc;
+	border-bottom:1px solid #cccccc;
+}
+
+
+.chatboxtextareaselected {
+	border: 2px solid #f99d39;
+	margin:0;
+}
+
+.chatboxtextarea {
+	border: 2px solid #ccc;
+	margin:0;
+}
+
+.chatboxmessage {
+	margin-left:1em;
+}
+
+.chatboxinfo {
+	margin-left:-1em;
+	color:#666666;
+
+}
+
+.chatboxmessagefrom {
+	margin-left:-1em;
+	font-weight: bold;
+}
+
+.chatboxmessagecontent {
+}
+
+.chatboxoptions {
+	float: right;
+}
+
+.chatboxoptions a {
+	text-decoration: none;
+	color: white;
+	font-weight:bold;
+	font-family:Verdana,Arial,"Bitstream Vera Sans",sans-serif;
+
+}
+
+.chatboxtitle {
+	float: left;
+	width:110px;
+	padding-left:70px;
+	font-weight:bold;
+	text-align:right;
+}
+
+.chatboxImage {
+	float: left;
+	width:40px;
+	font-weight:bold;
+	height:40px;
+}
+
+.chatListTitle {
+	float: left;
+
+}
+
+ .titleText{
+	 color: #ffffff;
+	 font-weight:bold;
+ }

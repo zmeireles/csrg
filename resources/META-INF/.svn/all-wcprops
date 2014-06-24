@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/csrg/!svn/ver/286/resources/META-INF
+END
+persistence-dev.xml
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/csrg/!svn/ver/220/resources/META-INF/persistence-dev.xml
+END
+persistence-test.xml
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/csrg/!svn/ver/1/resources/META-INF/persistence-test.xml
+END
+application.xml
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/csrg/!svn/ver/286/resources/META-INF/application.xml
+END
+persistence-prod.xml
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/csrg/!svn/ver/1/resources/META-INF/persistence-prod.xml
+END
+ejb-jar.xml
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/csrg/!svn/ver/1/resources/META-INF/ejb-jar.xml
+END
+orm.xml
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/csrg/!svn/ver/1/resources/META-INF/orm.xml
+END
+jboss-app.xml
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/csrg/!svn/ver/13/resources/META-INF/jboss-app.xml
+END

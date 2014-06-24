@@ -1,0 +1,7 @@
+#1 -> ref_regiao
+#2 -> regiao
+#3 -> arquipelago
+
+01;Continente;false
+20;Açores;true
+30;Madeira;true

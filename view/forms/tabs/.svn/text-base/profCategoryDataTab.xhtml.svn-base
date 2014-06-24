@@ -1,0 +1,15 @@
+<div xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ice="http://www.icesoft.com/icefaces/component"
+      xmlns:s="http://jboss.com/products/seam/taglib">
+
+	<s:decorate id="nameDecoration" template="/layout/edit.xhtml">
+        <ui:define name="label">#{messages.NameLabel}</ui:define>
+        <h:inputText id="name" required="true" style="width: 320px;"
+                     value="#{modelEditHome.instance.name}"/>
+    </s:decorate>
+    
+</div>
+	

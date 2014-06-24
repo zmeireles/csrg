@@ -1,0 +1,39 @@
+<ice:panelGroup xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ice="http://www.icesoft.com/icefaces/component"
+      xmlns:s="http://jboss.com/products/seam/taglib"
+      styleClass="newsBox panelSeriesContainer">
+      
+        <ice:panelSeries id="icePnlSrs"
+                         value="#{newsPanelController.news}"
+                         var="data" style="float:left">
+            <!-- news box is repeated for each news record -->
+            <ice:panelGroup id="newsBox" styleClass="newsBox">
+            	<ice:panelGroup styleClass="iceDatTblColHdr">
+            		<s:link id="name" value="#{data.title}" 
+                    				style="font-weight:bold;" 
+                    				view="/forms/newsView.xhtml"
+                    				propagation="begin">
+                    	<f:param value="#{data.id}" name="newsId"/>	
+                    </s:link>
+                </ice:panelGroup>
+                <ice:outputText id="date" value="#{data.returnNewsDate()}" style="text-align: left; font-style: italic;"/><br/>
+                <s:graphicImage value="#{data.thumbnail}" rendered="#{data.thumbnail ne null}"
+                		style="float: left; padding: 5px;">
+						<s:transformImageSize width="64" maintainRatio="true"/>
+				</s:graphicImage><p style="min-height: 64px;" align="left">
+				<ice:outputText id="synopsis" value="#{data.synopsis}" /></p>
+				<br/>
+				
+				<s:link id="name" value="#{messages.SeeMore}" 
+	               				view="/forms/newsView.xhtml"
+	               				style="text-align: left; vertical-align: baseline"
+	               				propagation="begin">
+	               	<f:param value="#{data.id}" name="newsId"/>	
+				</s:link>
+            </ice:panelGroup>
+
+        </ice:panelSeries>
+</ice:panelGroup>

@@ -1,0 +1,47 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+		      xmlns:ui="http://java.sun.com/jsf/facelets"
+		      xmlns:h="http://java.sun.com/jsf/html"
+		      xmlns:f="http://java.sun.com/jsf/core"
+		      xmlns:a4j="http://richfaces.org/a4j"
+		      xmlns:ice="http://www.icesoft.com/icefaces/component"
+		      xmlns:s="http://jboss.com/products/seam/taglib"
+		      template="#{theme}/popupDragItemsPanel.xhtml">
+
+<ui:define name="availableItemsColumn">
+   		<ice:column>
+   			<f:facet name="header">
+   				<ice:outputText value="#{messages.AvailableItems}"/>
+   			</f:facet>
+   			<ice:panelGroup
+   					draggable="true"
+   					dragListener="#{modelEditHome.addDndOperation}"
+   					dragValue="#{data}"
+   					dragOptions="solid"
+   					dragMask="dragging,drag_cancel,hover_start,hover_end"
+            					dropMask="dragging,drag_cancel,hover_start,hover_end">
+                      <ice:outputText value="#{data.name}" />
+			</ice:panelGroup>
+   		</ice:column>
+</ui:define>
+<ui:define name="selectedItemsColumn">
+   		<ice:column>
+   			<f:facet name="header">
+   				<ice:outputText value="#{messages.SelectedItems}"/>
+   			</f:facet>
+   			<ice:panelGroup id="selectedDropBox"
+   					draggable="true"
+   					dragListener="#{modelEditHome.removeDndOperation}"
+   					dragValue="#{data}"
+   					dragOptions="solid"
+   					dragMask="dragging,drag_cancel,hover_start,hover_end"
+            					dropMask="dragging,drag_cancel,hover_start,hover_end">
+                      <ice:outputText value="#{data.name}" />
+                     </ice:panelGroup>
+   		</ice:column>
+</ui:define>
+<ui:define name="saveButton">
+	<ice:commandButton id="modalPnlSaveButton" type="submit"
+						value="#{messages.SaveButton}"
+						actionListener="#{modelEditHome.savePopupSelectedDepartments}"/>
+</ui:define>
+</ui:composition>
